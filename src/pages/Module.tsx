@@ -58,12 +58,16 @@ const Module = () => {
               const Icon = understandingIcons[i];
               const s = understandingTile[u.tone];
               return (
-                <div key={u.label} className={`flex flex-col gap-6 rounded-2xl p-5 shadow-soft ${s.wrap}`}>
+                <Link
+                  key={u.label}
+                  to={`/module/${slug}/understanding/${i}`}
+                  className={`flex flex-col gap-6 rounded-2xl p-5 shadow-soft ${s.wrap} transition-transform hover:-translate-y-0.5`}
+                >
                   <div className={`grid h-12 w-12 place-items-center rounded-xl ${s.tile}`}>
                     <Icon className={`h-6 w-6 ${s.icon}`} strokeWidth={2} />
                   </div>
                   <span className={`text-sm font-semibold leading-snug ${s.text}`}>{u.label}</span>
-                </div>
+                </Link>
               );
             })}
           </div>
