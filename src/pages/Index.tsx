@@ -30,7 +30,7 @@ const Index = () => {
 
         {/* Tips */}
         <section className="mb-14">
-          <h2 className="mb-4 text-sm font-semibold tracking-wide text-foreground">Tips</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">Tips</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {tipCards.map((tip) => {
               const Icon = iconMap[tip.iconKey as keyof typeof iconMap];
@@ -51,7 +51,7 @@ const Index = () => {
 
         {/* Find support */}
         <section>
-          <h2 className="mb-4 text-sm font-semibold tracking-wide text-foreground">
+          <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">
             Find support for your health
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
