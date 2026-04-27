@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, MessageCircle } from "lucide-react";
 import { iconMap } from "@/lib/icons";
 import { supportCards, tipCards } from "@/data/modules";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
         <header className="mb-12 flex items-start gap-4">
           <button
+            onClick={() => navigate(-1)}
             aria-label="Back"
             className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
           >

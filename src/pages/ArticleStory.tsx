@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { ChevronLeft, Clock, ArrowUp, ArrowRight } from "lucide-react";
 import { modules, type ModuleSlug } from "@/data/modules";
 import { toneBg, toneFg } from "@/lib/tones";
@@ -7,6 +7,7 @@ type Kind = "articles" | "stories";
 
 const ArticleStory = () => {
   const { slug, kind, index } = useParams<{ slug: ModuleSlug; kind: Kind; index: string }>();
+  const navigate = useNavigate();
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   const i = Number(index);
   if (!data || (kind !== "articles" && kind !== "stories") || isNaN(i))
@@ -39,13 +40,13 @@ const ArticleStory = () => {
       {/* Slim top bar */}
       <div className="sticky top-0 z-20 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-[680px] items-center justify-between px-6 py-3 md:px-0">
-          <Link
-            to={`/module/${slug}/${kind}`}
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/60 transition-colors hover:text-foreground"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             {isArticle ? "Articles" : "Stories"}
-          </Link>
+          </button>
           <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-foreground/50">
             <span style={{ color: accent }}>{data.title}</span>
             <span className="text-foreground/25">/</span>
@@ -212,13 +213,13 @@ const ArticleStory = () => {
           )}
 
           <div className="flex items-center justify-between text-xs text-foreground/55">
-            <Link
-              to={`/module/${slug}/${kind}`}
+            <button
+              onClick={() => navigate(-1)}
               className="inline-flex items-center gap-1.5 font-medium transition-colors hover:text-foreground"
             >
               <ChevronLeft className="h-3.5 w-3.5" />
               All {isArticle ? "articles" : "stories"}
-            </Link>
+            </button>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="inline-flex items-center gap-1.5 font-medium transition-colors hover:text-foreground"

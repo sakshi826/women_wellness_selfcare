@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { ChevronLeft, BookOpen, CircleDot, Heart, Lightbulb, Clock, Sparkles } from "lucide-react";
 import { modules, type ModuleSlug } from "@/data/modules";
 import { understandingTile } from "@/lib/tones";
@@ -7,6 +7,7 @@ const understandingIcons = [BookOpen, CircleDot, Heart, Lightbulb];
 
 const Understanding = () => {
   const { slug, index } = useParams<{ slug: ModuleSlug; index: string }>();
+  const navigate = useNavigate();
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   const i = Number(index);
   if (!data || isNaN(i) || !data.understanding[i]) return <Navigate to="/" replace />;
@@ -30,14 +31,14 @@ const Understanding = () => {
       {/* Hero band */}
       <div className={`${s.wrap} border-b border-border/40`}>
         <div className="mx-auto max-w-3xl px-6 pb-12 pt-8 md:px-10 md:pb-16 md:pt-10">
-          <Link
-            to={`/module/${slug}`}
+          <button
+            onClick={() => navigate(-1)}
             aria-label="Back"
             className="mb-8 inline-flex items-center gap-1.5 rounded-full bg-card/70 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             Back to {data.title}
-          </Link>
+          </button>
 
           <div className="flex items-start gap-4">
             <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ${s.tile} shadow-soft`}>
@@ -117,13 +118,13 @@ const Understanding = () => {
           <p className="mt-1.5 text-sm text-foreground/70">
             Browse trackers, articles, tips and stories curated for this topic.
           </p>
-          <Link
-            to={`/module/${slug}`}
+          <button
+            onClick={() => navigate(-1)}
             className={`mt-5 inline-flex items-center gap-2 rounded-full ${s.tile} px-5 py-2.5 text-sm font-semibold ${s.icon} shadow-soft transition-transform hover:-translate-y-0.5`}
           >
             <ChevronLeft className="h-4 w-4" />
             Back to {data.title}
-          </Link>
+          </button>
         </div>
       </article>
     </div>

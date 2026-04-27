@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import {
   ChevronLeft,
   ArrowUpRight,
@@ -54,6 +54,7 @@ const resourceMeta: Record<
 
 const Resource = () => {
   const { slug, resource } = useParams<{ slug: ModuleSlug; resource: ResourceKey }>();
+  const navigate = useNavigate();
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   const meta = resource ? resourceMeta[resource as ResourceKey] : undefined;
   if (!data || !meta) return <Navigate to="/" replace />;
@@ -76,14 +77,14 @@ const Resource = () => {
         />
 
         <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-8 md:px-10 md:pb-20 md:pt-10">
-          <Link
-            to={`/module/${slug}`}
+          <button
+            onClick={() => navigate(-1)}
             aria-label="Back"
             className="inline-flex items-center gap-1.5 rounded-full bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             Back to {data.title}
-          </Link>
+          </button>
 
           <div className="mt-10 grid gap-6 md:grid-cols-[auto_1fr] md:items-end md:gap-10">
             <div

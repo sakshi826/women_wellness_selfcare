@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, BookOpen, CircleDot, Heart, Lightbulb, Star, Moon, HeartHandshake, Bike, Smile, Newspaper, BookMarked, HelpCircle } from "lucide-react";
 import { modules, type ModuleSlug, TRACKERS } from "@/data/modules";
 import { iconMap } from "@/lib/icons";
@@ -24,6 +24,7 @@ const resourceStyles = [
 
 const Module = () => {
   const { slug } = useParams<{ slug: ModuleSlug }>();
+  const navigate = useNavigate();
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   if (!data) return <Navigate to="/" replace />;
 
@@ -34,13 +35,13 @@ const Module = () => {
       <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
         <header className="mb-12 flex items-start gap-4">
-          <Link
-            to="/"
+          <button
+            onClick={() => navigate(-1)}
             aria-label="Back"
             className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
           >
             <ChevronLeft className="h-5 w-5" />
-          </Link>
+          </button>
           <div className={`grid h-11 w-11 place-items-center rounded-2xl ${toneBg[data.tone]}`}>
             <HeaderIcon className={`h-5 w-5 ${toneFg[data.tone]}`} strokeWidth={1.75} />
           </div>
@@ -85,8 +86,6 @@ const Module = () => {
                 <a
                   key={t}
                   href={meta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className={`flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-4 py-3 text-left shadow-soft transition-transform hover:-translate-y-0.5`}
                 >
                   <div className="flex items-center gap-3">

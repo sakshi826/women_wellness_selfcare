@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { tipPages, type TipSlug } from "@/data/tips";
 import { iconMap } from "@/lib/icons";
@@ -37,6 +37,7 @@ const toneStyles: Record<string, { headerBg: string; tile: string; icon: string;
 
 const Tip = () => {
   const { slug } = useParams<{ slug: TipSlug }>();
+  const navigate = useNavigate();
   const data = slug ? tipPages[slug as TipSlug] : undefined;
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   if (!data) return <Navigate to="/" replace />;
@@ -49,13 +50,13 @@ const Tip = () => {
       <div className="mx-auto max-w-3xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
         <header className="mb-10 flex items-start gap-4">
-          <Link
-            to="/"
+          <button
+            onClick={() => navigate(-1)}
             aria-label="Back"
             className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
           >
             <ChevronLeft className="h-5 w-5" />
-          </Link>
+          </button>
           <div className={`grid h-11 w-11 place-items-center rounded-2xl ${s.headerBg}`}>
             <HeaderIcon className={`h-5 w-5 ${s.icon}`} strokeWidth={1.75} />
           </div>
