@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronLeft, Newspaper, BookMarked, Clock, Sparkles, ArrowUp } from "lucide-react";
+import { ChevronLeft, Clock, ArrowUp, ArrowRight } from "lucide-react";
 import { modules, type ModuleSlug } from "@/data/modules";
 import { toneBg, toneFg } from "@/lib/tones";
 
@@ -9,7 +9,8 @@ const ArticleStory = () => {
   const { slug, kind, index } = useParams<{ slug: ModuleSlug; kind: Kind; index: string }>();
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   const i = Number(index);
-  if (!data || (kind !== "articles" && kind !== "stories") || isNaN(i)) return <Navigate to="/" replace />;
+  if (!data || (kind !== "articles" && kind !== "stories") || isNaN(i))
+    return <Navigate to="/" replace />;
 
   const isArticle = kind === "articles";
   const item = isArticle ? data.articles[i] : data.stories[i];
@@ -17,147 +18,216 @@ const ArticleStory = () => {
 
   const tone = (isArticle ? "yellow" : "lilac") as keyof typeof toneBg;
   const accent = `hsl(var(--pastel-${tone}-fg))`;
-  const Icon = isArticle ? Newspaper : BookMarked;
+  const accentSoft = `hsl(var(--pastel-${tone}))`;
   const heading = isArticle ? (item as any).title : (item as any).name;
-  const eyebrow = isArticle ? "Article" : "Story";
+  const eyebrow = isArticle ? "Essay" : "Story";
   const summary = isArticle ? (item as any).summary : undefined;
   const body: string[] = (item as any).body ?? [];
   const quote = !isArticle ? (item as any).quote : undefined;
 
   const words = body.join(" ").split(/\s+/).filter(Boolean).length;
   const mins = Math.max(2, Math.round(words / 220));
+  const issueNo = String(i + 1).padStart(2, "0");
+
+  // Next item for end-of-article CTA
+  const list = isArticle ? data.articles : data.stories;
+  const next = list[(i + 1) % list.length];
+  const nextTitle = isArticle ? (next as any).title : (next as any).name;
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Editorial hero */}
-      <header className="relative overflow-hidden border-b border-border/40">
-        <div className={`absolute inset-0 ${toneBg[tone]} opacity-90`} />
-        <div
-          className="absolute -right-20 -top-24 h-72 w-72 rounded-full opacity-50 blur-3xl"
-          style={{ background: accent }}
-        />
-        <div
-          className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full opacity-25 blur-3xl"
-          style={{ background: accent }}
-        />
-
-        <div className="relative mx-auto max-w-3xl px-6 pb-14 pt-8 md:px-10 md:pb-20 md:pt-10">
+      {/* Slim top bar */}
+      <div className="sticky top-0 z-20 border-b border-border/60 bg-background/85 backdrop-blur">
+        <div className="mx-auto flex max-w-[680px] items-center justify-between px-6 py-3 md:px-0">
           <Link
             to={`/module/${slug}/${kind}`}
-            aria-label="Back"
-            className="inline-flex items-center gap-1.5 rounded-full bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/60 transition-colors hover:text-foreground"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
-            Back to {isArticle ? "Articles" : "Stories"}
+            {isArticle ? "Articles" : "Stories"}
           </Link>
+          <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-foreground/50">
+            <span style={{ color: accent }}>{data.title}</span>
+            <span className="text-foreground/25">/</span>
+            <span className="font-mono">№ {issueNo}</span>
+          </div>
+        </div>
+      </div>
 
-          <div className="mt-10 flex items-center gap-3">
-            <span className="h-px w-10" style={{ background: accent, opacity: 0.5 }} />
-            <p className={`text-[10px] font-bold uppercase tracking-[0.28em] ${toneFg[tone]}`}>
-              {data.title} · {eyebrow}
+      {/* Masthead */}
+      <header className="border-b border-border/60">
+        <div className="mx-auto max-w-[680px] px-6 pb-14 pt-16 md:px-0 md:pb-20 md:pt-24">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3">
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full"
+              style={{ background: accent }}
+            />
+            <p
+              className="text-[10px] font-bold uppercase tracking-[0.32em]"
+              style={{ color: accent }}
+            >
+              {eyebrow}
+            </p>
+            <span className="h-px flex-1" style={{ background: accent, opacity: 0.25 }} />
+            <p className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-foreground/45">
+              {String(words).padStart(4, "0")} words
             </p>
           </div>
 
-          <h1 className="mt-4 text-[34px] font-bold leading-[1.1] tracking-tight text-foreground md:text-[56px]">
+          {/* Title — serif display */}
+          <h1
+            className="mt-8 font-serif text-[40px] font-semibold leading-[1.05] tracking-[-0.02em] text-foreground md:text-[64px]"
+            style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+          >
             {heading}
           </h1>
 
+          {/* Deck / standfirst */}
           {summary && (
-            <p className="mt-4 max-w-2xl text-[16px] leading-[1.65] text-foreground/65 md:text-[18px]">
+            <p
+              className="mt-6 max-w-[560px] font-serif text-[19px] leading-[1.5] text-foreground/65 md:text-[22px]"
+              style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: "italic" }}
+            >
               {summary}
             </p>
           )}
 
-          {/* Meta strip */}
-          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/55">
-            <span className="inline-flex items-center gap-1.5">
+          {/* Byline / meta */}
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-border/60 pt-6 text-[12px] text-foreground/55">
+            <div className="flex items-center gap-2.5">
+              <div
+                className="grid h-9 w-9 place-items-center rounded-full text-[11px] font-bold"
+                style={{ background: accentSoft, color: accent }}
+              >
+                {data.title.charAt(0)}
+              </div>
+              <div className="leading-tight">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground/45">
+                  Curated by
+                </p>
+                <p className="text-[13px] font-semibold text-foreground/80">
+                  The {data.title} Library
+                </p>
+              </div>
+            </div>
+            <span className="hidden h-8 w-px bg-border md:block" />
+            <div className="flex items-center gap-1.5">
               <Clock className="h-3.5 w-3.5" />
-              {mins} min read
-            </span>
-            <span className="text-foreground/30">·</span>
-            <span className="inline-flex items-center gap-1.5">
-              <Sparkles className="h-3 w-3" fill="currentColor" style={{ color: accent }} />
-              Reviewed by experts
-            </span>
-            <span className="text-foreground/30">·</span>
-            <span className="font-mono">No. {String(i + 1).padStart(2, "0")}</span>
+              <span className="font-medium">{mins} min read</span>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Body */}
-      <main className="mx-auto max-w-3xl px-6 py-14 md:px-10 md:py-20">
-        <article className="relative">
-          {/* Floating icon medallion */}
-          <div
-            className="absolute -top-20 right-0 hidden h-14 w-14 place-items-center rounded-2xl bg-card shadow-card md:grid"
-            style={{ color: accent }}
-          >
-            <Icon className="h-6 w-6" strokeWidth={1.5} />
-          </div>
-
+      <main className="mx-auto max-w-[680px] px-6 py-16 md:px-0 md:py-24">
+        <article>
           {quote && (
             <blockquote
-              className={`mb-10 rounded-2xl ${toneBg[tone]} p-6 text-[20px] font-medium italic leading-snug text-foreground/85 md:p-8 md:text-[22px]`}
-              style={{ borderLeft: `4px solid ${accent}` }}
+              className="mb-12 border-l-2 pl-6 font-serif text-[24px] leading-[1.4] text-foreground/85 md:text-[28px]"
+              style={{
+                borderLeftColor: accent,
+                fontFamily: 'Georgia, "Times New Roman", serif',
+                fontStyle: "italic",
+              }}
             >
               "{quote}"
             </blockquote>
           )}
 
-          <div className="space-y-7 md:space-y-8">
-            {body.map((p, idx) => (
-              <p
-                key={idx}
-                className="text-[17px] leading-[1.85] tracking-[-0.005em] text-foreground/85 md:text-[18.5px]"
-              >
-                {idx === 0 && !quote ? (
-                  <>
+          <div className="space-y-8">
+            {body.map((p, idx) => {
+              if (idx === 0 && !quote) {
+                return (
+                  <p
+                    key={idx}
+                    className="font-serif text-[19px] leading-[1.75] text-foreground/85 md:text-[20px]"
+                    style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                  >
                     <span
-                      style={{ color: accent }}
-                      className="float-left mr-3 mt-1 font-serif text-[68px] font-bold leading-[0.85]"
+                      className="float-left mr-3 mt-2 font-serif text-[80px] font-semibold leading-[0.8]"
+                      style={{
+                        color: accent,
+                        fontFamily: 'Georgia, "Times New Roman", serif',
+                      }}
                     >
                       {p.charAt(0)}
                     </span>
                     {p.slice(1)}
-                  </>
-                ) : (
-                  p
-                )}
-              </p>
-            ))}
+                  </p>
+                );
+              }
+              return (
+                <p
+                  key={idx}
+                  className="font-serif text-[19px] leading-[1.75] text-foreground/85 md:text-[20px]"
+                  style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                >
+                  {p}
+                </p>
+              );
+            })}
           </div>
 
-          {/* End-of-article footer */}
-          <footer className="mt-16 border-t border-border/60 pt-8">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <p className={`text-[10px] font-bold uppercase tracking-[0.22em] ${toneFg[tone]}`}>
-                  End of {eyebrow.toLowerCase()}
-                </p>
-                <p className="mt-1 text-sm text-foreground/55">
-                  Thanks for reading. Take what serves you, leave the rest.
-                </p>
-              </div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-3.5 py-2 text-xs font-semibold text-foreground/70 transition-colors hover:bg-secondary"
-                >
-                  <ArrowUp className="h-3.5 w-3.5" />
-                  Top
-                </button>
-                <Link
-                  to={`/module/${slug}/${kind}`}
-                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5"
-                  style={{ background: accent }}
-                >
-                  More {isArticle ? "articles" : "stories"}
-                </Link>
-              </div>
-            </div>
-          </footer>
+          {/* End mark */}
+          <div className="mt-14 flex items-center gap-4">
+            <span className="h-px flex-1 bg-border" />
+            <span
+              className="inline-block h-2 w-2 rotate-45"
+              style={{ background: accent }}
+            />
+            <span className="h-px flex-1 bg-border" />
+          </div>
         </article>
+
+        {/* Footer / next-up */}
+        <footer className="mt-16 space-y-8">
+          {next && next !== item && (
+            <Link
+              to={`/module/${slug}/${kind}/read/${(i + 1) % list.length}`}
+              className="group block rounded-2xl border border-border/60 bg-card p-6 transition-all hover:-translate-y-0.5 hover:shadow-soft md:p-8"
+            >
+              <p
+                className="text-[10px] font-bold uppercase tracking-[0.28em]"
+                style={{ color: accent }}
+              >
+                Up next · {eyebrow}
+              </p>
+              <div className="mt-3 flex items-start justify-between gap-6">
+                <h3
+                  className="font-serif text-[22px] font-semibold leading-snug tracking-tight text-foreground md:text-[26px]"
+                  style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                >
+                  {nextTitle}
+                </h3>
+                <div
+                  className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-full transition-transform group-hover:translate-x-1"
+                  style={{ background: accentSoft, color: accent }}
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </div>
+            </Link>
+          )}
+
+          <div className="flex items-center justify-between text-xs text-foreground/55">
+            <Link
+              to={`/module/${slug}/${kind}`}
+              className="inline-flex items-center gap-1.5 font-medium transition-colors hover:text-foreground"
+            >
+              <ChevronLeft className="h-3.5 w-3.5" />
+              All {isArticle ? "articles" : "stories"}
+            </Link>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="inline-flex items-center gap-1.5 font-medium transition-colors hover:text-foreground"
+            >
+              Back to top
+              <ArrowUp className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </footer>
       </main>
     </div>
   );
