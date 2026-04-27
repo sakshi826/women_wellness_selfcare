@@ -87,15 +87,15 @@ const Module = () => {
                   href={meta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-4 py-3.5 text-left shadow-soft transition-transform hover:-translate-y-0.5`}
+                  className={`flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-5 py-5 text-left shadow-soft transition-transform hover:-translate-y-0.5`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className={`grid h-9 w-9 place-items-center rounded-xl ${toneBg[tone]}`}>
-                      <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
+                  <div className="flex items-center gap-4">
+                    <div className={`grid h-12 w-12 place-items-center rounded-xl ${toneBg[tone]}`}>
+                      <Icon className={`h-6 w-6 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
-                    <span className={`text-sm font-semibold ${toneFg[tone]}`}>{t}</span>
+                    <span className={`text-lg font-semibold ${toneFg[tone]}`}>{t}</span>
                   </div>
-                  <ChevronRight className={`h-4 w-4 ${toneFg[tone]}`} />
+                  <ChevronRight className={`h-5 w-5 ${toneFg[tone]}`} />
                 </a>
               );
             })}
@@ -113,19 +113,19 @@ const Module = () => {
                 <Link
                   key={r.key}
                   to={`/module/${slug}/${r.path}`}
-                  className={`flex items-center justify-between rounded-2xl border-l-4 ${toneBg[tone]}/60 px-4 py-4 shadow-soft transition-transform hover:translate-x-0.5`}
+                  className={`flex items-center justify-between rounded-2xl border-l-4 ${toneBg[tone]}/60 px-5 py-5 shadow-soft transition-transform hover:translate-x-0.5`}
                   style={{ borderLeftColor: `hsl(var(--pastel-${tone}-fg))` }}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]}`}>
-                      <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
+                  <div className="flex items-center gap-4">
+                    <div className={`grid h-12 w-12 place-items-center rounded-xl ${toneBg[tone]}`}>
+                      <Icon className={`h-6 w-6 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
-                    <span className={`text-sm font-semibold underline decoration-2 underline-offset-4 ${toneFg[tone]}`}>
+                    <span className={`text-lg font-semibold underline decoration-2 underline-offset-4 ${toneFg[tone]}`}>
                       {r.key}
                     </span>
                   </div>
-                  <div className={`grid h-8 w-8 place-items-center rounded-full ${toneBg[tone]}`}>
-                    <ChevronRight className={`h-4 w-4 ${toneFg[tone]}`} />
+                  <div className={`grid h-9 w-9 place-items-center rounded-full ${toneBg[tone]}`}>
+                    <ChevronRight className={`h-5 w-5 ${toneFg[tone]}`} />
                   </div>
                 </Link>
               );
