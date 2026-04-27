@@ -121,7 +121,7 @@ const Module = () => {
 interface ResourceAccordionProps {
   resourceKey: ResourceKey;
   tone: keyof typeof toneBg;
-  Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  Icon: React.ComponentType<any>;
   data: ModuleContent;
 }
 
