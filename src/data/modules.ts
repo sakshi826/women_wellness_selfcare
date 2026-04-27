@@ -358,10 +358,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "Sprout",
     tone: "rose",
     understanding: [
-      { label: "Understanding Ovulation & Fertility", tone: "peach" },
-      { label: "Female Fertility", tone: "blue" },
-      { label: "Fertility Options", tone: "rose" },
-      { label: "5 Common Signs of Infertility", tone: "mint" },
+      { label: "Understanding Ovulation & Fertility", tone: "peach", body: [
+        "Ovulation is the moment an egg is released from an ovary, usually about 12–16 days before your next period. The egg lives roughly 12–24 hours; sperm can survive up to 5 days inside the body.",
+        "That overlap creates a fertile window of about 6 days each cycle. Sex during this window is when conception is possible — and tracking helps you find it.",
+        "Cervical mucus that turns clear and stretchy, a small temperature rise, mid-cycle twinges, and a positive LH strip are all reliable signals. Two or three of these together are far more accurate than any single one alone."
+      ]},
+      { label: "Female Fertility", tone: "blue", body: [
+        "Female fertility depends on egg quantity and quality, regular ovulation, open fallopian tubes, and a healthy uterus. All four matter — and all four can be supported or evaluated.",
+        "Age is the biggest single factor for egg quality. Fertility is high through the early thirties, gradually declines, and drops more steeply after 37–38. Knowing this isn't pressure — it's information for planning.",
+        "Lifestyle still matters: sleep, balanced eating, not smoking, limiting alcohol, and managing stress all support healthier eggs and cycles. So does your partner's health, regardless of whose body the pregnancy will happen in."
+      ]},
+      { label: "Fertility Options", tone: "rose", body: [
+        "Fertility care is a spectrum. It starts with timing intercourse and basic workups, moves through medication that supports ovulation (like letrozole), and includes IUI (intrauterine insemination) and IVF (in vitro fertilization).",
+        "Egg freezing and embryo freezing let people preserve fertility for later — useful before treatments that affect fertility, or for those who want time before trying. Donor eggs, donor sperm, and gestational carriers expand the options further.",
+        "There's no 'right' path. The best plan considers your age, diagnosis, finances, values, and emotional bandwidth. A good clinic walks you through trade-offs without pressure."
+      ]},
+      { label: "5 Common Signs of Infertility", tone: "mint", body: [
+        "Watch for: irregular or absent periods, very painful periods, cycles shorter than 21 or longer than 35 days, repeated miscarriages, and trying for 12 months without success (or 6 months if you're 35+).",
+        "Other quieter signs include changes in cervical mucus, hormonal symptoms like acne or hair changes (which can hint at PCOS), and pelvic pain (which can hint at endometriosis or fibroids).",
+        "Infertility is a couple issue about a third of the time, a male-factor issue about a third, and a female-factor issue about a third. Both partners getting evaluated together is faster, fairer, and more accurate."
+      ]},
     ],
     articles: [
       { title: "Knowing your fertile window", body: "It's roughly the 5 days before ovulation plus ovulation day. Cervical mucus is the most reliable cue." },
