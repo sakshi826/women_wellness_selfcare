@@ -345,8 +345,8 @@ export const supportCards: { slug: ModuleSlug; title: string; tone: PastelTone; 
 ];
 
 export const tipCards = [
-  { title: "Hair & Skin", gradient: "bg-tip-teal", iconKey: "Wind" },
-  { title: "Food", gradient: "bg-tip-orange", iconKey: "UtensilsCrossed" },
-  { title: "Weight Loss", gradient: "bg-tip-pink", iconKey: "Scale" },
-  { title: "PMS", gradient: "bg-tip-purple", iconKey: "Flower" },
+  { title: "Hair & Skin", slug: "hair-skin", gradient: "bg-tip-teal", iconKey: "Wind" },
+  { title: "Food", slug: "food", gradient: "bg-tip-orange", iconKey: "UtensilsCrossed" },
+  { title: "Weight Loss", slug: "weight-loss", gradient: "bg-tip-pink", iconKey: "Scale" },
+  { title: "PMS", slug: "pms", gradient: "bg-tip-purple", iconKey: "Flower" },
 ] as const;
