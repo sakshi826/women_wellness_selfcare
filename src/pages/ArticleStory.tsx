@@ -109,20 +109,14 @@ const ArticleStory = () => {
             {body.map((p, idx) => (
               <p
                 key={idx}
-                className={`text-[17px] leading-[1.85] tracking-[-0.005em] text-foreground/85 md:text-[18.5px] ${
-                  idx === 0
-                    ? "first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[64px] first-letter:font-bold first-letter:leading-[0.85]"
-                    : ""
-                }`}
-                style={
-                  idx === 0
-                    ? ({ "--tw-text-opacity": 1 } as any)
-                    : undefined
-                }
+                className="text-[17px] leading-[1.85] tracking-[-0.005em] text-foreground/85 md:text-[18.5px]"
               >
-                {idx === 0 ? (
+                {idx === 0 && !quote ? (
                   <>
-                    <span style={{ color: accent }} className="float-left mr-3 mt-1 text-[64px] font-bold leading-[0.85]">
+                    <span
+                      style={{ color: accent }}
+                      className="float-left mr-3 mt-1 font-serif text-[68px] font-bold leading-[0.85]"
+                    >
                       {p.charAt(0)}
                     </span>
                     {p.slice(1)}
