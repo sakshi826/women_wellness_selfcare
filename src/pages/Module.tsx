@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronDown, ChevronLeft, ChevronRight, BookOpen, CircleDot, Heart, Lightbulb, Star, Moon, HeartHandshake, Bike, Smile, Newspaper, BookMarked, HelpCircle } from "lucide-react";
-import { modules, type ModuleSlug, type ModuleContent, TRACKERS } from "@/data/modules";
+import { ChevronLeft, ChevronRight, BookOpen, CircleDot, Heart, Lightbulb, Star, Moon, HeartHandshake, Bike, Smile, Newspaper, BookMarked, HelpCircle } from "lucide-react";
+import { modules, type ModuleSlug, TRACKERS } from "@/data/modules";
 import { iconMap } from "@/lib/icons";
 import { toneBg, toneFg, understandingTile } from "@/lib/tones";
-
-type ResourceKey = "Articles" | "Tips" | "Stories" | "Myths";
 
 const understandingIcons = [BookOpen, CircleDot, Heart, Lightbulb];
 
@@ -19,10 +16,10 @@ const trackerStyles: Record<string, { tone: string; Icon: any; href: string }> =
 };
 
 const resourceStyles = [
-  { key: "Articles", tone: "yellow", Icon: Newspaper },
-  { key: "Tips", tone: "blue", Icon: Lightbulb },
-  { key: "Stories", tone: "lilac", Icon: BookMarked },
-  { key: "Myths", tone: "mint", Icon: HelpCircle },
+  { key: "Articles", path: "articles", tone: "yellow", Icon: Newspaper },
+  { key: "Tips", path: "tips", tone: "blue", Icon: Lightbulb },
+  { key: "Stories", path: "stories", tone: "lilac", Icon: BookMarked },
+  { key: "Myths", path: "myths", tone: "mint", Icon: HelpCircle },
 ] as const;
 
 const Module = () => {
