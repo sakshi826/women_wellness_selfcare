@@ -12,7 +12,7 @@ const understandingIcons = [BookOpen, CircleDot, Heart, Lightbulb];
 const trackerStyles: Record<string, { tone: string; Icon: any; href: string }> = {
   Energy: { tone: "rose", Icon: Star, href: "https://platform.mantracare.com/therapy/trackers/energy-tracker" },
   Sleep: { tone: "lilac", Icon: Moon, href: "https://web.mantracare.com/app/sleep" },
-  "Self Care": { tone: "lilac", Icon: Heart, href: "https://platform.mantracare.com/therapy/trackers/care-tracker" },
+  "Self Care": { tone: "pink", Icon: Heart, href: "https://platform.mantracare.com/therapy/trackers/care-tracker" },
   BMI: { tone: "mint", Icon: HeartHandshake, href: "https://platform.mantracare.com/bmi-calculator-new" },
   "Physical Activity": { tone: "peach", Icon: Bike, href: "https://platform.mantracare.com/therapy/trackers/physical-activity-log" },
   Mood: { tone: "yellow", Icon: Smile, href: "https://platform.mantracare.com/mood_tracker/" },
