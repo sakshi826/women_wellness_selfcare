@@ -35,14 +35,15 @@ const Index = () => {
             {tipCards.map((tip) => {
               const Icon = iconMap[tip.iconKey as keyof typeof iconMap];
               return (
-                <button
+                <Link
                   key={tip.title}
+                  to={`/tips/${tip.slug}`}
                   className={`group relative flex h-32 flex-col justify-between overflow-hidden rounded-2xl ${tip.gradient} p-5 text-left text-white shadow-card transition-transform duration-300 hover:-translate-y-1`}
                 >
                   <Icon className="h-7 w-7 opacity-95" strokeWidth={1.75} />
                   <span className="text-base font-semibold">{tip.title}</span>
                   <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/15 blur-xl" />
-                </button>
+                </Link>
               );
             })}
           </div>
