@@ -1,16 +1,86 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { ChevronLeft, MessageCircle } from "lucide-react";
+import { iconMap } from "@/lib/icons";
+import { supportCards, tipCards } from "@/data/modules";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
+        {/* Header */}
+        <header className="mb-12 flex items-start gap-4">
+          <button
+            aria-label="Back"
+            className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-secondary">
+            <MessageCircle className="h-5 w-5 text-foreground" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              Self-Care Resources
+            </h1>
+            <p className="mt-1 text-muted-foreground">
+              Explore tools and guidance for your wellness journey
+            </p>
+          </div>
+        </header>
+
+        {/* Tips */}
+        <section className="mb-14">
+          <h2 className="mb-4 text-sm font-semibold tracking-wide text-foreground">Tips</h2>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {tipCards.map((tip) => {
+              const Icon = iconMap[tip.iconKey as keyof typeof iconMap];
+              return (
+                <button
+                  key={tip.title}
+                  className={`group relative flex h-32 flex-col justify-between overflow-hidden rounded-2xl ${tip.gradient} p-5 text-left text-white shadow-card transition-transform duration-300 hover:-translate-y-1`}
+                >
+                  <Icon className="h-7 w-7 opacity-95" strokeWidth={1.75} />
+                  <span className="text-base font-semibold">{tip.title}</span>
+                  <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/15 blur-xl" />
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Find support */}
+        <section>
+          <h2 className="mb-4 text-sm font-semibold tracking-wide text-foreground">
+            Find support for your health
+          </h2>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {supportCards.map((card) => {
+              const Icon = iconMap[card.iconKey as keyof typeof iconMap];
+              return (
+                <Link
+                  key={card.slug}
+                  to={`/module/${card.slug}`}
+                  className="group flex flex-col items-center gap-4 rounded-2xl border border-border/60 bg-card p-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
+                >
+                  <div
+                    className={`grid h-16 w-16 place-items-center rounded-2xl bg-pastel-${card.tone}`}
+                  >
+                    <Icon
+                      className={`h-7 w-7 text-pastel-${card.tone}-foreground`}
+                      strokeWidth={1.75}
+                    />
+                  </div>
+                  <span className="text-center text-sm font-semibold leading-snug text-foreground">
+                    {card.title}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
