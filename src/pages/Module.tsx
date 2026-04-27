@@ -52,7 +52,7 @@ const Module = () => {
 
         {/* Understanding */}
         <section className="mb-12">
-          <h2 className="mb-4 text-sm font-semibold tracking-wide">Understanding {data.title}</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight">Understanding {data.title}</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {data.understanding.map((u, i) => {
               const Icon = understandingIcons[i];
@@ -75,7 +75,7 @@ const Module = () => {
 
         {/* Trackers */}
         <section className="mb-12">
-          <h2 className="mb-4 text-sm font-semibold tracking-wide">Trackers</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight">Trackers</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {TRACKERS.map((t) => {
               const meta = trackerStyles[t];
@@ -104,7 +104,7 @@ const Module = () => {
 
         {/* Resources — link to dedicated pages */}
         <section className="mb-12">
-          <h2 className="mb-4 text-sm font-semibold tracking-wide">Resources</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight">Resources</h2>
           <div className="space-y-3">
             {resourceStyles.map((r) => {
               const tone = r.tone as keyof typeof toneBg;

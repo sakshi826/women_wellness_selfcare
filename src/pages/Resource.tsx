@@ -47,7 +47,7 @@ const Resource = () => {
             {data.articles.map((a) => (
               <article key={a.title} className="rounded-2xl border border-border/60 bg-card p-5 shadow-soft">
                 <h2 className="mb-2 text-base font-semibold">{a.title}</h2>
-                <p className="text-sm leading-relaxed text-muted-foreground">{a.body}</p>
+                <p className="text-[15px] leading-[1.75] text-muted-foreground">{a.body}</p>
               </article>
             ))}
           </div>
@@ -70,7 +70,7 @@ const Resource = () => {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {data.stories.map((s) => (
               <blockquote key={s.name} className="rounded-2xl bg-pastel-lilac/60 p-5 shadow-soft">
-                <p className="text-sm italic leading-relaxed">"{s.quote}"</p>
+                <p className="text-base italic leading-[1.75]">"{s.quote}"</p>
                 <footer className="mt-3 text-xs font-semibold text-pastel-lilac-foreground">— {s.name}</footer>
               </blockquote>
             ))}

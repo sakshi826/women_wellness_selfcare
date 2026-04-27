@@ -30,20 +30,29 @@ const Understanding = () => {
             <Icon className={`h-6 w-6 ${s.icon}`} strokeWidth={2} />
           </div>
           <div>
-            <p className={`text-xs font-semibold uppercase tracking-wider ${s.text}`}>
+            <p className={`text-sm font-semibold uppercase tracking-wider ${s.text}`}>
               {data.title}
             </p>
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{item.label}</h1>
+            <h1 className="mt-1 text-3xl font-bold tracking-tight md:text-4xl">{item.label}</h1>
           </div>
         </header>
 
-        <article className={`rounded-3xl ${s.wrap} p-6 md:p-8 shadow-soft`}>
-          <div className="space-y-5">
-            {item.body.map((p, idx) => (
-              <p key={idx} className="text-[15px] leading-relaxed text-foreground/85">
-                {p}
-              </p>
-            ))}
+        <article className={`rounded-3xl ${s.wrap} p-2 shadow-soft`}>
+          <div className="rounded-[20px] bg-card p-6 md:p-10">
+            <div className="space-y-6 md:space-y-7">
+              {item.body.map((p, idx) => (
+                <p
+                  key={idx}
+                  className={`text-[17px] md:text-[18px] leading-[1.8] text-foreground/90 ${
+                    idx === 0
+                      ? `first-letter:float-left first-letter:mr-2 first-letter:text-5xl first-letter:font-bold first-letter:leading-none ${s.text}`
+                      : ""
+                  }`}
+                >
+                  {p}
+                </p>
+              ))}
+            </div>
           </div>
         </article>
       </div>
