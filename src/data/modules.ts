@@ -196,10 +196,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "Salad",
     tone: "peach",
     understanding: [
-      { label: "Why is nutrition important?", tone: "peach" },
-      { label: "Balanced Diet", tone: "blue" },
-      { label: "Healthy Weight", tone: "rose" },
-      { label: "The Role of Nutrition", tone: "mint" },
+      { label: "Why is nutrition important?", tone: "peach", body: [
+        "Food is information. Every meal sends signals to your hormones, immune system, brain, and muscles. Good nutrition isn't about perfection — it's about giving your body steady, useful information most of the time.",
+        "Women specifically have more demand on iron, calcium, B12, vitamin D, and omega-3s, especially through cycles, pregnancy, and perimenopause. Skipping these silently shows up as fatigue, hair loss, mood dips, or weak workouts.",
+        "Think 'add' before 'subtract'. Adding protein, fiber, and color to your plate naturally crowds out the foods that drain you, without the willpower battle of strict restriction."
+      ]},
+      { label: "Balanced Diet", tone: "blue", body: [
+        "A balanced plate is simpler than the internet makes it: roughly half vegetables and fruit, a quarter protein (palm-sized), a quarter whole carbs (rice, oats, potatoes, bread), plus a thumb of healthy fat (olive oil, nuts, avocado).",
+        "This shape stabilizes blood sugar, supports muscle, and keeps you full for hours. You don't need to track grams — you just need the shape repeated most days.",
+        "Variety matters too. Rotating proteins, swapping grains, and changing up vegetables across the week covers a wider range of nutrients than eating the same 'healthy' meal on repeat."
+      ]},
+      { label: "Healthy Weight", tone: "rose", body: [
+        "A healthy weight is the one your body settles at when you're sleeping enough, moving regularly, eating mostly whole foods, and not in a constant cycle of restrict-and-rebound. It looks different on every body.",
+        "Weight is one signal, not the signal. Energy, strength, periods, mood, and bloodwork tell a fuller story. Many people get healthier without the scale moving much at all.",
+        "If weight loss is a goal, slow and supported wins. Aim for habits you'd happily keep for years, not a sprint that ends in a binge. Strength training and protein protect muscle while you change body composition."
+      ]},
+      { label: "The Role of Nutrition", tone: "mint", body: [
+        "Nutrition shapes nearly every system: hormones, gut, brain, skin, immunity, sleep. Even small upgrades — more fiber, more water, more protein at breakfast — ripple into how you feel within a week or two.",
+        "It's also a powerful partner to medication and movement. People who pair treatment with steady nutrition consistently report better outcomes for PCOS, thyroid, mood, and metabolic health.",
+        "Most importantly, nutrition is meant to be enjoyed. Meals with people you love, foods from your culture, and flavors you actually want to eat are part of a healthy life — not a deviation from it."
+      ]},
     ],
     articles: [
       { title: "The plate, simplified", body: "Half veggies, a quarter protein, a quarter whole grains. That's it. No app required." },
