@@ -593,40 +593,49 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     tone: "peach",
     understanding: [
       { label: "Why is nutrition important?", tone: "peach", body: [
-        "Food is information. Every meal sends signals to your hormones, immune system, brain, gut, and muscles.",
-        "What you eat shapes how you feel within hours and how you function over decades.",
-        "Women have higher demands for iron, calcium, vitamin D, B12, folate, omega-3s, and protein.",
-        "Skipping these silently shows up as fatigue, hair shedding, mood dips, weak workouts, and irregular cycles.",
-        "Nutrition interacts with stress, sleep, and movement.",
-        "Think 'add' before 'subtract.' Adding good foods naturally crowds out the draining ones.",
-        "Nutrition is meant to support your life, not control it."
+        "Food is information. Every meal sends signals to your hormones, immune system, brain, gut, and muscles. The same body that feels foggy and depleted on one set of meals can feel clear and resilient on another — without changing anything else.",
+        "What you eat shapes how you feel within hours (energy, mood, focus, cravings) and how you function over decades (heart, bones, brain, hormones, cancer risk). Both timescales matter, and both respond to the same basic principles.",
+        "Women have higher demands for iron, calcium, vitamin D, B12, folate, omega-3s, and protein at almost every life stage. Menstruation, pregnancy, breastfeeding, and menopause each shift the math, and 'standard' nutrition advice often underestimates what you actually need.",
+        "Skipping these silently shows up as fatigue, hair shedding, mood dips, weak workouts, irregular cycles, brittle nails, anxiety, and poor recovery from illness. Many women live with low-grade deficiencies for years, blaming stress when the real issue is fuel.",
+        "Nutrition interacts with stress, sleep, and movement in both directions. Poor sleep raises cravings; chronic stress changes how nutrients are absorbed; under-eating drains the energy you'd need to work out. You can't fix one without addressing the others.",
+        "Think 'add' before 'subtract.' Adding protein, fiber, color, water, and healthy fat naturally crowds out the foods that drain you — without the rebound that restriction creates. Most sustainable nutrition shifts are additive, not punitive.",
+        "Diet culture has done real damage. Decades of restriction, calorie counting, and moralizing food ('clean,' 'cheat,' 'good,' 'bad') have left many women anxious about eating itself. Healing your relationship with food is part of nutrition, not separate from it.",
+        "Nutrition is meant to support your life, not control it. If your eating plan is making you obsessive, isolated, or miserable, it's not working — no matter how 'clean' it looks on paper."
       ]},
       { label: "Balanced Diet", tone: "blue", body: [
-        "A balanced plate is roughly half vegetables and fruit, a quarter protein, a quarter whole carbs, plus a thumb of healthy fat.",
-        "Protein is the most underrated piece for women — aim for 25–35g per meal.",
-        "Carbs are not the enemy. Whole carbs fuel your brain, workouts, and hormones.",
-        "Healthy fats are essential for hormones, brain, hair, skin, and vitamin absorption.",
-        "Hydration matters — most adults need 2–3 liters a day.",
-        "Variety matters as much as the shape.",
-        "Meal timing is mostly individual — find what works for you."
+        "A balanced plate is roughly half vegetables and fruit, a quarter protein, a quarter whole carbs, plus a thumb of healthy fat. This shape works at almost every life stage and adapts easily to most cultural cuisines and budgets.",
+        "Protein is the most underrated piece for women — aim for 25–35g per meal, ideally 100–130g per day if you're active or in perimenopause/menopause. Eggs, fish, chicken, Greek yogurt, cottage cheese, tofu, tempeh, lentils, beans, and protein-rich grains like quinoa all count.",
+        "Carbs are not the enemy. Whole carbs (oats, rice, potatoes, fruit, legumes, whole-grain bread and pasta) fuel your brain, workouts, hormones, and thyroid. Chronic low-carb eating can suppress cycles and tank energy in active women.",
+        "Healthy fats are essential for hormones, brain, hair, skin, and vitamin absorption. Olive oil, avocado, nuts, seeds, fatty fish (salmon, sardines, mackerel), and yogurt are reliable sources. Fat-free diets are quietly hard on hormones.",
+        "Fiber is a quiet hero — 25–35g per day supports gut bacteria, blood sugar, cholesterol, hormone clearance, and satiety. Most adults get less than half this amount.",
+        "Hydration matters — most adults need 2–3 liters a day, more in heat or with exercise. Mild dehydration looks a lot like fatigue, headaches, and brain fog.",
+        "Variety matters as much as the shape. Aim for 30 different plant foods per week (vegetables, fruit, herbs, spices, nuts, seeds, legumes, whole grains all count). Gut diversity follows plant diversity.",
+        "Meal timing is mostly individual — find what works for you. Three meals plus a snack works for most; some prefer four smaller meals; some do well with longer fasting windows. The 'right' rhythm is the one that keeps you energized and stable.",
+        "Plan a little, not a lot. Stocking the kitchen with proteins, easy carbs, frozen vegetables, fruit, and pantry staples makes balanced eating the default rather than the exception."
       ]},
       { label: "Healthy Weight", tone: "rose", body: [
-        "A healthy weight is the one your body settles at when sleep, food, movement, and stress are steady.",
-        "Body weight is shaped by genetics, hormones, age, conditions, medications, sleep, and life stage.",
-        "Weight is one signal, not the signal. Energy, strength, sleep, and labs tell a fuller story.",
-        "Slow and supported weight change wins almost every time.",
-        "Protein and strength training are the two most underrated tools.",
-        "Sleep controls weight more than most diets do.",
-        "Weight is not a measure of worth, discipline, or value."
+        "A healthy weight is the one your body settles at when sleep, food, movement, and stress are steady. It's rarely a single number on a chart — it's a range your body defends, and that range is shaped by far more than calories.",
+        "Body weight is shaped by genetics, hormones, age, medical conditions (PCOS, thyroid, insulin resistance), medications (antidepressants, hormonal contraception, steroids), sleep quality, stress load, and life stage. Treating weight as a willpower problem ignores most of the actual variables.",
+        "Weight is one signal, not the signal. Energy, strength, sleep quality, mood, libido, lab markers (HbA1c, lipids, blood pressure), and how clothes fit tell a much fuller story than the scale alone. Many people get healthier without the scale moving much.",
+        "Slow and supported weight change wins almost every time. Aggressive restriction triggers metabolic adaptation, muscle loss, hormone disruption, and rebound — usually leaving people heavier than they started within a few years. Sustainable change is boring on purpose.",
+        "Protein and strength training are the two most underrated tools. Protein preserves muscle during weight loss; strength training keeps the metabolism resilient. Together they change body composition even when the scale moves slowly.",
+        "Sleep controls weight more than most diets do. Sleep deprivation raises hunger hormones, lowers fullness signals, and amplifies cravings for sugar and refined carbs. A week of bad sleep can undo a month of careful eating.",
+        "Stress matters too. Chronic cortisol changes where the body stores fat (often around the middle), drives emotional eating, and disrupts sleep — a full loop that has nothing to do with willpower.",
+        "Hormonal life stages reshape weight. Perimenopause, postpartum, and post-pill transitions all temporarily shift weight regulation; understanding the stage is more useful than blaming yourself.",
+        "Working with a registered dietitian or doctor (rather than a wellness influencer) is often the difference between progress and another failed attempt — especially if PCOS, thyroid issues, or disordered eating history are part of the picture.",
+        "Weight is not a measure of worth, discipline, or value. People in larger bodies are not failed thin people; people in thin bodies are not automatically healthy. Health and weight overlap, but they're not the same thing."
       ]},
       { label: "The Role of Nutrition", tone: "mint", body: [
-        "Nutrition shapes hormones, gut, brain, skin, immunity, sleep, mood, fertility, and metabolism.",
-        "Hormonal health depends on steady nutrition.",
-        "Gut and nutrition are inseparable — aim for 30 different plants per week.",
-        "Mental health and nutrition are deeply linked.",
-        "Nutrition is a powerful partner to medication and movement.",
-        "Across life stages, needs shift.",
-        "Start small. One steady habit changed becomes a different body over time."
+        "Nutrition shapes hormones, gut, brain, skin, immunity, sleep, mood, fertility, and metabolism. There is almost no body system that food doesn't touch — which is why the right adjustments often improve several things at once.",
+        "Hormonal health depends on steady nutrition. Skipped meals, very low calorie days, and chronic under-eating signal scarcity to the body, which can suppress thyroid, slow metabolism, and quiet cycles. Hormones need fuel.",
+        "Gut and nutrition are inseparable. Aim for 30 different plants per week, plenty of fiber, fermented foods (yogurt, kefir, sauerkraut, kimchi), and minimal ultra-processed food. A healthy gut affects mood, immunity, hormone clearance, and inflammation.",
+        "Mental health and nutrition are deeply linked. Omega-3s, B vitamins, iron, vitamin D, magnesium, and stable blood sugar all influence anxiety and depression. Nutrition is not a substitute for therapy or medication, but it's a powerful partner to both.",
+        "Skin, hair, and nails are slow-feedback signals of nutrition status. Brittle nails, hair shedding, dull skin, and slow-healing breakouts often improve dramatically when protein, iron, zinc, and healthy fats are restored.",
+        "Nutrition is a powerful partner to medication and movement. Many medications work better when paired with steady eating; many workouts pay off more with adequate fuel. Trying to out-train or out-medicate poor nutrition rarely works.",
+        "Across life stages, needs shift. Pregnancy and breastfeeding raise demands sharply; perimenopause shifts protein and calcium needs upward; postmenopause emphasizes bone and muscle support. The plate evolves with the chapter.",
+        "Avoid the extremes. Cutting out entire food groups without medical reason often backfires; so does eating whatever, whenever, with no structure. The middle — varied, regular, mostly whole foods, with room for pleasure — is where most people thrive.",
+        "Cooking even a few times a week is one of the highest-leverage nutrition habits. You don't need to be a great cook; you need a small rotation of meals you can make on autopilot.",
+        "Start small. One steady habit changed (a protein-forward breakfast, a piece of fruit at lunch, a glass of water before coffee) becomes a different body over time. Compound interest works for nutrition too."
       ]},
     ],
     articles: [
