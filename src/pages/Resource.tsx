@@ -213,25 +213,37 @@ const Resource = () => {
                 <Link
                   key={a.title}
                   to={`/module/${slug}/articles/read/${i}`}
-                  className="group relative grid grid-cols-[64px_1fr_auto] items-start gap-6 border-t border-border/60 py-8 md:gap-10 md:py-10"
+                  className="group relative mb-4 grid grid-cols-[64px_1fr_auto] items-start gap-6 overflow-hidden rounded-2xl border border-border/50 bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card md:gap-10 md:p-7"
                 >
+                  {/* Soft tinted accent bar */}
+                  <span
+                    aria-hidden
+                    className={`absolute inset-y-0 left-0 w-1.5 ${toneBg[tone]}`}
+                  />
+                  {/* Subtle corner glow */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-20 blur-3xl transition-opacity group-hover:opacity-40"
+                    style={{ background: accent }}
+                  />
+
                   {/* Number column */}
                   <span
-                    className="font-mono text-2xl font-light tabular-nums leading-none md:text-3xl"
+                    className="relative font-mono text-2xl font-light tabular-nums leading-none md:text-3xl"
                     style={{ color: accent }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
                   {/* Content */}
-                  <div className="min-w-0">
+                  <div className="relative min-w-0">
                     <div className="mb-2 flex flex-wrap items-center gap-3">
-                      <p
-                        className={`text-[10px] font-bold uppercase tracking-[0.22em] ${toneFg[tone]}`}
+                      <span
+                        className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em]"
+                        style={{ background: `${accent}1a`, color: accent }}
                       >
                         Article
-                      </p>
-                      <span className="text-foreground/30">·</span>
+                      </span>
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-foreground/55">
                         <Clock className="h-3 w-3" />
                         {mins} min read
@@ -247,7 +259,7 @@ const Resource = () => {
 
                   {/* Arrow affordance */}
                   <div
-                    className="mt-1 grid h-10 w-10 place-items-center rounded-full border border-border/60 transition-all group-hover:border-transparent group-hover:translate-x-1"
+                    className="relative mt-1 grid h-10 w-10 place-items-center rounded-full border border-border/60 transition-all group-hover:translate-x-1"
                     style={{ color: accent }}
                   >
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
