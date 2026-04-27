@@ -34,7 +34,7 @@ const Module = () => {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
-        <header className="mb-12 flex items-start gap-4">
+        <header className="mb-12 flex items-start gap-4 animate-in slide-up">
           <button
             onClick={() => navigate(-1)}
             aria-label="Back"
@@ -52,7 +52,7 @@ const Module = () => {
         </header>
 
         {/* Understanding */}
-        <section className="mb-12">
+        <section className="mb-12 animate-in slide-up stagger-1">
           <h2 className="mb-5 text-2xl font-bold tracking-tight">Understanding {data.title}</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {data.understanding.map((u, i) => {
@@ -62,9 +62,9 @@ const Module = () => {
                 <Link
                   key={u.label}
                   to={`/module/${slug}/understanding/${i}`}
-                  className={`flex flex-col gap-6 rounded-2xl p-5 shadow-soft ${s.wrap} transition-transform hover:-translate-y-0.5`}
+                  className={`group flex flex-col gap-6 rounded-2xl p-5 shadow-soft ${s.wrap} transition-all duration-300 hover:-translate-y-1 hover:shadow-card`}
                 >
-                  <div className={`grid h-12 w-12 place-items-center rounded-xl ${s.tile}`}>
+                  <div className={`grid h-12 w-12 place-items-center rounded-xl ${s.tile} transition-transform duration-300 group-hover:scale-110`}>
                     <Icon className={`h-6 w-6 ${s.icon}`} strokeWidth={2} />
                   </div>
                   <span className={`text-sm font-semibold leading-snug ${s.text}`}>{u.label}</span>
@@ -75,7 +75,7 @@ const Module = () => {
         </section>
 
         {/* Trackers */}
-        <section className="mb-12">
+        <section className="mb-12 animate-in slide-up stagger-2">
           <h2 className="mb-5 text-2xl font-bold tracking-tight">Trackers</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {TRACKERS.map((t) => {
@@ -86,15 +86,15 @@ const Module = () => {
                 <a
                   key={t}
                   href={meta.href}
-                  className={`flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-4 py-3 text-left shadow-soft transition-transform hover:-translate-y-0.5`}
+                  className={`group flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-4 py-3 text-left shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]}`}>
+                    <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]} transition-transform duration-300 group-hover:scale-110`}>
                       <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
                     <span className={`text-sm font-medium ${toneFg[tone]}`}>{t}</span>
                   </div>
-                  <ChevronRight className={`h-4 w-4 ${toneFg[tone]}`} />
+                  <ChevronRight className={`h-4 w-4 ${toneFg[tone]} transition-transform duration-300 group-hover:translate-x-1`} />
                 </a>
               );
             })}
@@ -102,7 +102,7 @@ const Module = () => {
         </section>
 
         {/* Resources — link to dedicated pages */}
-        <section className="mb-12">
+        <section className="mb-12 animate-in slide-up stagger-3">
           <h2 className="mb-5 text-2xl font-bold tracking-tight">Resources</h2>
           <div className="space-y-3">
             {resourceStyles.map((r) => {

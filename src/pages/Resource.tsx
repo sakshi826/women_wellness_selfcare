@@ -86,7 +86,7 @@ const Resource = () => {
             Back to {data.title}
           </button>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-[auto_1fr] md:items-end md:gap-10">
+          <div className="mt-10 grid gap-6 md:grid-cols-[auto_1fr] md:items-end md:gap-10 animate-in slide-up">
             <div
               className="grid h-20 w-20 place-items-center rounded-3xl bg-card shadow-card md:h-24 md:w-24"
               style={{ boxShadow: `0 12px 40px -12px ${accent}` }}
@@ -113,7 +113,7 @@ const Resource = () => {
         </div>
       </header>
 
-      <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
+      <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20 animate-in slide-up stagger-1">
         {/* ---------- ARTICLES ---------- */}
         {resource === "articles" && (
           <div>

@@ -29,19 +29,19 @@ const Understanding = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero band */}
-      <div className={`${s.wrap} border-b border-border/40`}>
+      <div className={`${s.wrap} border-b border-border/40 animate-in fade-in`}>
         <div className="mx-auto max-w-3xl px-6 pb-12 pt-8 md:px-10 md:pb-16 md:pt-10">
           <button
             onClick={() => navigate(-1)}
             aria-label="Back"
-            className="mb-8 inline-flex items-center gap-1.5 rounded-full bg-card/70 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
+            className="mb-8 inline-flex items-center gap-1.5 rounded-full bg-card/70 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-all duration-300 hover:bg-card hover:-translate-y-0.5"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             Back to {data.title}
           </button>
 
-          <div className="flex items-start gap-4">
-            <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ${s.tile} shadow-soft`}>
+          <div className="flex items-start gap-4 animate-in slide-up">
+            <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ${s.tile} shadow-soft transition-transform duration-500 hover:rotate-6`}>
               <Icon className={`h-7 w-7 ${s.icon}`} strokeWidth={2} />
             </div>
             <div className="min-w-0">
@@ -68,7 +68,7 @@ const Understanding = () => {
       </div>
 
       {/* Article body */}
-      <article className="mx-auto max-w-3xl px-6 py-12 md:px-10 md:py-16">
+      <article className="mx-auto max-w-3xl px-6 py-12 md:px-10 md:py-16 animate-in slide-up stagger-1">
         {/* Lead paragraph */}
         {lead && (
           <p className={`mb-12 text-xl font-medium leading-[1.6] tracking-[-0.005em] text-foreground md:text-[22px] first-letter:float-left first-letter:mr-3 first-letter:text-[64px] first-letter:font-bold first-letter:leading-[0.9] first-letter:${s.text}`}>
@@ -81,8 +81,8 @@ const Understanding = () => {
           {rest.map((p, idx) => {
             if (idx === pullQuoteIndex) {
               return (
-                <figure key={idx} className="my-2">
-                  <div className={`relative rounded-2xl ${s.wrap} px-6 py-7 md:px-9 md:py-9`}>
+                <figure key={idx} className="my-2 animate-in fade-in stagger-2">
+                  <div className={`relative rounded-2xl ${s.wrap} px-6 py-7 md:px-9 md:py-9 transition-transform duration-500 hover:scale-[1.02]`}>
                     <Sparkles className={`absolute -top-3 left-6 h-6 w-6 ${s.text}`} fill="currentColor" />
                     <blockquote className={`text-lg font-semibold leading-[1.55] md:text-xl ${s.text}`}>
                       “{p}”
@@ -94,12 +94,12 @@ const Understanding = () => {
             return (
               <section key={idx} className="group flex gap-5 md:gap-6">
                 <div className="flex flex-col items-center pt-1.5">
-                  <span className={`text-xs font-bold tabular-nums ${s.text}`}>
+                  <span className={`text-xs font-bold tabular-nums ${s.text} transition-transform duration-300 group-hover:scale-110`}>
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <span className={`mt-2 h-full w-px bg-border`} aria-hidden />
+                  <span className={`mt-2 h-full w-px bg-border group-hover:bg-primary/30 transition-colors`} aria-hidden />
                 </div>
-                <p className="text-[17px] leading-[1.85] text-foreground/85 md:text-[18px]">
+                <p className="text-[17px] leading-[1.85] text-foreground/85 md:text-[18px] transition-colors duration-300 group-hover:text-foreground">
                   {p}
                 </p>
               </section>
@@ -108,7 +108,7 @@ const Understanding = () => {
         </div>
 
         {/* Closing card */}
-        <div className={`mt-16 rounded-2xl border border-border/50 ${s.wrap} p-6 md:p-8`}>
+        <div className={`mt-16 rounded-2xl border border-border/50 ${s.wrap} p-6 md:p-8 animate-in slide-up stagger-2`}>
           <p className={`text-[11px] font-bold uppercase tracking-[0.18em] ${s.text}`}>
             Keep exploring
           </p>
@@ -120,7 +120,7 @@ const Understanding = () => {
           </p>
           <button
             onClick={() => navigate(-1)}
-            className={`mt-5 inline-flex items-center gap-2 rounded-full ${s.tile} px-5 py-2.5 text-sm font-semibold ${s.icon} shadow-soft transition-transform hover:-translate-y-0.5`}
+            className={`mt-5 inline-flex items-center gap-2 rounded-full ${s.tile} px-5 py-2.5 text-sm font-semibold ${s.icon} shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card`}
           >
             <ChevronLeft className="h-4 w-4" />
             Back to {data.title}

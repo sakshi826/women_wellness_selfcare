@@ -49,7 +49,7 @@ const Tip = () => {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-3xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
-        <header className="mb-10 flex items-start gap-4">
+        <header className="mb-10 flex items-start gap-4 animate-in slide-up">
           <button
             onClick={() => navigate(-1)}
             aria-label="Back"
@@ -57,7 +57,7 @@ const Tip = () => {
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
-          <div className={`grid h-11 w-11 place-items-center rounded-2xl ${s.headerBg}`}>
+          <div className={`grid h-11 w-11 place-items-center rounded-2xl ${s.headerBg} transition-transform duration-300 hover:scale-110`}>
             <HeaderIcon className={`h-5 w-5 ${s.icon}`} strokeWidth={1.75} />
           </div>
           <div>
@@ -66,33 +66,33 @@ const Tip = () => {
           </div>
         </header>
 
-        <div className="space-y-3">
+        <div className="space-y-3 animate-in slide-up stagger-1">
           {data.items.map((item, i) => {
             const Icon = iconMap[item.iconKey as keyof typeof iconMap] ?? iconMap.Lightbulb;
             const open = openIdx === i;
             return (
               <div
                 key={item.title}
-                className={`overflow-hidden rounded-2xl border border-border/60 bg-card shadow-soft transition-all ${open ? `ring-1 ${s.ring}` : ""}`}
+                className={`overflow-hidden rounded-2xl border border-border/60 bg-card shadow-soft transition-all duration-300 ${open ? `ring-1 ${s.ring} shadow-card` : "hover:shadow-md"}`}
               >
                 <button
                   onClick={() => setOpenIdx(open ? null : i)}
                   aria-expanded={open}
                   className="flex w-full items-center gap-4 px-4 py-4 text-left transition-colors hover:bg-black/[0.02]"
                 >
-                  <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${s.tile}`}>
+                  <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${s.tile} transition-transform duration-300 ${open ? "scale-105" : ""}`}>
                     <Icon className={`h-5 w-5 ${s.icon}`} strokeWidth={1.75} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                    <h3 className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">{item.title}</h3>
                     <p className={`mt-0.5 text-xs ${s.subtitle}`}>{item.subtitle}</p>
                   </div>
                   <ChevronRight
-                    className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-90" : ""}`}
+                    className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-90" : ""}`}
                   />
                 </button>
                 {open && (
-                  <div className="border-t border-border/40 px-4 pb-4 pt-3 md:px-5">
+                  <div className="animate-in fade-in border-t border-border/40 px-4 pb-4 pt-3 md:px-5">
                     <p className="pl-15 text-sm leading-relaxed text-muted-foreground" style={{ paddingLeft: "3.75rem" }}>
                       {item.detail}
                     </p>

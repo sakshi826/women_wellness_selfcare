@@ -9,7 +9,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
-        <header className="mb-12 flex items-start gap-4">
+        <header className="mb-12 flex items-start gap-4 animate-in slide-up">
           <button
             onClick={() => navigate(-1)}
             aria-label="Back"
@@ -31,7 +31,7 @@ const Index = () => {
         </header>
 
         {/* Tips */}
-        <section className="mb-14">
+        <section className="mb-14 animate-in slide-up stagger-1">
           <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">Tips</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {tipCards.map((tip) => {
@@ -40,11 +40,11 @@ const Index = () => {
                 <Link
                   key={tip.title}
                   to={`/tips/${tip.slug}`}
-                  className={`group relative flex h-32 flex-col justify-between overflow-hidden rounded-2xl ${tip.gradient} p-5 text-left text-white shadow-card transition-transform duration-300 hover:-translate-y-1`}
+                  className={`group relative flex h-32 flex-col justify-between overflow-hidden rounded-2xl ${tip.gradient} p-5 text-left text-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
                 >
-                  <Icon className="h-7 w-7 opacity-95" strokeWidth={1.75} />
+                  <Icon className="h-7 w-7 opacity-95 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.75} />
                   <span className="text-base font-semibold">{tip.title}</span>
-                  <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/15 blur-xl" />
+                  <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/15 blur-xl transition-all duration-500 group-hover:scale-150" />
                 </Link>
               );
             })}
@@ -52,7 +52,7 @@ const Index = () => {
         </section>
 
         {/* Find support */}
-        <section>
+        <section className="animate-in slide-up stagger-2">
           <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">
             Find support for your health
           </h2>

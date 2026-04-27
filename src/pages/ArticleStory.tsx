@@ -56,7 +56,7 @@ const ArticleStory = () => {
       </div>
 
       {/* Masthead */}
-      <header className="border-b border-border/60">
+      <header className="border-b border-border/60 animate-in fade-in">
         <div className="mx-auto max-w-[680px] px-6 pb-14 pt-16 md:px-0 md:pb-20 md:pt-24">
           {/* Eyebrow */}
           <div className="flex items-center gap-3">
@@ -78,7 +78,7 @@ const ArticleStory = () => {
 
           {/* Title — serif display */}
           <h1
-            className="mt-8 font-serif text-[40px] font-semibold leading-[1.05] tracking-[-0.02em] text-foreground md:text-[64px]"
+            className="mt-8 font-serif text-[40px] font-semibold leading-[1.05] tracking-[-0.02em] text-foreground md:text-[64px] animate-in slide-up"
             style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
           >
             {heading}
@@ -87,7 +87,7 @@ const ArticleStory = () => {
           {/* Deck / standfirst */}
           {summary && (
             <p
-              className="mt-6 max-w-[560px] font-serif text-[19px] leading-[1.5] text-foreground/65 md:text-[22px]"
+              className="mt-6 max-w-[560px] font-serif text-[19px] leading-[1.5] text-foreground/65 md:text-[22px] animate-in slide-up stagger-1"
               style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontStyle: "italic" }}
             >
               {summary}
@@ -95,7 +95,7 @@ const ArticleStory = () => {
           )}
 
           {/* Byline / meta */}
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-border/60 pt-6 text-[12px] text-foreground/55">
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-border/60 pt-6 text-[12px] text-foreground/55 animate-in slide-up stagger-2">
             <div className="flex items-center gap-2.5">
               <div
                 className="grid h-9 w-9 place-items-center rounded-full text-[11px] font-bold"
@@ -122,11 +122,11 @@ const ArticleStory = () => {
       </header>
 
       {/* Body */}
-      <main className="mx-auto max-w-[680px] px-6 py-16 md:px-0 md:py-24">
+      <main className="mx-auto max-w-[680px] px-6 py-16 md:px-0 md:py-24 animate-in slide-up stagger-2">
         <article>
           {quote && (
             <blockquote
-              className="mb-12 border-l-2 pl-6 font-serif text-[24px] leading-[1.4] text-foreground/85 md:text-[28px]"
+              className="mb-12 border-l-2 pl-6 font-serif text-[24px] leading-[1.4] text-foreground/85 md:text-[28px] animate-in fade-in"
               style={{
                 borderLeftColor: accent,
                 fontFamily: 'Georgia, "Times New Roman", serif',
@@ -172,7 +172,7 @@ const ArticleStory = () => {
           </div>
 
           {/* End mark */}
-          <div className="mt-14 flex items-center gap-4">
+          <div className="mt-14 flex items-center gap-4 animate-in fade-in">
             <span className="h-px flex-1 bg-border" />
             <span
               className="inline-block h-2 w-2 rotate-45"
