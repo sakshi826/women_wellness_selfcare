@@ -90,10 +90,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "Flower2",
     tone: "lilac",
     understanding: [
-      { label: "What is Reproductive Health?", tone: "peach" },
-      { label: "Reproductive Health Made Simple", tone: "blue" },
-      { label: "Understanding Reproductive Health", tone: "rose" },
-      { label: "Boost Your Reproductive Health", tone: "mint" },
+      { label: "What is Reproductive Health?", tone: "peach", body: [
+        "Reproductive health is more than the ability to have children — it's the overall state of your reproductive system at every stage of life. It covers your menstrual cycle, hormones, fertility, sexual wellness, and the long arc from puberty through menopause.",
+        "Good reproductive health means your cycle is reasonably predictable, sex is comfortable, you can make informed choices about contraception or pregnancy, and you have the information and care you need at every life phase.",
+        "It's also deeply connected to the rest of you. Stress, sleep, nutrition, and mental health all show up in your cycle. Treating reproductive health as part of whole-body health is what makes care actually work."
+      ]},
+      { label: "Reproductive Health Made Simple", tone: "blue", body: [
+        "Your menstrual cycle is run by a feedback loop between your brain and ovaries, with estrogen and progesterone rising and falling in a predictable pattern. Each phase has a different feel — more energy near ovulation, more inward focus before your period.",
+        "When the loop runs smoothly, periods come roughly monthly, last 3–7 days, and don't derail your life. Symptoms like mild cramps or breast tenderness are common; severe pain, very heavy bleeding, or missing periods are signals worth checking.",
+        "The simple version: track what's normal for you, support the basics (sleep, food, movement, stress), and speak up early when something shifts. You don't need to wait for things to be 'bad enough.'"
+      ]},
+      { label: "Understanding Reproductive Health", tone: "rose", body: [
+        "Reproductive health spans a lifetime: first periods, contraception choices, fertility planning, pregnancy or not, perimenopause, and beyond. Each phase brings new questions, and what worked at 22 may not fit at 38.",
+        "Common conditions like PCOS, endometriosis, fibroids, and thyroid issues can quietly shape symptoms. Many go undiagnosed for years because their signs — pain, fatigue, irregular cycles — get normalized.",
+        "Knowing your baseline is power. A simple cycle log and an honest conversation with a clinician can shorten years of guessing into a clear plan."
+      ]},
+      { label: "Boost Your Reproductive Health", tone: "mint", body: [
+        "Eat for hormones: plenty of fiber, leafy greens, healthy fats, and steady protein. Fiber especially helps your body clear used estrogen, which keeps cycles smoother.",
+        "Move daily, lift weekly. Movement supports circulation and mood; strength training protects long-term hormone and bone health. You don't need a gym — bodyweight at home counts.",
+        "Sleep, hydration, and gentle stress care round it out. Most reproductive symptoms respond — at least partly — to these basics, even before any medication enters the picture."
+      ]},
     ],
     articles: [
       { title: "Your cycle, decoded", body: "A healthy cycle is a vital sign. Length, flow, and symptoms all tell you something about your hormones." },
