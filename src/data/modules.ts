@@ -968,41 +968,48 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     tone: "blue",
     understanding: [
       { label: "Understanding Mental Health", tone: "peach", body: [
-        "Mental health is the state of your emotional, psychological, and social well-being.",
-        "Good mental health doesn't mean feeling happy all the time. It means being able to feel the full range of emotion without getting stuck.",
-        "It's shaped by genetics, brain chemistry, hormones, sleep, nutrition, movement, relationships, and life circumstances.",
-        "Struggling doesn't mean you're broken or weak.",
-        "Naming what's happening is the first relief.",
-        "Care is wide and layered — therapy, medication, movement, connection, time outdoors, sleep, and rest.",
-        "Mental health care isn't just for crisis. It's for clarity, growth, and becoming more yourself."
+        "Mental health is the state of your emotional, psychological, and social well-being. It shapes how you think, feel, handle stress, relate to others, and make decisions — every single day, not just on hard ones. It exists on a continuum, and everyone moves along it at different times.",
+        "Good mental health doesn't mean feeling happy all the time. It means being able to feel the full range of emotion — sadness, anger, grief, joy, anxiety — without getting stuck in any one of them, and without losing the ability to function while you feel them.",
+        "It's shaped by genetics, brain chemistry, hormones, sleep, nutrition, movement, relationships, life circumstances, trauma history, and access to care. Most mental health struggles aren't caused by one thing; they emerge from several factors layering on top of each other.",
+        "Hormones matter more than mainstream mental health care often acknowledges. The menstrual cycle, postpartum period, perimenopause, thyroid function, and contraception can all significantly shift mood — and treating mental health without considering hormones often leaves people stuck.",
+        "Struggling doesn't mean you're broken or weak. It means you're a human being navigating a hard moment, often with a brain doing exactly what brains do under stress. The shame around mental health is one of the biggest obstacles to actually getting help.",
+        "Naming what's happening is the first relief. 'I'm anxious,' 'I'm depressed,' 'I'm burned out,' 'I'm grieving' — even just to yourself — moves the experience from background fog into something you can work with.",
+        "Care is wide and layered — therapy, medication, movement, connection, time outdoors, sleep, rest, creative expression, community, spiritual practice, and basic boundaries. There's no single right combination, and what works often shifts across life stages.",
+        "Mental health care isn't just for crisis. It's for clarity, growth, processing change, building resilience, recovering from old wounds, and becoming more yourself. Therapy and self-knowledge are not luxuries; they're investments that compound across decades."
       ]},
       { label: "Mental Health Made Simple", tone: "blue", body: [
-        "Three systems shape mental health: nervous system, brain chemistry, and life context.",
-        "Resilience is the ability to handle hard things and recover when you fall apart.",
-        "Small daily inputs add up — morning sunlight, regular meals, gentle movement, slow breathing, screens off before bed.",
-        "Big interventions like therapy and medication work better with these basics in place.",
-        "Mental health is not separate from physical health — iron, thyroid, vitamin D, and hormones all matter.",
-        "Sleep is the single biggest mental health lever for most people.",
-        "Connection is the second biggest — even one or two reliable relationships are protective."
+        "Three systems shape mental health: your nervous system (how regulated or activated you feel), your brain chemistry (neurotransmitters, hormones, inflammation), and your life context (relationships, work, environment, history). All three are working all the time, and they affect each other.",
+        "Your nervous system has two main settings: activated (fight, flight, freeze) and regulated (rest, digest, connect). Modern life keeps many of us stuck in low-grade activation. Learning to actively shift back to regulation — through breath, movement, nature, connection, or rest — is foundational mental health work.",
+        "Resilience is the ability to handle hard things and recover when you fall apart. It's not about avoiding difficulty; it's about having the internal and external resources to come back. Resilience is built daily, not summoned in a crisis.",
+        "Small daily inputs add up — morning sunlight in your eyes within an hour of waking, regular meals with protein, gentle movement, slow breathing, screens off before bed, time with people you trust. None of these are revolutionary, but stacked together they shift baseline mental health.",
+        "Big interventions like therapy and medication work better with these basics in place. Trying to therapize your way out of chronic sleep deprivation, or medicate your way through deep loneliness, often disappoints — not because the tools don't work, but because they're being asked to do too much.",
+        "Mental health is not separate from physical health. Iron deficiency mimics depression. Thyroid issues mimic anxiety. Low vitamin D worsens mood. Blood sugar swings amplify anxiety. Inflammation drives depression. Run basic bloods before assuming it's purely psychological.",
+        "Sleep is the single biggest mental health lever for most people. Even a few nights of better sleep can noticeably shift mood, anxiety, and emotional regulation. Most people underestimate how much sleep they actually need.",
+        "Connection is the second biggest — even one or two reliable relationships are protective against almost every mental health condition. Loneliness is now considered as harmful to long-term health as smoking 15 cigarettes a day.",
+        "Movement is the third — not athletic performance, just regular gentle movement. Walking is one of the most studied antidepressants we have. It's free, available, and consistently underused."
       ]},
       { label: "What is Mental Health?", tone: "rose", body: [
-        "Mental health is the state of your emotional and psychological functioning.",
-        "Common conditions include anxiety, depression, PMDD, postpartum depression, ADHD, OCD, eating disorders, bipolar, and PTSD.",
-        "These are medical conditions, not character flaws.",
-        "Mental health conditions often show up first as physical symptoms.",
-        "Women are particularly affected by hormone-linked mental health shifts.",
-        "You don't need to be in crisis to seek support.",
-        "If you're struggling with thoughts of harming yourself, reach out immediately."
+        "Mental health is the state of your emotional, psychological, and behavioral functioning. Just like physical health, it can be excellent, decent, struggling, or in crisis — and it shifts over time depending on what's happening in your life and your body.",
+        "Common conditions include generalized anxiety, panic disorder, depression, premenstrual dysphoric disorder (PMDD), postpartum depression and anxiety, ADHD (often missed in women until adulthood), OCD, eating disorders, bipolar disorder, PTSD, complex PTSD, and burnout. Most are far more common than people realize.",
+        "These are medical conditions, not character flaws. They have real biological underpinnings — neurotransmitter imbalances, inflammation, hormonal influences, structural brain differences — even when they're triggered or shaped by life circumstances.",
+        "Mental health conditions often show up first as physical symptoms: chronic fatigue, headaches, gut issues, body pain, jaw clenching, racing heart, brain fog, weight changes, low libido, sleep problems. The body often knows before the mind names it.",
+        "Women are particularly affected by hormone-linked mental health shifts: PMDD, perinatal mood disorders, perimenopause-related anxiety and depression, and contraception-related mood changes. These are real, identifiable patterns — not imagination, not weakness.",
+        "ADHD and autism in women are massively underdiagnosed because they often present differently than the textbook (which was based on boys and men). Many women only get diagnosed in their 30s or 40s after a child is diagnosed and the patterns suddenly look familiar.",
+        "Trauma — including 'small t' chronic trauma like emotional neglect, racism, medical trauma, or long-term high stress — shapes mental health in ways that pure willpower can't undo. Trauma-informed care matters.",
+        "You don't need to be in crisis to seek support. Going to therapy when things are 'pretty okay' is one of the wisest things you can do. The best time to build mental health tools is before you desperately need them.",
+        "If you're struggling with thoughts of harming yourself, having a plan to act on those thoughts, or feeling like you can't keep yourself safe, reach out immediately — to a crisis line, an emergency room, or a trusted person who can stay with you. These feelings are treatable, and they pass with the right support."
       ]},
       { label: "Top Tips for Good Mental Health", tone: "mint", body: [
-        "Anchor your day with non-negotiables: morning light, consistent sleep, real breakfast, daily movement.",
-        "Move daily, even briefly.",
-        "Eat to support your brain — protein, healthy fats, B vitamins, magnesium, iron, vitamin D.",
-        "Connect on purpose. Loneliness is a major mental health risk.",
-        "Make rest active rather than collapsed scrolling.",
-        "Build a small toolkit for hard moments.",
-        "Limit doomscrolling, comparison-heavy social media, and alcohol used as coping.",
-        "Therapy multiplies all of the above."
+        "Anchor your day with non-negotiables: morning light in your eyes within an hour of waking (10 minutes is enough), consistent sleep and wake times, a real breakfast with protein, daily movement, and a wind-down ritual at night.",
+        "Move daily, even briefly. A 20-minute walk has consistently been shown to improve mood, anxiety, sleep, and cognitive function. Strength training twice a week adds long-term mental health benefits, including resilience and self-efficacy.",
+        "Eat to support your brain — protein at every meal, healthy fats (omega-3s especially), B vitamins, magnesium, iron, vitamin D, and stable blood sugar. Skipping meals is one of the most common quiet drivers of mood swings and anxiety.",
+        "Connect on purpose. Schedule it like an appointment if you have to. Loneliness is a major mental health risk, and casual social media doesn't count — actual conversation, in person or by voice, is what regulates the nervous system.",
+        "Make rest active rather than collapsed scrolling. Real rest — reading, walking, baths, naps, time outdoors, doing nothing on a couch with no phone — restores; passive scrolling drains. Both feel like 'doing nothing,' but they have opposite effects.",
+        "Build a small toolkit for hard moments: a breathing exercise, a person to text, a walk route, a calming playlist, a journal prompt, a grounding practice. Decide on these when you're calm so you can reach for them when you're not.",
+        "Limit doomscrolling, comparison-heavy social media, and alcohol used as coping. None need to be perfect, but each, repeated daily, quietly worsens anxiety, mood, and sleep over time.",
+        "Get bloodwork if you've been struggling for a while: thyroid (TSH, free T4, antibodies), iron panel (especially ferritin), vitamin D, B12, fasting glucose, and reproductive hormones if cycles are off. Treating a hidden physical driver can transform mental health.",
+        "Therapy multiplies all of the above. A good therapist helps you see patterns you can't see alone, build skills you don't have yet, and process what's been weighing on you. Finding the right fit may take a few tries, and that's normal.",
+        "Be patient with the process. Mental health doesn't improve in a straight line — it improves in waves, with backslides that are part of the path, not evidence of failure. The work compounds quietly, and one day you realize you're in a different place than you were a year ago."
       ]},
     ],
     articles: [
