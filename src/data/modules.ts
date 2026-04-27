@@ -409,41 +409,46 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     tone: "slate",
     understanding: [
       { label: "Different Health Conditions", tone: "peach", body: [
-        "Women's bodies face a unique mix of medical conditions, many of which can show up at any age — endometriosis, fibroids, adenomyosis, PCOS, thyroid disorders, autoimmune diseases, migraines, anemia, recurrent UTIs, and pelvic floor disorders.",
-        "These conditions often overlap and are frequently missed. Symptoms get blamed on stress when there's an identifiable, treatable condition underneath.",
-        "Early recognition shortens suffering. The longer a condition goes unnamed, the more it can shape daily life.",
-        "A good symptom journal turns vague experience into something a clinician can act on.",
-        "You're not expected to diagnose yourself. You are expected to be the expert on your own body.",
-        "Don't be afraid to seek a second opinion.",
-        "Having a chronic condition does not mean giving up on a full life."
+        "Women's bodies face a unique mix of medical conditions, many of which can show up at any age — endometriosis, fibroids, adenomyosis, PCOS, thyroid disorders (Hashimoto's, Graves', subclinical hypothyroidism), autoimmune diseases (lupus, rheumatoid arthritis, multiple sclerosis), migraines, anemia, recurrent UTIs, pelvic floor disorders, and chronic pain conditions like fibromyalgia.",
+        "These conditions often overlap and are frequently missed. Symptoms get blamed on stress, anxiety, or 'just being tired' when there's an identifiable, treatable condition underneath. Many women hear 'your labs are normal' for years before someone runs the right test or asks the right question.",
+        "Early recognition shortens suffering enormously. The longer a condition goes unnamed, the more it shapes daily life — sleep, work, relationships, mental health. Endometriosis still takes an average of 7–10 years to diagnose. Hashimoto's is often missed for a decade. Knowing the names and patterns is half the battle.",
+        "A good symptom journal turns vague experience into something a clinician can act on. Track date, symptom, severity (1–10), what you were doing, what you ate, where you were in your cycle, sleep quality, and stress level. Three months of this changes appointments completely.",
+        "You're not expected to diagnose yourself. You are expected to be the expert on your own body — what's normal for you, what's new, what's changing. Clinicians see you for fifteen minutes; you live in your body 24/7.",
+        "Don't be afraid to seek a second opinion. The first doctor isn't always the right doctor, and persistent symptoms with 'normal' results often need a fresh set of eyes — often a specialist rather than a generalist.",
+        "Many of these conditions respond well to a combination approach: targeted medical treatment plus the same foundations that help everything else (sleep, food, movement, stress, community). Neither alone is usually enough.",
+        "Having a chronic condition does not mean giving up on a full life. It means building a life that works with your body rather than against it — which often turns out to be a better life than the one you were forcing before."
       ]},
       { label: "Understanding Women's Health", tone: "blue", body: [
-        "For most of medical history, research was conducted on male bodies. Women were often excluded from clinical trials until the 1990s.",
-        "Heart attacks in women often present as fatigue, jaw pain, nausea, or back pain rather than classic chest pain.",
-        "Pain is taken less seriously in women, on average. Knowing this isn't about blame — it's about preparation.",
-        "Asking 'what else could this be?' is one of the most useful questions in medicine.",
-        "Bring a friend or partner to appointments — both for emotional support and an extra set of ears.",
-        "Hormonal context matters at every age.",
-        "Women's health is not niche health. It's half the population."
+        "For most of medical history, research was conducted on male bodies. Women were often excluded from clinical trials until the 1990s, and even today many drug doses, symptom checklists, and 'normal' ranges were calibrated on male physiology. The gap is closing, but it's still real.",
+        "This shows up in concrete ways. Heart attacks in women often present as fatigue, jaw pain, nausea, dizziness, or back pain rather than classic crushing chest pain — and are still misdiagnosed more often than in men. ADHD in women is frequently missed because it presents differently than the textbook hyperactive-boy pattern. Autoimmune conditions disproportionately affect women but are often dismissed as anxiety.",
+        "Pain is taken less seriously in women, on average. Studies show women wait longer for pain medication in emergency rooms and are more likely to be referred to mental health services for physical complaints. Knowing this isn't about blame — it's about preparation, so you can advocate clearly when it matters.",
+        "Asking 'what else could this be?' is one of the most useful questions in medicine. So is 'what would you do if I were your sister?' These questions push past pattern-matching and force a fresh look.",
+        "Bring a friend or partner to appointments when something feels serious — both for emotional support and an extra set of ears. Write down questions in advance. Ask for results in writing. Ask 'what's the diagnostic plan if this doesn't improve?' before you leave.",
+        "Hormonal context matters at every age. The same symptom can mean very different things in your twenties, thirties, forties, and fifties — and a clinician who doesn't ask about your cycle, contraception, pregnancies, or perimenopause status is missing context.",
+        "Race and class shape women's health outcomes too. Black women in particular face significantly worse maternal health outcomes and longer diagnostic delays for the same symptoms. Knowing this isn't pessimism — it's a reason to advocate harder, bring support, and seek out clinicians who take you seriously.",
+        "Women's health is not niche health. It's half the population, across an entire lifespan, with conditions that affect every body system. Treating it as central — not optional — is what care should look like."
       ]},
       { label: "Common Reproductive Health Concerns", tone: "rose", body: [
-        "Common concerns include painful periods, heavy bleeding, irregular cycles, fibroids, endometriosis, adenomyosis, ovarian cysts, PCOS, recurrent UTIs, and pelvic floor dysfunction.",
-        "Severe period pain is one of the most common signs of endometriosis or adenomyosis.",
-        "Heavy periods can lead to anemia and exhaustion. Fibroids and thyroid issues are common causes.",
-        "Bleeding between periods, after sex, or after menopause is always worth checking.",
-        "Pain with sex is more common than people realize and almost always treatable.",
-        "Recurrent UTIs and yeast infections often respond to simple changes.",
-        "Bring specifics to appointments to shorten the path to relief."
+        "Common concerns include painful periods, heavy bleeding, irregular cycles, fibroids, endometriosis, adenomyosis, ovarian cysts, PCOS, recurrent UTIs, yeast infections, bacterial vaginosis, pelvic floor dysfunction, painful sex, low libido, and unexplained infertility. Most are common; very few are rare.",
+        "Severe period pain — pain that stops you from working, sleeping, or moving — is one of the most common signs of endometriosis or adenomyosis. 'Bad cramps are normal' is one of the most damaging myths in women's health. Real pain deserves a real workup.",
+        "Heavy periods (soaking through pads or tampons hourly, large clots, lasting more than 7 days) can lead to iron-deficiency anemia and exhaustion. Fibroids, adenomyosis, polyps, and thyroid issues are common causes — all treatable.",
+        "Bleeding between periods, after sex, or after menopause is always worth checking. Most causes are benign (cervical irritation, polyps, hormonal shifts), but ruling out the more serious ones is part of why the question matters.",
+        "Pain with sex (dyspareunia) is more common than people realize and almost always treatable. Causes range from vaginal dryness, infections, and pelvic floor tension to endometriosis, scar tissue, or vulvodynia. None of them require you to 'just push through.'",
+        "Recurrent UTIs and yeast infections often respond to simple changes — hydration, peeing after sex, breathable underwear, vaginal estrogen if perimenopausal — but they can also point to underlying issues like diabetes or hormonal shifts that deserve a closer look.",
+        "Pelvic floor dysfunction (leaking with sneezing, urgency, prolapse, painful sex, chronic pelvic pain) is extremely common after childbirth and in perimenopause. Pelvic floor physical therapy is one of the most effective and underused interventions in women's health.",
+        "Bring specifics to appointments to shorten the path to relief. 'Heavy periods' is vague; 'soaking through a super tampon every two hours for three days' is actionable. Numbers, dates, and patterns get faster help than feelings."
       ]},
       { label: "Tips to Improve Health", tone: "mint", body: [
-        "Lay the foundations: consistent sleep, hydration, regular meals, and daily movement.",
-        "Get basic labs annually: thyroid, iron, vitamin D, B12, fasting glucose and HbA1c.",
-        "Track your cycle and symptoms over 3–6 months.",
-        "Build a small care team you trust.",
-        "Continuity of care matters — a doctor who knows your history catches more.",
-        "Strength training protects bone density, hormones, and metabolic health.",
-        "Manage stress as a medical issue, not a personality trait.",
-        "Trust your body. Your instinct is data."
+        "Lay the foundations: consistent sleep (7–9 hours), hydration (2–3 liters), regular meals with protein and fiber, and daily movement. None are dramatic; together they prevent or improve most chronic conditions.",
+        "Get basic labs annually: thyroid (TSH, free T4, TPO antibodies), iron panel (ferritin, not just hemoglobin), vitamin D, B12, fasting glucose and HbA1c, and a full lipid panel. Add hormone testing if cycles are off.",
+        "Track your cycle and symptoms over 3–6 months. Patterns reveal themselves slowly — a single chart often answers questions years of vague memory couldn't.",
+        "Build a small care team you trust: a primary care doctor, a gynecologist, and one or two specialists if you have a chronic condition. A pelvic floor physiotherapist, mental health professional, or registered dietitian can be game-changers.",
+        "Continuity of care matters — a doctor who knows your history catches more than one seeing you for the first time. If you can keep one clinician across years, do.",
+        "Strength training twice a week protects bone density, supports hormones, improves insulin sensitivity, and reduces injury risk. The earlier you start, the more it pays off; the later you start, it still helps enormously.",
+        "Manage stress as a medical issue, not a personality trait. Chronic stress raises inflammation, worsens autoimmune conditions, disrupts sleep, and amplifies pain. Daily wind-down rituals and real rest are medicine.",
+        "Cultivate connection. Loneliness is now considered as harmful to health as smoking. A few reliable relationships protect physical and mental health more than most supplements.",
+        "Be your own advocate without apology. Ask for results in writing, request the test if you think it's needed, get the second opinion, and switch clinicians if you're not being heard.",
+        "Trust your body. Your instinct that something is off is data — often the most important data in the room."
       ]},
     ],
     articles: [
