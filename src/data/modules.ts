@@ -250,10 +250,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "Baby",
     tone: "mint",
     understanding: [
-      { label: "Pregnancy and Conception", tone: "peach" },
-      { label: "Understanding the Stages of Pregnancy", tone: "blue" },
-      { label: "Prenatal Care", tone: "rose" },
-      { label: "Postpartum Depression", tone: "mint" },
+      { label: "Pregnancy and Conception", tone: "peach", body: [
+        "Conception happens when a sperm fertilizes an egg released during ovulation, usually around the middle of your cycle. The fertile window — about 5 days before ovulation through ovulation day — is when intercourse can lead to pregnancy.",
+        "Tracking ovulation through cervical mucus changes, basal body temperature, or LH strips makes timing far easier than guessing. For most healthy couples, conception happens within 6–12 months.",
+        "Preparing for pregnancy starts before the test: a daily prenatal with folate, steady sleep, balanced meals, and easing alcohol all support a healthier first trimester for both you and the baby."
+      ]},
+      { label: "Understanding the Stages of Pregnancy", tone: "blue", body: [
+        "Pregnancy is split into three trimesters of about 13 weeks each. The first is when the baby's organs form — and when fatigue and nausea often hit hardest. Rest is doing real work, even if it doesn't feel like it.",
+        "The second trimester usually brings more energy. Movement returns, the bump shows, and many appointments and scans happen here. The third is preparation: bigger body, more rest, and the final shaping of lungs and brain.",
+        "Each stage has its own focus, but the through-line is the same: regular prenatal care, gentle movement, hydration, protein, and honest check-ins about your mental health."
+      ]},
+      { label: "Prenatal Care", tone: "rose", body: [
+        "Prenatal care is the regular cadence of check-ups, blood tests, and scans across pregnancy. It catches problems early — high blood pressure, gestational diabetes, growth concerns — when they're easiest to manage.",
+        "Bring questions to every visit, even small ones. Sleep, nausea, anxiety, sex, work, travel, food cravings: it's all fair game. Good prenatal care treats the whole person, not just the bump.",
+        "If something feels off between visits — sudden swelling, severe headaches, reduced fetal movement, bleeding — call. You're not bothering anyone. That's exactly what they're there for."
+      ]},
+      { label: "Postpartum Depression", tone: "mint", body: [
+        "Postpartum depression (PPD) is more than baby blues. Blues are common in the first two weeks; PPD lingers and deepens, with persistent sadness, anxiety, hopelessness, or numbness that affects daily life and bonding.",
+        "It's a medical condition, not a parenting failure. It can show up weeks or even months after birth, and it can affect anyone — including partners. Hormones, sleep loss, and identity shifts all play a part.",
+        "Effective help exists: therapy, peer support, medication when needed, and practical help with the baby. Telling a clinician — even with one sentence — opens the door. The earlier the support, the faster the relief."
+      ]},
     ],
     articles: [
       { title: "The first trimester, honestly", body: "Fatigue and nausea are real work. Rest is productive. Snacks are medicine." },
