@@ -130,11 +130,6 @@ interface ResourceAccordionProps {
 
 const ResourceAccordion = ({ resourceKey, tone, Icon, data }: ResourceAccordionProps) => {
   const [open, setOpen] = useState(false);
-  const count =
-    resourceKey === "Articles" ? data.articles.length :
-    resourceKey === "Tips" ? data.tips.length :
-    resourceKey === "Stories" ? data.stories.length :
-    data.myths.length;
 
   return (
     <div
@@ -153,7 +148,6 @@ const ResourceAccordion = ({ resourceKey, tone, Icon, data }: ResourceAccordionP
           <span className={`text-sm font-semibold underline decoration-2 underline-offset-4 ${toneFg[tone]}`}>
             {resourceKey}
           </span>
-          <span className={`text-xs ${toneFg[tone]} opacity-70`}>({count})</span>
         </div>
         <div className={`grid h-8 w-8 place-items-center rounded-full ${toneBg[tone]} transition-transform ${open ? "rotate-180" : ""}`}>
           <ChevronDown className={`h-4 w-4 ${toneFg[tone]}`} />
