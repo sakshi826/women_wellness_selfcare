@@ -1157,40 +1157,50 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     tone: "rose",
     understanding: [
       { label: "Understanding Ovulation & Fertility", tone: "peach", body: [
-        "Ovulation is the moment a mature egg is released from the ovary, usually 12–16 days before your next period starts.",
-        "The fertile window is about six days long — the five days before ovulation and ovulation day.",
-        "Sperm can survive 5 days; an egg lives 12–24 hours after release.",
-        "Tracking ovulation with cervical mucus, basal body temperature, and LH strips is far more accurate than counting from day 14.",
-        "Cycle length varies normally; ovulation timing varies with it.",
-        "Some cycles don't ovulate at all — that's not always a problem unless it's persistent.",
-        "Understanding your fertile window is power — for trying or avoiding pregnancy."
+        "Ovulation is the moment a mature egg is released from the ovary, usually 12–16 days before your next period starts. It is the central event of the cycle — without ovulation, the rest of the hormonal rhythm doesn't fall into place, and conception isn't possible.",
+        "The fertile window is about six days long — the five days before ovulation and ovulation day itself. Sex earlier in this window often gives the highest chance of conception because sperm are already waiting when the egg arrives.",
+        "Sperm can survive up to 5 days in fertile cervical mucus; an egg lives only 12–24 hours after release. This asymmetry is why timing matters so much, and why 'just having more sex' isn't always the answer when timing is off.",
+        "Tracking ovulation with cervical mucus changes (clear, stretchy, egg-white-like near ovulation), basal body temperature (a small sustained rise after ovulation), and LH ovulation strips is far more accurate than counting from day 14. Apps that only count days are often wrong, especially for irregular cycles.",
+        "Cycle length varies normally between 21 and 35 days, and ovulation timing varies with it. A 35-day cycle ovulates around day 21, not day 14 — a mismatch that costs many couples months of mistimed effort.",
+        "Some cycles don't ovulate at all (anovulatory cycles) — that's not always a problem unless it's persistent. Stress, illness, travel, intense training, and weight changes can all temporarily skip ovulation. Repeated anovulation deserves a workup.",
+        "Signs of healthy ovulation include regular cycles, mid-cycle cervical mucus changes, sometimes a small twinge on one side (mittelschmerz), and a slight rise in libido around ovulation. Tracking these makes your own cycle far less mysterious.",
+        "Egg quantity and quality both decline with age, faster after 35 and sharply after 40 — but the curve is gradual, not a cliff. Knowing this helps with planning, not panicking.",
+        "Understanding your fertile window is power — for trying to conceive, for avoiding pregnancy without hormonal contraception, and for understanding the rhythms of energy, mood, and libido that move through your cycle every month."
       ]},
       { label: "Fertility Made Simple", tone: "blue", body: [
-        "Fertility depends on egg quality and quantity, sperm quality, fallopian tube function, hormonal balance, and uterine health.",
-        "Both partners contribute roughly equally to fertility outcomes.",
-        "Age is the single biggest factor in egg quantity and quality.",
-        "Most healthy couples under 35 conceive within 6–12 months.",
-        "Lifestyle — sleep, weight, stress, alcohol, smoking — affects both partners.",
-        "Some conditions (PCOS, endometriosis, low sperm count) need targeted help.",
-        "Getting tested early prevents wasted years."
+        "Fertility depends on egg quality and quantity, sperm quality (count, motility, and shape), open and healthy fallopian tubes, hormonal balance (thyroid, prolactin, insulin, sex hormones), and a uterus capable of supporting implantation. Any one of these can be the bottleneck.",
+        "Both partners contribute roughly equally to fertility outcomes. Roughly a third of cases trace primarily to the egg side, a third to the sperm side, and a third are combined or unexplained. Yet sperm is still tested far less often, far later — which costs time.",
+        "Age is the single biggest factor in egg quantity and quality. Fertility declines gradually through the 30s and more steeply after 40. Sperm quality also declines with age, especially after 45, though more slowly.",
+        "Most healthy couples under 35 conceive within 6–12 months of regular, well-timed sex. Over 35, the average shortens. These are averages, not deadlines — but they're useful benchmarks for when to ask for help.",
+        "Lifestyle — sleep, weight, stress, alcohol, smoking, recreational drugs, environmental exposures — affects both partners. None of these need to be perfect, but they shift the odds, and the 90 days before conception are when the changes matter most (because that's how long it takes a new egg or sperm to mature).",
+        "Some conditions need targeted help — PCOS (often responds to ovulation induction), endometriosis (may need surgery or IVF), low sperm count, blocked tubes, fibroids, thyroid disorders, premature ovarian insufficiency. None of these mean you can't have children; most have well-established treatment paths.",
+        "Stress affects fertility, but not in the way most people fear. Chronic high stress can delay ovulation, but the idea that 'just relaxing' will fix infertility is a myth that has caused real harm. Stress management helps; it isn't a treatment.",
+        "Mental health during fertility journeys deserves attention. The grief of trying and not conceiving, the strain on relationships, and the exhaustion of medical appointments are real — therapy and peer support are part of fertility care, not extras.",
+        "Getting tested early prevents wasted years. Many fertility issues are easier to treat when caught early; some, like declining ovarian reserve, are time-sensitive. Knowing where you stand is empowering, even if you're not ready to act yet."
       ]},
       { label: "Boost Your Fertility", tone: "rose", body: [
-        "Both partners benefit from a daily multivitamin or prenatal at least 3 months before trying.",
-        "Eat for fertility — protein, healthy fats, antioxidants from colorful vegetables and fruit.",
-        "Limit alcohol; ideally avoid it while trying.",
-        "Stop smoking — it ages eggs and damages sperm.",
-        "Manage caffeine — under 200mg/day is reasonable.",
-        "Move regularly but avoid excessive endurance training.",
-        "Sleep is non-negotiable — short sleep affects ovulation and sperm quality."
+        "Both partners benefit from a daily multivitamin or prenatal at least 3 months before trying. For the partner producing eggs, look for folate (methylfolate is well-absorbed), B12, vitamin D, iodine, choline, and omega-3s. For the partner producing sperm, zinc, selenium, CoQ10, and antioxidants matter.",
+        "Eat for fertility — steady protein at every meal, healthy fats (olive oil, avocado, fatty fish, nuts), complex carbs, and lots of color from vegetables and fruit. The Mediterranean pattern has the most evidence for fertility outcomes in both partners.",
+        "Limit alcohol; ideally avoid it during the trying-to-conceive window. Alcohol affects egg quality, sperm quality, and early embryo development. Both partners benefit from cutting back.",
+        "Stop smoking — it ages eggs, damages sperm DNA, and significantly reduces success rates with both natural conception and IVF. Vaping is not a safe substitute. Support to quit is medical care, not weakness.",
+        "Manage caffeine — under 200mg/day (about one large coffee) is generally considered reasonable while trying and during pregnancy.",
+        "Move regularly but avoid excessive endurance training. Too much intense cardio can suppress ovulation and lower sperm count. Walking, strength training, yoga, and moderate exercise support fertility; ultra-marathon training may not.",
+        "Aim for a body weight your body settles at with steady habits. Both very low and very high body fat affect ovulation and sperm quality, but the obsessive pursuit of a 'fertility weight' often backfires. Steady habits matter more than the number.",
+        "Sleep is non-negotiable — short or disrupted sleep affects ovulation, hormone balance, and sperm quality. Seven to nine hours, consistent timing, dark cool room.",
+        "Reduce easy environmental exposures — fragrance-free skincare, glass instead of plastic for hot food, BPA-free containers, filtered water if you can. Don't make this a source of anxiety; do the easy swaps and move on.",
+        "Track your cycle for at least 2–3 months before starting. Knowing your true ovulation day saves months of mistimed effort and gives any specialist a clearer starting point if you need help."
       ]},
       { label: "When to See a Specialist", tone: "mint", body: [
-        "Under 35 trying for 12 months without success: see a fertility specialist.",
-        "Over 35 trying for 6 months: see a specialist sooner.",
-        "Known conditions (PCOS, endometriosis, irregular cycles, previous miscarriages): get a workup at the start, not after a year.",
-        "Both partners should be tested.",
-        "A standard workup includes hormone panels, ovarian reserve testing, ultrasound, semen analysis, and sometimes tube imaging.",
-        "Don't wait. Time matters in fertility.",
-        "A specialist can shorten months of guessing into a clear plan."
+        "Under 35 trying for 12 months without success: see a fertility specialist. The 12-month threshold reflects the average; if it's stressing you out, you're allowed to ask for a workup sooner.",
+        "Over 35 trying for 6 months: see a specialist sooner. After 40, consider going at 3 months. Time is one of the most important variables in fertility, and waiting often costs more than asking.",
+        "Known conditions warrant a workup at the start, not after a year of trying: PCOS, endometriosis, irregular or absent cycles, previous miscarriages (especially two or more), pelvic surgery history, thyroid disorders, or known male-factor issues.",
+        "Both partners should be tested. Sperm analysis is one of the simplest and most informative tests in fertility — and yet it's still often skipped or delayed. Testing both partners early gives the fastest path to answers.",
+        "A standard workup includes hormone panels (FSH, LH, estradiol, AMH, thyroid, prolactin), ovarian reserve testing (AMH and antral follicle count), pelvic ultrasound, semen analysis, and sometimes tubal imaging (HSG or sono-HSG).",
+        "Treatment options range widely: timed intercourse with monitoring, ovulation induction (letrozole, clomid), intrauterine insemination (IUI), in vitro fertilization (IVF), donor eggs or sperm, surrogacy, and adoption. A good specialist explains the full menu, not just one option.",
+        "Egg freezing is worth a conversation in your early-to-mid 30s if you're not ready to try yet. The earlier the freeze, the better the egg quality and the higher the future success rate.",
+        "Mental health support during fertility care is essential — therapists who specialize in reproductive mental health, peer support groups, and honest communication with your partner all matter. The emotional load is real.",
+        "Don't wait quietly when something feels off. A second opinion is always reasonable, especially in fertility, where clinics and approaches vary widely.",
+        "A specialist can shorten months of guessing into a clear plan — and a clear plan, even if the news is hard, is almost always better than the limbo of not knowing."
       ]},
     ],
     articles: [
