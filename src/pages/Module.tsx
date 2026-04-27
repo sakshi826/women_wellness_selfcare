@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronDown, ChevronLeft, ChevronRight, BookOpen, CircleDot, Heart, Lightbulb, Star, Moon, HeartHandshake, Bike, Smile, Newspaper, BookMarked, HelpCircle } from "lucide-react";
-import { modules, type ModuleSlug, type ModuleContent, TRACKERS } from "@/data/modules";
+import { ChevronLeft, ChevronRight, BookOpen, CircleDot, Heart, Lightbulb, Star, Moon, HeartHandshake, Bike, Smile, Newspaper, BookMarked, HelpCircle } from "lucide-react";
+import { modules, type ModuleSlug, TRACKERS } from "@/data/modules";
 import { iconMap } from "@/lib/icons";
 import { toneBg, toneFg, understandingTile } from "@/lib/tones";
-
-type ResourceKey = "Articles" | "Tips" | "Stories" | "Myths";
 
 const understandingIcons = [BookOpen, CircleDot, Heart, Lightbulb];
 
@@ -19,10 +16,10 @@ const trackerStyles: Record<string, { tone: string; Icon: any; href: string }> =
 };
 
 const resourceStyles = [
-  { key: "Articles", tone: "yellow", Icon: Newspaper },
-  { key: "Tips", tone: "blue", Icon: Lightbulb },
-  { key: "Stories", tone: "lilac", Icon: BookMarked },
-  { key: "Myths", tone: "mint", Icon: HelpCircle },
+  { key: "Articles", path: "articles", tone: "yellow", Icon: Newspaper },
+  { key: "Tips", path: "tips", tone: "blue", Icon: Lightbulb },
+  { key: "Stories", path: "stories", tone: "lilac", Icon: BookMarked },
+  { key: "Myths", path: "myths", tone: "mint", Icon: HelpCircle },
 ] as const;
 
 const Module = () => {
@@ -101,108 +98,37 @@ const Module = () => {
           </div>
         </section>
 
-        {/* Resources — collapsible */}
+        {/* Resources — link to dedicated pages */}
         <section className="mb-12">
           <h2 className="mb-4 text-sm font-semibold tracking-wide">Resources</h2>
           <div className="space-y-3">
-            {resourceStyles.map((r) => (
-              <ResourceAccordion
-                key={r.key}
-                resourceKey={r.key as ResourceKey}
-                tone={r.tone as keyof typeof toneBg}
-                Icon={r.Icon}
-                data={data}
-              />
-            ))}
+            {resourceStyles.map((r) => {
+              const tone = r.tone as keyof typeof toneBg;
+              const Icon = r.Icon;
+              return (
+                <Link
+                  key={r.key}
+                  to={`/module/${slug}/${r.path}`}
+                  className={`flex items-center justify-between rounded-2xl border-l-4 ${toneBg[tone]}/60 px-4 py-4 shadow-soft transition-transform hover:translate-x-0.5`}
+                  style={{ borderLeftColor: `hsl(var(--pastel-${tone}-fg))` }}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]}`}>
+                      <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
+                    </div>
+                    <span className={`text-sm font-semibold underline decoration-2 underline-offset-4 ${toneFg[tone]}`}>
+                      {r.key}
+                    </span>
+                  </div>
+                  <div className={`grid h-8 w-8 place-items-center rounded-full ${toneBg[tone]}`}>
+                    <ChevronRight className={`h-4 w-4 ${toneFg[tone]}`} />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
       </div>
-    </div>
-  );
-};
-
-interface ResourceAccordionProps {
-  resourceKey: ResourceKey;
-  tone: keyof typeof toneBg;
-  Icon: React.ComponentType<any>;
-  data: ModuleContent;
-}
-
-const ResourceAccordion = ({ resourceKey, tone, Icon, data }: ResourceAccordionProps) => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div
-      className={`overflow-hidden rounded-2xl border-l-4 ${toneBg[tone]}/60 shadow-soft transition-all`}
-      style={{ borderLeftColor: `hsl(var(--pastel-${tone}-fg))` }}
-    >
-      <button
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        className="flex w-full items-center justify-between px-4 py-4 text-left transition-colors hover:bg-black/[0.02]"
-      >
-        <div className="flex items-center gap-3">
-          <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]}`}>
-            <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
-          </div>
-          <span className={`text-sm font-semibold underline decoration-2 underline-offset-4 ${toneFg[tone]}`}>
-            {resourceKey}
-          </span>
-        </div>
-        <div className={`grid h-8 w-8 place-items-center rounded-full ${toneBg[tone]} transition-transform ${open ? "rotate-180" : ""}`}>
-          <ChevronDown className={`h-4 w-4 ${toneFg[tone]}`} />
-        </div>
-      </button>
-
-      {open && (
-        <div className="space-y-3 border-t border-border/40 bg-card/60 p-4 md:p-5">
-          {resourceKey === "Articles" && (
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-              {data.articles.map((a) => (
-                <article key={a.title} className="rounded-xl border border-border/60 bg-card p-4 shadow-soft">
-                  <h3 className="mb-1.5 text-sm font-semibold">{a.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{a.body}</p>
-                </article>
-              ))}
-            </div>
-          )}
-
-          {resourceKey === "Tips" && (
-            <ul className="space-y-2">
-              {data.tips.map((tip, i) => (
-                <li key={i} className="flex items-start gap-3 rounded-xl bg-pastel-blue/60 p-3.5">
-                  <div className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-pastel-blue">
-                    <Lightbulb className="h-3.5 w-3.5 text-pastel-blue-foreground" strokeWidth={2.5} />
-                  </div>
-                  <span className="text-sm leading-relaxed">{tip}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {resourceKey === "Stories" && (
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-              {data.stories.map((s) => (
-                <blockquote key={s.name} className="rounded-xl bg-pastel-lilac/60 p-4">
-                  <p className="text-sm italic leading-relaxed">"{s.quote}"</p>
-                  <footer className="mt-2 text-xs font-semibold text-pastel-lilac-foreground">— {s.name}</footer>
-                </blockquote>
-              ))}
-            </div>
-          )}
-
-          {resourceKey === "Myths" && (
-            <div className="space-y-2.5">
-              {data.myths.map((m, i) => (
-                <div key={i} className="rounded-xl bg-pastel-mint/50 p-4">
-                  <p className="text-sm font-semibold text-pastel-mint-foreground">Myth: {m.myth}</p>
-                  <p className="mt-1 text-sm leading-relaxed">Fact: {m.fact}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 };
