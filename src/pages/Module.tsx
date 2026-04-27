@@ -12,7 +12,7 @@ const trackerStyles: Record<string, { tone: string; Icon: any; href: string }> =
   "Self Care": { tone: "pink", Icon: Heart, href: "https://platform.mantracare.com/therapy/trackers/care-tracker" },
   BMI: { tone: "mint", Icon: HeartHandshake, href: "https://platform.mantracare.com/bmi-calculator-new" },
   "Physical Activity": { tone: "peach", Icon: Bike, href: "https://platform.mantracare.com/therapy/trackers/physical-activity-log" },
-  Mood: { tone: "yellow", Icon: Smile, href: "https://platform.mantracare.com/mood_tracker/" },
+  Mood: { tone: "yellow", Icon: Smile, href: "https://web.mantracare.com/app/mood_tracker" },
 };
 
 const resourceStyles = [
