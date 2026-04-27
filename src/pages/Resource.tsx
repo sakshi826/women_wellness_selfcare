@@ -1,15 +1,55 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Lightbulb, Newspaper, BookMarked, HelpCircle, Quote, Sparkles, X, Check, Clock } from "lucide-react";
+import {
+  ChevronLeft,
+  ArrowUpRight,
+  Lightbulb,
+  Newspaper,
+  BookMarked,
+  HelpCircle,
+  Quote,
+  Sparkles,
+  X,
+  Check,
+  Clock,
+  BookOpen,
+} from "lucide-react";
 import { modules, type ModuleSlug } from "@/data/modules";
 import { toneBg, toneFg } from "@/lib/tones";
 
 type ResourceKey = "articles" | "tips" | "stories" | "myths";
 
-const resourceMeta: Record<ResourceKey, { title: string; tone: keyof typeof toneBg; Icon: any; tagline: string }> = {
-  articles: { title: "Articles", tone: "yellow", Icon: Newspaper, tagline: "Deep dives & expert reads" },
-  tips: { title: "Tips", tone: "blue", Icon: Lightbulb, tagline: "Quick wins for everyday wellness" },
-  stories: { title: "Stories", tone: "lilac", Icon: BookMarked, tagline: "Voices from the community" },
-  myths: { title: "Myths vs Facts", tone: "mint", Icon: HelpCircle, tagline: "Setting the record straight" },
+const resourceMeta: Record<
+  ResourceKey,
+  { title: string; tone: keyof typeof toneBg; Icon: any; tagline: string; eyebrow: string }
+> = {
+  articles: {
+    title: "Articles",
+    tone: "yellow",
+    Icon: Newspaper,
+    tagline: "Long-form reads, written with care and reviewed by experts.",
+    eyebrow: "The Library",
+  },
+  tips: {
+    title: "Tips",
+    tone: "blue",
+    Icon: Lightbulb,
+    tagline: "Small, practical shifts you can fold into your day.",
+    eyebrow: "Daily Practice",
+  },
+  stories: {
+    title: "Stories",
+    tone: "lilac",
+    Icon: BookMarked,
+    tagline: "Honest reflections from people who've walked this path.",
+    eyebrow: "In Their Words",
+  },
+  myths: {
+    title: "Myths vs Facts",
+    tone: "mint",
+    Icon: HelpCircle,
+    tagline: "Common misconceptions, gently corrected with evidence.",
+    eyebrow: "Setting It Straight",
+  },
 };
 
 const Resource = () => {
@@ -18,70 +58,152 @@ const Resource = () => {
   const meta = resource ? resourceMeta[resource as ResourceKey] : undefined;
   if (!data || !meta) return <Navigate to="/" replace />;
 
-  const { tone, Icon, title, tagline } = meta;
+  const { tone, Icon, title, tagline, eyebrow } = meta;
+  const accent = `hsl(var(--pastel-${tone}-fg))`;
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero band */}
-      <div className={`${toneBg[tone]} border-b border-border/40`}>
-        <div className="mx-auto max-w-4xl px-6 pb-12 pt-8 md:px-10 md:pb-14 md:pt-10">
+      {/* Editorial hero */}
+      <header className="relative overflow-hidden border-b border-border/40">
+        <div className={`absolute inset-0 ${toneBg[tone]} opacity-90`} />
+        <div
+          className="absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-40 blur-3xl"
+          style={{ background: accent }}
+        />
+        <div
+          className="absolute -bottom-32 -left-16 h-64 w-64 rounded-full opacity-25 blur-3xl"
+          style={{ background: accent }}
+        />
+
+        <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-8 md:px-10 md:pb-20 md:pt-10">
           <Link
             to={`/module/${slug}`}
             aria-label="Back"
-            className="mb-8 inline-flex items-center gap-1.5 rounded-full bg-card/70 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
+            className="inline-flex items-center gap-1.5 rounded-full bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             Back to {data.title}
           </Link>
-          <div className="flex items-start gap-4">
-            <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-card shadow-soft`}>
-              <Icon className={`h-7 w-7 ${toneFg[tone]}`} strokeWidth={1.75} />
+
+          <div className="mt-10 grid gap-6 md:grid-cols-[auto_1fr] md:items-end md:gap-10">
+            <div
+              className="grid h-20 w-20 place-items-center rounded-3xl bg-card shadow-card md:h-24 md:w-24"
+              style={{ boxShadow: `0 12px 40px -12px ${accent}` }}
+            >
+              <Icon className={`h-10 w-10 ${toneFg[tone]} md:h-11 md:w-11`} strokeWidth={1.5} />
             </div>
             <div>
-              <p className={`text-[11px] font-bold uppercase tracking-[0.18em] ${toneFg[tone]}`}>
-                {data.title}
+              <div className="flex items-center gap-3">
+                <span className="h-px flex-1 max-w-[60px]" style={{ background: accent, opacity: 0.5 }} />
+                <p
+                  className={`text-[10px] font-bold uppercase tracking-[0.28em] ${toneFg[tone]}`}
+                >
+                  {eyebrow} · {data.title}
+                </p>
+              </div>
+              <h1 className="mt-3 font-bold tracking-tight text-foreground text-[44px] leading-[1.05] md:text-[60px]">
+                {title}
+              </h1>
+              <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-foreground/65 md:text-base">
+                {tagline}
               </p>
-              <h1 className="mt-1.5 text-3xl font-bold tracking-tight md:text-[40px]">{title}</h1>
-              <p className="mt-1.5 text-sm text-foreground/65">{tagline}</p>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="mx-auto max-w-4xl px-6 py-12 md:px-10 md:py-14">
-        {/* Articles — magazine-style cards */}
+      <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
+        {/* ---------- ARTICLES ---------- */}
         {resource === "articles" && (
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="space-y-10">
             {data.articles.map((a, i) => {
               const words = (a.body?.join(" ") ?? a.summary ?? "").split(/\s+/).length;
               const mins = Math.max(2, Math.round(words / 220));
+              const isFeature = i === 0;
+
+              if (isFeature) {
+                return (
+                  <Link
+                    key={a.title}
+                    to={`/module/${slug}/articles/read/${i}`}
+                    className="group relative block overflow-hidden rounded-[28px] border border-border/50 bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
+                  >
+                    <div className={`relative ${toneBg[tone]} p-8 md:p-12`}>
+                      <div
+                        className="absolute right-0 top-0 h-48 w-48 rounded-full opacity-50 blur-3xl"
+                        style={{ background: accent }}
+                      />
+                      <div className="relative">
+                        <div className="mb-5 flex flex-wrap items-center gap-3">
+                          <span
+                            className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em]"
+                            style={{ color: accent }}
+                          >
+                            <Sparkles className="h-3 w-3" fill="currentColor" />
+                            Featured Read
+                          </span>
+                          <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-foreground/60">
+                            <Clock className="h-3.5 w-3.5" />
+                            {mins} min read
+                          </span>
+                        </div>
+                        <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-foreground md:text-[40px]">
+                          {a.title}
+                        </h2>
+                        <p className="mt-4 max-w-2xl text-[15px] leading-[1.7] text-foreground/70 md:text-base">
+                          {a.summary ?? a.body?.[0]}
+                        </p>
+                        <div
+                          className="mt-7 inline-flex items-center gap-2 rounded-full bg-card px-5 py-2.5 text-sm font-semibold shadow-soft transition-transform group-hover:translate-x-1"
+                          style={{ color: accent }}
+                        >
+                          Read the article
+                          <ArrowUpRight className="h-4 w-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              }
+
               return (
                 <Link
                   key={a.title}
                   to={`/module/${slug}/articles/read/${i}`}
-                  className="group relative flex flex-col overflow-hidden rounded-3xl border border-border/50 bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
+                  className="group relative grid gap-6 border-t border-border/60 pt-10 md:grid-cols-[180px_1fr] md:gap-10"
                 >
-                  <div className={`absolute right-0 top-0 h-28 w-28 -translate-y-10 translate-x-10 rounded-full ${toneBg[tone]} opacity-70 blur-2xl`} />
-                  <div className="relative">
-                    <div className="mb-4 flex items-center gap-2">
-                      <span className={`inline-flex items-center gap-1 rounded-full ${toneBg[tone]} px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${toneFg[tone]}`}>
-                        <Newspaper className="h-3 w-3" />
-                        Article {String(i + 1).padStart(2, "0")}
+                  <div className="flex md:flex-col md:items-start md:gap-3">
+                    <div className="flex items-center gap-3 md:flex-col md:items-start">
+                      <span
+                        className="font-mono text-3xl font-light tabular-nums"
+                        style={{ color: accent }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-foreground/55">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-foreground/55">
                         <Clock className="h-3 w-3" />
                         {mins} min
                       </span>
                     </div>
-                    <h2 className="mb-2.5 text-lg font-bold leading-snug tracking-tight group-hover:underline">
+                  </div>
+                  <div>
+                    <p
+                      className={`mb-2 text-[10px] font-bold uppercase tracking-[0.22em] ${toneFg[tone]}`}
+                    >
+                      Article
+                    </p>
+                    <h2 className="text-2xl font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-foreground/70 md:text-[28px]">
                       {a.title}
                     </h2>
-                    <p className="line-clamp-3 text-[14px] leading-[1.65] text-foreground/70">
+                    <p className="mt-3 line-clamp-3 text-[15px] leading-[1.7] text-foreground/65">
                       {a.summary ?? a.body?.[0]}
                     </p>
-                    <div className={`mt-5 inline-flex items-center gap-1.5 text-xs font-semibold ${toneFg[tone]}`}>
-                      Read article
-                      <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    <div
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider"
+                      style={{ color: accent }}
+                    >
+                      Continue reading
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
                   </div>
                 </Link>
@@ -90,57 +212,99 @@ const Resource = () => {
           </div>
         )}
 
-        {/* Tips — numbered, alternating accent */}
+        {/* ---------- TIPS ---------- */}
         {resource === "tips" && (
-          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {data.tips.map((tip, i) => (
-              <li
-                key={i}
-                className="group relative flex gap-4 overflow-hidden rounded-2xl border border-border/50 bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card"
-              >
-                <div className={`absolute left-0 top-0 h-full w-1 ${toneBg[tone].replace("bg-", "bg-")}`} style={{ background: `hsl(var(--pastel-${tone}-fg))` }} />
-                <div className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${toneBg[tone]}`}>
-                  <span className={`text-base font-bold tabular-nums ${toneFg[tone]}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className={`mb-1.5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider ${toneFg[tone]}`}>
-                    <Sparkles className="h-3 w-3" fill="currentColor" />
-                    Daily tip
+          <div>
+            <div className="mb-8 flex items-baseline justify-between border-b border-border/60 pb-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-foreground/50">
+                {String(data.tips.length).padStart(2, "0")} practices
+              </p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">
+                Curated for {data.title}
+              </p>
+            </div>
+            <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-border/60 bg-border/60 md:grid-cols-2">
+              {data.tips.map((tip, i) => (
+                <li
+                  key={i}
+                  className="group relative flex gap-5 bg-card p-7 transition-colors hover:bg-muted/30"
+                >
+                  <div className="flex flex-col items-center">
+                    <span
+                      className="font-mono text-4xl font-light leading-none tabular-nums"
+                      style={{ color: accent }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className="mt-2 h-12 w-px"
+                      style={{ background: accent, opacity: 0.3 }}
+                    />
                   </div>
-                  <p className="text-[15px] font-medium leading-[1.6] text-foreground/85">{tip}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+                  <div className="min-w-0 flex-1 pt-1">
+                    <p
+                      className={`mb-2 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] ${toneFg[tone]}`}
+                    >
+                      <Sparkles className="h-3 w-3" fill="currentColor" />
+                      Practice
+                    </p>
+                    <p className="text-[15px] font-medium leading-[1.65] text-foreground/85">
+                      {tip}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
 
-        {/* Stories — quote-style cards with avatar initials */}
+        {/* ---------- STORIES ---------- */}
         {resource === "stories" && (
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {data.stories.map((s, i) => {
-              const initials = s.name.split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+              const initials = s.name
+                .split(/\s+/)
+                .slice(0, 2)
+                .map((w) => w[0])
+                .join("")
+                .toUpperCase();
               return (
                 <Link
                   key={s.name}
                   to={`/module/${slug}/stories/read/${i}`}
-                  className="group relative block overflow-hidden rounded-3xl border border-border/50 bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
+                  className="group relative flex flex-col overflow-hidden rounded-[28px] border border-border/50 bg-card p-8 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card md:p-9"
                 >
-                  <Quote className={`absolute right-5 top-5 h-12 w-12 ${toneFg[tone]} opacity-15`} fill="currentColor" />
-                  <div className="relative">
-                    <p className="line-clamp-4 text-[16px] font-medium italic leading-[1.65] text-foreground/85">
-                      “{s.quote}”
-                    </p>
-                    <div className="mt-5 flex items-center gap-3 border-t border-border/50 pt-4">
-                      <div className={`grid h-10 w-10 place-items-center rounded-full ${toneBg[tone]} text-sm font-bold ${toneFg[tone]}`}>
-                        {initials}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="text-sm font-semibold text-foreground">{s.name}</p>
-                        <p className="text-[11px] uppercase tracking-wider text-foreground/50">Community story</p>
-                      </div>
-                      <ChevronRight className={`h-4 w-4 ${toneFg[tone]} transition-transform group-hover:translate-x-1`} />
+                  <Quote
+                    className={`absolute -right-3 -top-3 h-28 w-28 ${toneFg[tone]} opacity-[0.08]`}
+                    fill="currentColor"
+                  />
+                  <div
+                    className="mb-6 h-1 w-10 rounded-full"
+                    style={{ background: accent }}
+                  />
+                  <p className="relative line-clamp-5 text-[17px] font-medium leading-[1.6] tracking-tight text-foreground/85">
+                    "{s.quote}"
+                  </p>
+                  <div className="mt-auto flex items-center gap-4 pt-7">
+                    <div
+                      className={`grid h-12 w-12 place-items-center rounded-full ${toneBg[tone]} text-sm font-bold ${toneFg[tone]} ring-2 ring-card`}
+                      style={{ boxShadow: `0 0 0 1px ${accent}33` }}
+                    >
+                      {initials}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[15px] font-semibold tracking-tight text-foreground">
+                        {s.name}
+                      </p>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/45">
+                        Community Story · No. {String(i + 1).padStart(2, "0")}
+                      </p>
+                    </div>
+                    <div
+                      className="grid h-9 w-9 place-items-center rounded-full transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                      style={{ background: accent, color: "white" }}
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>
                 </Link>
@@ -149,32 +313,46 @@ const Resource = () => {
           </div>
         )}
 
-        {/* Myths — split layout with myth (red-ish) and fact (mint) badges */}
+        {/* ---------- MYTHS ---------- */}
         {resource === "myths" && (
-          <div className="space-y-5">
+          <div className="space-y-6">
             {data.myths.map((m, i) => (
               <div
                 key={i}
-                className="overflow-hidden rounded-3xl border border-border/50 bg-card shadow-soft"
+                className="overflow-hidden rounded-[28px] border border-border/50 bg-card shadow-soft"
               >
+                <div className="flex items-center justify-between border-b border-border/50 bg-muted/30 px-6 py-3 md:px-8">
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-foreground/50">
+                    Misconception No. {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <BookOpen className="h-3.5 w-3.5 text-foreground/40" />
+                </div>
                 <div className="grid md:grid-cols-2">
                   {/* Myth side */}
-                  <div className="relative bg-pastel-rose/60 p-6 md:p-7">
-                    <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-card/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-pastel-rose-foreground">
-                      <X className="h-3 w-3" strokeWidth={3} />
-                      Myth #{String(i + 1).padStart(2, "0")}
+                  <div className="relative bg-pastel-rose/40 p-7 md:p-9">
+                    <div className="mb-4 flex items-center gap-2.5">
+                      <div className="grid h-7 w-7 place-items-center rounded-full bg-pastel-rose-foreground/10">
+                        <X className="h-3.5 w-3.5 text-pastel-rose-foreground" strokeWidth={3} />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-pastel-rose-foreground">
+                        The Myth
+                      </span>
                     </div>
-                    <p className="text-[15px] font-medium leading-[1.6] text-foreground/85 line-through decoration-pastel-rose-foreground/40 decoration-2">
+                    <p className="text-[16px] font-medium leading-[1.6] text-foreground/80 line-through decoration-pastel-rose-foreground/40 decoration-[1.5px]">
                       {m.myth}
                     </p>
                   </div>
                   {/* Fact side */}
-                  <div className="relative bg-pastel-mint/60 p-6 md:p-7">
-                    <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-card/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-pastel-mint-foreground">
-                      <Check className="h-3 w-3" strokeWidth={3} />
-                      Fact
+                  <div className="relative bg-pastel-mint/40 p-7 md:p-9">
+                    <div className="mb-4 flex items-center gap-2.5">
+                      <div className="grid h-7 w-7 place-items-center rounded-full bg-pastel-mint-foreground/10">
+                        <Check className="h-3.5 w-3.5 text-pastel-mint-foreground" strokeWidth={3} />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-pastel-mint-foreground">
+                        The Truth
+                      </span>
                     </div>
-                    <p className="text-[15px] font-medium leading-[1.6] text-foreground/85">
+                    <p className="text-[16px] font-medium leading-[1.6] text-foreground/85">
                       {m.fact}
                     </p>
                   </div>
