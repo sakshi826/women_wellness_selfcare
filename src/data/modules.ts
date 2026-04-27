@@ -17,7 +17,7 @@ export interface ModuleContent {
   subtitle: string;
   iconKey: string;
   tone: PastelTone;
-  understanding: { label: string; tone: "peach" | "blue" | "rose" | "mint" }[];
+  understanding: { label: string; tone: "peach" | "blue" | "rose" | "mint"; body: string[] }[];
   articles: { title: string; body: string }[];
   tips: string[];
   stories: { name: string; quote: string }[];
