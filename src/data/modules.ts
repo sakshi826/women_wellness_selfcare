@@ -229,40 +229,46 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     tone: "lilac",
     understanding: [
       { label: "What is Reproductive Health?", tone: "peach", body: [
-        "Reproductive health is much more than the ability to have children. It's the overall state of your reproductive system at every stage of life — from your first period to the years long after menopause.",
-        "When reproductive health is in a good place, your cycle is reasonably predictable, your periods are manageable, sex is comfortable, you can make informed choices about contraception or pregnancy, and you have access to the information and care you need at every life phase.",
-        "Reproductive health is deeply connected to the rest of you. Stress, sleep, nutrition, movement, mental health, and your social environment all show up in your cycle.",
-        "It also changes across your lifespan, and that's normal. Different phases need different attention.",
-        "Sexual health is part of reproductive health too — pleasure, comfort, consent, contraception, STI prevention, and freedom to ask questions without shame.",
-        "Reproductive health lives inside relationships and communities. Being able to talk openly with a partner, friend, or doctor changes outcomes.",
-        "It's something you're allowed to invest in actively. You don't have to wait for symptoms to get serious."
+        "Reproductive health is much more than the ability to have children. It's the overall state of your reproductive system at every stage of life — from your first period to the years long after menopause. It includes your hormones, your cycle, your sexual wellbeing, your fertility (whether or not you ever use it), and the long-term health of your uterus, ovaries, breasts, and pelvic floor.",
+        "When reproductive health is in a good place, your cycle is reasonably predictable, your periods are manageable, sex is comfortable, you can make informed choices about contraception or pregnancy, and you have access to the information and care you need at every life phase. It also means feeling at home in your body — not bracing against it.",
+        "Reproductive health is deeply connected to the rest of you. Stress, sleep, nutrition, movement, mental health, and your social environment all show up in your cycle. A stretch of bad sleep or a stressful month can delay ovulation; chronic under-eating can quiet a cycle entirely. The reproductive system is sensitive precisely because it's protective — it slows down when conditions don't feel safe.",
+        "It also changes across your lifespan, and that's normal. Adolescence brings the first decade of cycles finding their rhythm, the twenties and thirties bring questions of contraception and possibly pregnancy, perimenopause reshapes hormones again in the forties, and postmenopause begins a new chapter that lasts decades. Different phases need different attention.",
+        "Sexual health is part of reproductive health too — pleasure, comfort, consent, contraception, STI prevention, lubrication, libido, and freedom to ask questions without shame. Painful sex, low desire, or discomfort are not things you have to live with; they almost always have a treatable cause.",
+        "Reproductive health lives inside relationships and communities. Being able to talk openly with a partner, friend, or doctor changes outcomes. Silence and shame are some of the biggest reasons reproductive issues go unaddressed for years.",
+        "It's something you're allowed to invest in actively. You don't have to wait for symptoms to get serious. A yearly check-in, a simple cycle log, and a clinician you trust can quietly prevent years of confusion later.",
+        "And finally — reproductive health is yours. You get to decide what 'healthy' looks like for your life: whether that includes pregnancy or not, contraception or not, hormones or not. Good care should support your choices, not steer them."
       ]},
       { label: "Reproductive Health Made Simple", tone: "blue", body: [
-        "Your menstrual cycle is run by a feedback loop between your brain and ovaries. Estrogen and progesterone rise and fall in a predictable pattern across roughly 21–35 days.",
-        "There are four broad phases: menstrual, follicular, ovulation, and luteal. Each has a different feel.",
-        "When the loop runs smoothly, periods come roughly monthly, last 3–7 days, and don't derail your life.",
-        "Severe pain, very heavy bleeding, bleeding between periods, or cycles that disappear for months are signals worth checking — not signals to push through.",
-        "Track what's normal for you, support the basics, and speak up early when something shifts.",
-        "A basic cycle log turns vague experience into useful information.",
-        "Cycles can shift with stress, illness, travel, intense exercise, weight changes, breastfeeding, and big life events."
+        "Your menstrual cycle is run by a feedback loop between your brain (specifically the hypothalamus and pituitary) and your ovaries. Estrogen and progesterone rise and fall in a predictable pattern across roughly 21–35 days, with ovulation as the central event around which everything else organizes.",
+        "There are four broad phases: menstrual (your period), follicular (rebuilding the lining, follicles maturing), ovulation (an egg is released), and luteal (progesterone rises, then drops if there's no pregnancy, triggering the next period). Each has a different feel — energy, mood, libido, sleep, and even appetite shift across the month.",
+        "When the loop runs smoothly, periods come roughly monthly, last 3–7 days, are heavy enough to need protection but not so heavy that they soak through hourly, and don't derail your life. Cramps may be present but should be manageable, not debilitating.",
+        "Severe pain, very heavy bleeding (clots larger than a 50-cent coin, soaking through every hour), bleeding between periods, or cycles that disappear for months are signals worth checking — not signals to push through. They often point to fibroids, endometriosis, adenomyosis, PCOS, thyroid issues, or polyps, all of which are treatable when named.",
+        "Track what's normal for you, support the basics, and speak up early when something shifts. Your normal is the most useful baseline a clinician can have, and apps or even a simple notes-app log work fine.",
+        "A basic cycle log turns vague experience into useful information: period dates, flow, pain, mood, energy, sleep, sex drive, skin, digestion. Three months of data tells a story that vague memory cannot.",
+        "Cycles can shift with stress, illness, travel, intense exercise, weight changes, breastfeeding, perimenopause, hormonal contraception, and big life events. A single off cycle is rarely a problem; a pattern of off cycles is a signal.",
+        "Reproductive health, simplified: know your normal, respect the basics, log what you notice, and ask early when something feels off. Most issues are easier to address when caught early."
       ]},
       { label: "Understanding Reproductive Health", tone: "rose", body: [
-        "Reproductive health spans a lifetime, and each chapter brings its own questions.",
-        "What worked at 22 may not fit at 38, and that's by design.",
-        "Several common conditions can quietly shape reproductive health for years before they're named — PCOS, endometriosis, fibroids, thyroid disorders.",
-        "Persistent pain, very heavy bleeding, missed periods, painful sex, or trouble conceiving are reasons to ask for a workup.",
-        "Mental health and reproductive health are deeply linked.",
-        "Sexual health belongs in this picture too.",
-        "A simple cycle log, a yearly check-up, and an honest clinician can shorten years of guessing."
+        "Reproductive health spans a lifetime, and each chapter brings its own questions. Your teens are about understanding your cycle and learning what's normal. Your twenties often raise contraception, sexual health, and the early signals of conditions like PCOS or endometriosis. Your thirties may bring fertility questions. Your forties bring perimenopause. Your fifties and beyond bring postmenopausal health.",
+        "What worked at 22 may not fit at 38, and that's by design. The pill that suited college may not fit pregnancy planning; the workout that energized you in your twenties may need adjusting in perimenopause. Reproductive health is a moving target, not a fixed setting.",
+        "Several common conditions can quietly shape reproductive health for years before they're named — PCOS, endometriosis, adenomyosis, fibroids, thyroid disorders, hypothalamic amenorrhea, premature ovarian insufficiency, and pelvic floor dysfunction. The average diagnostic delay for endometriosis alone is still 7–10 years.",
+        "Persistent pain, very heavy bleeding, missed periods, painful sex, recurrent UTIs, or trouble conceiving are reasons to ask for a workup — not reasons to wait and see. The earlier these are addressed, the less they shape the rest of your health.",
+        "Mental health and reproductive health are deeply linked. Hormonal shifts can amplify anxiety, depression, and PMDD; chronic reproductive symptoms can erode mental health over time. Treating both together is almost always more effective than treating either alone.",
+        "Sexual health belongs in this picture too. Painful sex, vaginal dryness, low desire, or discomfort are not 'just part of being a woman.' They have causes — hormonal, physical, emotional — and almost all of them are treatable. The first step is naming them out loud.",
+        "Contraception is a reproductive health choice with real trade-offs, not just a yes/no decision. Different methods affect mood, cycles, libido, bone density, and future fertility differently. The 'best' option is the one that fits your body and your life right now, and you're allowed to switch.",
+        "A simple cycle log, a yearly check-up, and an honest clinician can shorten years of guessing. You don't need to know what's wrong to ask for help — you just need to notice that something feels off."
       ]},
       { label: "Boost Your Reproductive Health", tone: "mint", body: [
-        "Eat for hormones — steady protein, fiber, healthy fats. Aim for 25–30g of fiber daily.",
-        "Move daily, lift weekly. Work with your cycle, not against it.",
-        "Sleep is one of the most underrated reproductive health tools.",
-        "Manage stress in small daily ways.",
-        "Limit heavy alcohol, smoking, and chronically skipped meals.",
-        "See your reproductive health as something to invest in across decades.",
-        "Most issues respond — at least partly — to these basics."
+        "Eat for hormones — steady protein at every meal, plenty of fiber (aim for 25–30g daily from vegetables, fruit, legumes, whole grains), and healthy fats (olive oil, avocado, nuts, seeds, fatty fish). Hormones are literally built from fat and cholesterol; chronic under-eating quietly suppresses cycles.",
+        "Iron, B12, vitamin D, omega-3s, and folate matter more than people realize for reproductive health. If you menstruate heavily, are vegetarian or vegan, or feel constantly tired, get bloodwork — deficiencies are common and easy to fix.",
+        "Move daily, lift weekly. Walking, strength training, yoga, swimming, dancing — anything you'll keep doing. Strength training in particular protects bone density, supports hormones, and helps insulin sensitivity, which feeds back into cycle regularity.",
+        "Sleep is one of the most underrated reproductive health tools. Hormones are largely produced and reset overnight. Seven to nine hours, a consistent bedtime, and a dark cool room are not luxuries — they're hormone infrastructure.",
+        "Manage stress in small daily ways: a walk, breathwork, journaling, time outdoors, low-stakes hobbies, real connection. Chronic stress raises cortisol, which competes with progesterone and can disrupt ovulation entirely.",
+        "Limit heavy alcohol, smoking, and chronically skipped meals. None of these have to be perfect — but each, repeated daily, quietly destabilizes hormones and cycle health over years.",
+        "Be intentional about endocrine disruptors where it's easy: fragrance-free skincare, glass instead of plastic for hot food, filtered water if you can. Don't make this a source of anxiety, but also don't ignore it.",
+        "Have a yearly check-in even when nothing feels wrong: blood pressure, basic bloods (iron, thyroid, vitamin D, fasting glucose), pap when due, breast awareness, and an honest conversation about cycles and sexual health.",
+        "See your reproductive health as something to invest in across decades, not something to address only when something breaks. The compound interest is real.",
+        "Most issues respond — at least partly — to these basics. Even when medication or surgery is needed, the foundations make every other treatment work better."
       ]},
     ],
     articles: [
