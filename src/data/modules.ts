@@ -32,7 +32,7 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     slug: "pcos",
     title: "PCOS",
     subtitle: "Personalized care and guidance to manage PCOS symptoms effectively.",
-    iconKey: "Venus",
+    iconKey: "Flower",
     tone: "pink",
     understanding: [
       { label: "Basic Guide", tone: "peach" },
@@ -302,7 +302,7 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
 };
 
 export const supportCards: { slug: ModuleSlug; title: string; tone: PastelTone; iconKey: string }[] = [
-  { slug: "pcos", title: "PCOS", tone: "pink", iconKey: "Venus" },
+  { slug: "pcos", title: "PCOS", tone: "pink", iconKey: "Flower" },
   { slug: "reproductive-health", title: "Reproductive Health", tone: "lilac", iconKey: "Flower2" },
   { slug: "medical-conditions", title: "Medical Conditions", tone: "slate", iconKey: "ClipboardPlus" },
   { slug: "nutrition-weight", title: "Nutrition & Weight", tone: "peach", iconKey: "Salad" },
@@ -316,5 +316,5 @@ export const tipCards = [
   { title: "Hair & Skin", gradient: "bg-tip-teal", iconKey: "Wind" },
   { title: "Food", gradient: "bg-tip-orange", iconKey: "UtensilsCrossed" },
   { title: "Weight Loss", gradient: "bg-tip-pink", iconKey: "Scale" },
-  { title: "PMS", gradient: "bg-tip-purple", iconKey: "Venus" },
+  { title: "PMS", gradient: "bg-tip-purple", iconKey: "Flower" },
 ] as const;
