@@ -44,11 +44,22 @@ const Resource = () => {
 
         {resource === "articles" && (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {data.articles.map((a) => (
-              <article key={a.title} className="rounded-2xl border border-border/60 bg-card p-5 shadow-soft">
-                <h2 className="mb-2 text-base font-semibold">{a.title}</h2>
-                <p className="text-[15px] leading-[1.75] text-muted-foreground">{a.body}</p>
-              </article>
+            {data.articles.map((a, i) => (
+              <Link
+                key={a.title}
+                to={`/module/${slug}/articles/read/${i}`}
+                className="group rounded-2xl bg-pastel-yellow/60 p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+              >
+                <h2 className="mb-2 text-base font-semibold leading-snug text-pastel-yellow-foreground">
+                  {a.title}
+                </h2>
+                <p className="line-clamp-3 text-[14px] leading-[1.6] text-foreground/80">
+                  {a.summary ?? a.body?.[0]}
+                </p>
+                <span className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-pastel-yellow-foreground underline underline-offset-4">
+                  Read article →
+                </span>
+              </Link>
             ))}
           </div>
         )}
@@ -68,11 +79,18 @@ const Resource = () => {
 
         {resource === "stories" && (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {data.stories.map((s) => (
-              <blockquote key={s.name} className="rounded-2xl bg-pastel-lilac/60 p-5 shadow-soft">
-                <p className="text-base italic leading-[1.75]">"{s.quote}"</p>
+            {data.stories.map((s, i) => (
+              <Link
+                key={s.name}
+                to={`/module/${slug}/stories/read/${i}`}
+                className="block rounded-2xl bg-pastel-lilac/60 p-5 shadow-soft transition-transform hover:-translate-y-0.5"
+              >
+                <p className="line-clamp-3 text-base italic leading-[1.6]">"{s.quote}"</p>
                 <footer className="mt-3 text-xs font-semibold text-pastel-lilac-foreground">— {s.name}</footer>
-              </blockquote>
+                <span className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-pastel-lilac-foreground underline underline-offset-4">
+                  Read story →
+                </span>
+              </Link>
             ))}
           </div>
         )}
