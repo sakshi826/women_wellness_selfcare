@@ -412,10 +412,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "HeartPulse",
     tone: "mint",
     understanding: [
-      { label: "Perimenopause", tone: "peach" },
-      { label: "Menopause", tone: "blue" },
-      { label: "Postmenopause", tone: "rose" },
-      { label: "Menopause Relief", tone: "mint" },
+      { label: "Perimenopause", tone: "peach", body: [
+        "Perimenopause is the transition leading up to menopause, often starting in the late 30s or 40s and lasting 4–10 years. Hormones — especially estrogen and progesterone — start to fluctuate unpredictably.",
+        "Common signs: cycles that get shorter, longer, heavier, or skipped; new sleep issues; mood swings; brain fog; joint aches; and the first hot flashes. Many people are told they're 'too young' — but they aren't.",
+        "Perimenopause is treatable. Lifestyle (strength training, protein, sleep, stress care) plus, when appropriate, hormone therapy can dramatically smooth this transition. Finding a clinician who actually understands perimenopause is half the battle."
+      ]},
+      { label: "Menopause", tone: "blue", body: [
+        "Menopause is officially the day you've gone 12 full months without a period. The average age is around 51, but anywhere from the mid-40s to mid-50s is normal. Earlier than 45 is called early menopause and deserves specific care.",
+        "Symptoms span the whole body: hot flashes, night sweats, sleep changes, vaginal dryness, lower libido, mood shifts, joint pain, and changes in skin and hair. Estrogen has receptors almost everywhere, so its drop is felt almost everywhere.",
+        "Treatment options have come a long way. Hormone replacement therapy (HRT), non-hormonal medications, vaginal estrogen, and lifestyle changes are all valid tools. The right mix depends on your symptoms, history, and goals."
+      ]},
+      { label: "Postmenopause", tone: "rose", body: [
+        "Postmenopause begins after that 12-month mark and lasts the rest of your life. Many of the most disruptive symptoms ease over time, though some — like vaginal dryness or sleep changes — can linger and benefit from ongoing care.",
+        "The bigger focus shifts to long-term health: bones, heart, brain, and metabolism. Lower estrogen accelerates bone loss and changes cardiovascular risk, which is why strength training, protein, calcium, and vitamin D matter even more now.",
+        "Many people describe postmenopause as a powerful chapter — clearer priorities, less hormonal turbulence, and more freedom. The right care helps you feel that, not just hear it."
+      ]},
+      { label: "Menopause Relief", tone: "mint", body: [
+        "Start with the basics: cool the bedroom, keep alcohol and caffeine modest, build a steady wind-down routine, and lift weights at least twice a week. These alone reduce symptoms for many people.",
+        "Hormone therapy (HRT) is the most effective treatment for hot flashes, night sweats, sleep, and vaginal symptoms — and for most healthy people under 60 within 10 years of menopause, it's safer than the old headlines suggested.",
+        "Non-hormonal options exist too: certain antidepressants, gabapentin, cognitive behavioral therapy, and vaginal moisturizers. Find a menopause-aware clinician and build a plan that fits your body, history, and life."
+      ]},
     ],
     articles: [
       { title: "Perimenopause can start in your 40s", body: "Cycle changes, sleep shifts, and mood swings can begin a decade before your last period." },
