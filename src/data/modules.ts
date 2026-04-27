@@ -779,39 +779,51 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     tone: "mint",
     understanding: [
       { label: "Pregnancy and Conception", tone: "peach", body: [
-        "Conception happens when sperm fertilizes an egg released during ovulation, usually around mid-cycle.",
-        "The fertile window is about six days long.",
-        "Tracking ovulation makes timing far easier than guessing.",
-        "Most healthy couples under 35 conceive within 6–12 months.",
-        "Preparing for pregnancy starts well before the positive test.",
-        "Get any chronic conditions reviewed before trying.",
-        "Conception is also emotional, not just biological."
+        "Conception happens when sperm fertilizes an egg released during ovulation, usually around mid-cycle but actually anywhere from day 10 to day 21 depending on cycle length. The fertilized egg then travels down the fallopian tube over several days and implants in the uterine lining about 6–10 days later — which is when pregnancy technically begins.",
+        "The fertile window is about six days long: the five days before ovulation and ovulation day itself. Sperm can survive up to 5 days in fertile cervical mucus, while an egg lives only 12–24 hours after release. This means timing matters far more than frequency in most cases.",
+        "Tracking ovulation makes timing far easier than guessing. Cervical mucus changes (becoming clear and stretchy near ovulation), basal body temperature shifts (a small rise after ovulation), and LH ovulation strips are the most reliable signals. Apps that just count from day 14 are often wrong.",
+        "Most healthy couples under 35 conceive within 6–12 months of regular, well-timed sex. After 35, the average shortens because egg quantity and quality decline more rapidly. Knowing this isn't meant to alarm — it's meant to help you plan and seek support sooner if needed.",
+        "Preparing for pregnancy starts well before the positive test. Both partners benefit from a daily multivitamin or prenatal (with folate, B12, iodine, and omega-3) at least 3 months before trying — that's roughly how long it takes for a new egg or new sperm to mature.",
+        "Get any chronic conditions reviewed before trying — thyroid, blood pressure, blood sugar, mental health medications, autoimmune conditions, and oral health. Adjusting now is far easier than mid-pregnancy.",
+        "Lifestyle matters for both partners. Sleep, weight, alcohol, smoking, recreational drugs, environmental toxins, and stress all affect egg and sperm quality. None of this needs to be perfect, but small changes 90 days before trying make a real difference.",
+        "Conception is also emotional, not just biological. Trying to conceive can be exciting, anxious, lonely, joyful, and exhausting — sometimes all in the same week. Whatever you're feeling is valid, and finding even one person to talk honestly with helps enormously.",
+        "If conception is taking longer than expected, get checked early — within 12 months under 35, within 6 months over 35, sooner with known conditions. Most causes are identifiable and many are treatable; waiting often costs time you don't need to lose."
       ]},
       { label: "Stages of Pregnancy", tone: "blue", body: [
-        "Pregnancy is divided into three trimesters of about 13 weeks each.",
-        "The first trimester is when nearly all of the baby's organs form. It's often the hardest physically.",
-        "The second trimester often feels like a relief — energy returns, the bump becomes visible.",
-        "The third trimester is the final stretch — the baby grows rapidly, sleep gets harder.",
-        "Through all three, regular prenatal care, gentle movement, hydration, protein, sleep, and mental health check-ins are key.",
-        "Pregnancy is unpredictable. Plans change. That doesn't mean you're doing it wrong."
+        "Pregnancy is divided into three trimesters of about 13 weeks each, counted from the first day of your last period — which means you're already considered 2 weeks pregnant on the day of conception. Most pregnancies last about 40 weeks total.",
+        "The first trimester (weeks 1–13) is when nearly all of the baby's organs form, which is why this is the most sensitive period for medications, alcohol, and infections. It's often the hardest physically — fatigue can be crushing, nausea is common (the term 'morning' sickness is misleading; it can hit any time), and emotions run high.",
+        "First trimester essentials: prenatal vitamins with folate, hydration, protein, gentle movement, frequent small meals to manage nausea, and rest without guilt. Most miscarriages happen in this window, which is part of why many people wait to share the news — but talking to someone you trust can ease the weight.",
+        "The second trimester (weeks 14–27) often feels like a relief — energy returns, nausea usually fades, the bump becomes visible, and you may feel the baby move (typically 16–22 weeks). This is often the best window for travel, exercise, and finishing big projects.",
+        "Second trimester care includes the anatomy scan (around 18–22 weeks), gestational diabetes screening (24–28 weeks), and continued check-ups. It's also a good time to start pelvic floor work, prenatal yoga or pilates, and birth education.",
+        "The third trimester (weeks 28–40+) is the final stretch — the baby grows rapidly, sleep gets harder (heartburn, hip pain, frequent peeing), and Braxton Hicks contractions become more noticeable. Visits move to every two weeks, then weekly.",
+        "Third trimester focus: birth preparation (classes, birth plan, hospital bag, support team), postpartum prep (meal prep, recovery supplies, mental health plan), and watching for warning signs. Iron, protein, and rest become especially important.",
+        "Through all three trimesters, regular prenatal care, gentle movement, hydration, adequate protein (often 80–100g daily), sleep, and mental health check-ins are key. So is the basic permission to slow down — pregnancy is not the time to push through.",
+        "Each pregnancy is different, even for the same person. Comparing yours to a friend's or to your last one rarely helps; trust your team and your body's signals.",
+        "Pregnancy is unpredictable. Plans change — birth plans, due dates, energy levels, baby's position. That doesn't mean you're doing it wrong. Flexibility is the underrated superpower of pregnancy."
       ]},
       { label: "Prenatal Care", tone: "rose", body: [
-        "Prenatal care is the regular cadence of check-ups, blood tests, and scans across pregnancy.",
-        "A typical schedule has monthly visits, then every two weeks from week 28, then weekly from week 36.",
-        "Each visit includes weight, blood pressure, urine, fundal height, and baby's heartbeat.",
-        "Bring questions to every visit, even small ones.",
-        "Build your team thoughtfully.",
-        "Know the warning signs that need immediate attention.",
-        "If something feels off between visits, call."
+        "Prenatal care is the regular cadence of check-ups, blood tests, scans, and conversations across pregnancy. Good prenatal care meaningfully reduces complications, catches issues early, and supports the mental health of the pregnant person — and it's one of the most studied predictors of healthy outcomes for both mother and baby.",
+        "A typical schedule has monthly visits through week 28, every two weeks from weeks 28–36, then weekly from week 36 until delivery. Higher-risk pregnancies (advanced maternal age, twins, chronic conditions) often have more frequent visits.",
+        "Early visits include confirming pregnancy, dating the pregnancy via ultrasound, baseline bloods (blood type, Rh status, immunity, iron, blood sugar, infection screening), and a thorough medical and family history.",
+        "Each routine visit includes weight, blood pressure, urine sample, fundal height (measuring the uterus), and baby's heartbeat. The conversation is just as important — energy, mood, sleep, movement, nausea, and any new symptoms all matter.",
+        "Key milestone tests include first-trimester screening (around 11–13 weeks), the anatomy scan (18–22 weeks), the glucose tolerance test for gestational diabetes (24–28 weeks), and Group B strep screening (35–37 weeks). Vaccines like Tdap and flu are also part of standard care.",
+        "Bring questions to every visit, even small ones. Write them down beforehand — pregnancy brain is real, and once you're sitting in the chair, half of what you wanted to ask vanishes.",
+        "Build your team thoughtfully. An OB, midwife, or both; a primary care doctor; potentially a doula, lactation consultant, pelvic floor physiotherapist, mental health professional, and pediatrician. You don't need everyone, but knowing who fills which gap helps.",
+        "Know the warning signs that need immediate attention: severe headache that won't ease, sudden swelling of face or hands, blurred vision, persistent upper-abdominal pain, decreased fetal movement (after 28 weeks), heavy bleeding, leaking fluid, severe nausea/vomiting, fever, or signs of preterm labor.",
+        "Mental health is part of prenatal care. Anxiety and depression during pregnancy are common, treatable, and worth raising at every visit. Many medications are safer than untreated illness; a perinatal mental health specialist can help weigh options.",
+        "If something feels off between visits, call. Erring on the side of asking is the right call — providers expect these calls and would always rather see you for nothing than miss something serious."
       ]},
       { label: "Postpartum Depression", tone: "mint", body: [
-        "PPD is much more than baby blues — it lingers, deepens, and doesn't fade on its own.",
-        "It shows up as persistent sadness, anxiety, hopelessness, intrusive thoughts, trouble bonding, and sleep issues.",
-        "It is a medical condition, not a parenting failure.",
-        "Postpartum anxiety, OCD, PTSD, and rarely psychosis are also part of this picture.",
-        "PPD is one of the most treatable mental health conditions.",
-        "Telling a clinician — even with one sentence — opens the door.",
-        "Reach out urgently if you're having thoughts of harming yourself or the baby."
+        "Postpartum depression (PPD) is much more than the 'baby blues.' Baby blues affect up to 80% of new parents, peak around day 3–5 after birth, and resolve within two weeks on their own. PPD lingers, deepens, doesn't fade, and needs real support to lift.",
+        "PPD shows up as persistent sadness, anxiety, hopelessness, irritability, intrusive thoughts (often violent or scary thoughts that horrify the person having them), trouble bonding with the baby, sleep issues that go beyond newborn sleep deprivation, appetite changes, and a sense of going through the motions of caring for the baby without feeling present.",
+        "It can begin in pregnancy (perinatal depression), in the first weeks postpartum, or any time in the first year — and sometimes longer. Late-onset PPD around 6–9 months is common and often missed because everyone has stopped checking.",
+        "PPD is a medical condition, not a parenting failure. It's caused by a combination of massive hormonal shifts, sleep deprivation, identity change, isolation, history of depression or anxiety, traumatic birth, feeding struggles, and lack of support — none of which are character flaws.",
+        "Postpartum anxiety is just as common as PPD and often coexists. It looks like racing thoughts, constant worry about the baby's safety, panic attacks, and inability to sleep even when the baby is sleeping. It's also very treatable.",
+        "Postpartum OCD (intrusive thoughts about harm coming to the baby, often with checking behaviors), postpartum PTSD (after a traumatic birth experience), and rarely postpartum psychosis (a medical emergency with hallucinations, delusions, and severe disorientation) are also part of this picture.",
+        "PPD is one of the most treatable mental health conditions. Therapy (especially CBT and IPT), medication (many SSRIs are compatible with breastfeeding), peer support, sleep protection, practical help, and movement all work. Most people improve significantly within months.",
+        "Partners and people who don't give birth can also experience postpartum depression — often missed because the focus is on the birthing parent. If you're supporting someone with a new baby and you feel low or detached, that counts too.",
+        "Telling a clinician — even with one sentence ('I'm not okay') — opens the door. Most providers screen at the 6-week check, but you can raise it any time, and you should if you suspect it.",
+        "Reach out urgently if you're having thoughts of harming yourself or the baby, hearing voices, feeling disconnected from reality, or unable to care for yourself. These are emergencies and they have effective treatment. You are not the only one who has felt this; you do not have to face it alone."
       ]},
     ],
     articles: [
