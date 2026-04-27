@@ -35,10 +35,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "Flower",
     tone: "pink",
     understanding: [
-      { label: "Basic Guide", tone: "peach" },
-      { label: "PCOS Made Simple", tone: "blue" },
-      { label: "What is PCOS?", tone: "rose" },
-      { label: "Life Changing Tips", tone: "mint" },
+      { label: "Basic Guide", tone: "peach", body: [
+        "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal conditions, affecting roughly 1 in 10 people with ovaries. Despite the name, it isn't really about cysts — it's about a cluster of hormonal imbalances that can show up differently in every body.",
+        "The three classic features are irregular or absent periods, signs of higher androgen activity (like acne, oily skin, or unwanted hair growth), and ovaries that look polycystic on an ultrasound. You only need two of these three to be diagnosed, which is why two people with PCOS can have very different stories.",
+        "The good news: PCOS is highly responsive to lifestyle. Steady meals, strength training, quality sleep, and stress care can ease most symptoms. Medication and supplements add support, but consistent daily habits remain the strongest lever you have."
+      ]},
+      { label: "PCOS Made Simple", tone: "blue", body: [
+        "Think of PCOS as a communication issue between your brain, ovaries, and insulin. The brain sends hormone signals, the ovaries respond unevenly, and insulin — your blood sugar manager — often runs higher than it should.",
+        "When insulin runs high, the ovaries make more androgens. More androgens disrupt ovulation. No ovulation means irregular cycles, which feeds back into more imbalance. It's a loop, not a single broken part.",
+        "That's why the simplest interventions work so well: anything that calms insulin (protein-rich meals, walks after eating, lifting weights, sleep) gently quiets the whole loop, often within a few cycles."
+      ]},
+      { label: "What is PCOS?", tone: "rose", body: [
+        "PCOS is a lifelong endocrine condition where the ovaries don't release eggs as regularly as they should. It usually shows up in the late teens or twenties, but many people are diagnosed years later — often after struggling with periods, skin, or trying to conceive.",
+        "Symptoms vary widely: missed or unpredictable periods, acne, hair thinning on the scalp, hair growth on the face or body, weight that's hard to shift around the middle, fatigue, and mood changes. Not everyone gets every symptom.",
+        "PCOS is not your fault, and it's not caused by anything you did. It runs in families and is shaped by genes, environment, and hormones. Knowing what it is removes a lot of the shame — and makes the next steps much clearer."
+      ]},
+      { label: "Life Changing Tips", tone: "mint", body: [
+        "Start with the plate. Build meals around protein, fiber, and healthy fats first; add carbs from whole sources. This single change steadies blood sugar and reduces the cravings and crashes most people with PCOS describe.",
+        "Move in ways that build muscle. Two or three short strength sessions a week improve insulin sensitivity more than hours of cardio. Add walks after meals and you've covered the basics that medication can only partly replicate.",
+        "Protect sleep and stress like prescriptions. Seven to nine hours of sleep, a regular wind-down, and small daily stress outlets (a walk, journaling, breathwork) directly lower the cortisol that worsens PCOS. Consistency beats intensity every time."
+      ]},
     ],
     articles: [
       { title: "Understanding your hormones", body: "PCOS affects how your ovaries work. Learn the role of insulin, androgens, and how small lifestyle shifts can rebalance your cycle." },
