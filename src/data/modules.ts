@@ -304,10 +304,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "Brain",
     tone: "blue",
     understanding: [
-      { label: "Understanding Mental Health", tone: "peach" },
-      { label: "Mental Health Made Simple", tone: "blue" },
-      { label: "What is Mental Health?", tone: "rose" },
-      { label: "Top Tips for Good Mental Health", tone: "mint" },
+      { label: "Understanding Mental Health", tone: "peach", body: [
+        "Mental health is the state of your emotional, psychological, and social well-being. It shapes how you think, feel, relate, work, and rest. Like physical health, it sits on a spectrum and shifts across your life.",
+        "Struggling doesn't mean you're broken. Stress, grief, hormonal changes, sleep loss, and burnout all push mental health around — sometimes for weeks, sometimes longer. Naming what's happening is the first relief.",
+        "Care is wide: therapy, medication, movement, social connection, time outdoors, creative outlets, and rest. The goal isn't to feel happy all the time. It's to have tools when life gets heavy."
+      ]},
+      { label: "Mental Health Made Simple", tone: "blue", body: [
+        "Three systems shape day-to-day mental health: your nervous system (how regulated or activated you feel), your brain chemistry (mood and motivation), and your context (relationships, work, finances, sleep).",
+        "Small daily inputs add up: morning light, regular meals, movement, breath, and a few minutes of quiet stack into real resilience. Big interventions like therapy or medication work better when these basics are in place.",
+        "Mental health isn't separate from physical health. Iron, thyroid, vitamin D, hormones, and inflammation all influence mood. A simple lab panel often explains a surprising amount."
+      ]},
+      { label: "What is Mental Health?", tone: "rose", body: [
+        "Mental health includes mood, thinking, behavior, and the ability to cope with life's normal stress. It's not the absence of difficult feelings — it's the capacity to move through them without getting stuck.",
+        "Common conditions include anxiety, depression, PMDD, postpartum depression, ADHD, OCD, and trauma responses. They're real, common, and treatable. Many show up first as physical symptoms — fatigue, gut issues, headaches, sleep changes.",
+        "You don't need to be in crisis to seek support. Mental health care is just as valid for clarity, prevention, and growth as it is for difficult chapters."
+      ]},
+      { label: "Top Tips for Good Mental Health", tone: "mint", body: [
+        "Anchor your day with a few non-negotiables: morning light, consistent sleep and wake times, a real meal at breakfast, and one form of movement. These signals keep your nervous system steady.",
+        "Connect on purpose. A short call with someone who knows you, a walk with a friend, or a community ritual buffers stress more than almost any solo strategy.",
+        "Make rest active. Phones down 30 minutes before bed, time outdoors weekly, and one slow morning a week aren't luxuries — they're maintenance. Therapy, when accessible, multiplies all of the above."
+      ]},
     ],
     articles: [
       { title: "Anxiety isn't a character flaw", body: "It's a nervous system response. Naming it shrinks it. Tools help — therapy helps more." },
