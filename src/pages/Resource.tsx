@@ -115,7 +115,17 @@ const Resource = () => {
       <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         {/* ---------- ARTICLES ---------- */}
         {resource === "articles" && (
-          <div className="space-y-10">
+          <div>
+            {/* Section meta strip */}
+            <div className="mb-8 flex items-baseline justify-between border-b border-border/60 pb-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-foreground/50">
+                {String(data.articles.length).padStart(2, "0")} articles
+              </p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">
+                Curated for {data.title}
+              </p>
+            </div>
+
             {data.articles.map((a, i) => {
               const words = (a.body?.join(" ") ?? a.summary ?? "").split(/\s+/).length;
               const mins = Math.max(2, Math.round(words / 220));
@@ -126,18 +136,15 @@ const Resource = () => {
                   <Link
                     key={a.title}
                     to={`/module/${slug}/articles/read/${i}`}
-                    className="group relative block overflow-hidden rounded-[28px] border border-border/50 bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
+                    className="group relative mb-12 block overflow-hidden rounded-[28px] border border-border/50 bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
                   >
-                    <div className={`relative ${toneBg[tone]} p-8 md:p-12`}>
-                      <div
-                        className="absolute right-0 top-0 h-48 w-48 rounded-full opacity-50 blur-3xl"
-                        style={{ background: accent }}
-                      />
-                      <div className="relative">
+                    <div className="grid md:grid-cols-[1.4fr_1fr]">
+                      {/* Left: editorial copy */}
+                      <div className="relative p-8 md:p-12">
                         <div className="mb-5 flex flex-wrap items-center gap-3">
                           <span
-                            className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em]"
-                            style={{ color: accent }}
+                            className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em]"
+                            style={{ background: `${accent}1a`, color: accent }}
                           >
                             <Sparkles className="h-3 w-3" fill="currentColor" />
                             Featured Read
@@ -147,18 +154,54 @@ const Resource = () => {
                             {mins} min read
                           </span>
                         </div>
-                        <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-foreground md:text-[40px]">
+                        <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[42px]">
                           {a.title}
                         </h2>
-                        <p className="mt-4 max-w-2xl text-[15px] leading-[1.7] text-foreground/70 md:text-base">
+                        <p className="mt-4 text-[15px] leading-[1.7] text-foreground/70 md:text-base">
                           {a.summary ?? a.body?.[0]}
                         </p>
                         <div
-                          className="mt-7 inline-flex items-center gap-2 rounded-full bg-card px-5 py-2.5 text-sm font-semibold shadow-soft transition-transform group-hover:translate-x-1"
+                          className="mt-7 inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1"
                           style={{ color: accent }}
                         >
                           Read the article
                           <ArrowUpRight className="h-4 w-4" />
+                        </div>
+                      </div>
+
+                      {/* Right: tinted visual panel */}
+                      <div className={`relative hidden overflow-hidden ${toneBg[tone]} md:block`}>
+                        <div
+                          className="absolute -right-12 -top-12 h-56 w-56 rounded-full opacity-60 blur-3xl"
+                          style={{ background: accent }}
+                        />
+                        <div
+                          className="absolute -bottom-16 -left-10 h-48 w-48 rounded-full opacity-30 blur-3xl"
+                          style={{ background: accent }}
+                        />
+                        <div className="relative flex h-full flex-col justify-between p-10">
+                          <div className="flex justify-end">
+                            <div
+                              className="grid h-14 w-14 place-items-center rounded-2xl bg-card shadow-soft"
+                              style={{ color: accent }}
+                            >
+                              <Newspaper className="h-7 w-7" strokeWidth={1.5} />
+                            </div>
+                          </div>
+                          <div>
+                            <p
+                              className="font-mono text-[10px] font-bold uppercase tracking-[0.28em]"
+                              style={{ color: accent }}
+                            >
+                              Issue No. 01
+                            </p>
+                            <p className="mt-2 font-mono text-6xl font-light leading-none tabular-nums text-foreground/85">
+                              01
+                            </p>
+                            <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/50">
+                              {data.title} Library
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -170,41 +213,44 @@ const Resource = () => {
                 <Link
                   key={a.title}
                   to={`/module/${slug}/articles/read/${i}`}
-                  className="group relative grid gap-6 border-t border-border/60 pt-10 md:grid-cols-[180px_1fr] md:gap-10"
+                  className="group relative grid grid-cols-[64px_1fr_auto] items-start gap-6 border-t border-border/60 py-8 md:gap-10 md:py-10"
                 >
-                  <div className="flex md:flex-col md:items-start md:gap-3">
-                    <div className="flex items-center gap-3 md:flex-col md:items-start">
-                      <span
-                        className="font-mono text-3xl font-light tabular-nums"
-                        style={{ color: accent }}
+                  {/* Number column */}
+                  <span
+                    className="font-mono text-2xl font-light tabular-nums leading-none md:text-3xl"
+                    style={{ color: accent }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Content */}
+                  <div className="min-w-0">
+                    <div className="mb-2 flex flex-wrap items-center gap-3">
+                      <p
+                        className={`text-[10px] font-bold uppercase tracking-[0.22em] ${toneFg[tone]}`}
                       >
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                        Article
+                      </p>
+                      <span className="text-foreground/30">·</span>
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-foreground/55">
                         <Clock className="h-3 w-3" />
-                        {mins} min
+                        {mins} min read
                       </span>
                     </div>
-                  </div>
-                  <div>
-                    <p
-                      className={`mb-2 text-[10px] font-bold uppercase tracking-[0.22em] ${toneFg[tone]}`}
-                    >
-                      Article
-                    </p>
-                    <h2 className="text-2xl font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-foreground/70 md:text-[28px]">
+                    <h2 className="text-xl font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-foreground/70 md:text-[26px]">
                       {a.title}
                     </h2>
-                    <p className="mt-3 line-clamp-3 text-[15px] leading-[1.7] text-foreground/65">
+                    <p className="mt-2.5 line-clamp-2 max-w-2xl text-[14.5px] leading-[1.65] text-foreground/65">
                       {a.summary ?? a.body?.[0]}
                     </p>
-                    <div
-                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider"
-                      style={{ color: accent }}
-                    >
-                      Continue reading
-                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </div>
+                  </div>
+
+                  {/* Arrow affordance */}
+                  <div
+                    className="mt-1 grid h-10 w-10 place-items-center rounded-full border border-border/60 transition-all group-hover:border-transparent group-hover:translate-x-1"
+                    style={{ color: accent }}
+                  >
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
                   </div>
                 </Link>
               );
