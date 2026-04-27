@@ -9,13 +9,13 @@ type ResourceKey = "Articles" | "Tips" | "Stories" | "Myths";
 
 const understandingIcons = [BookOpen, CircleDot, Heart, Lightbulb];
 
-const trackerStyles: Record<string, { tone: string; Icon: any }> = {
-  Energy: { tone: "rose", Icon: Star },
-  Sleep: { tone: "lilac", Icon: Moon },
-  "Self Care": { tone: "lilac", Icon: Heart },
-  BMI: { tone: "mint", Icon: HeartHandshake },
-  "Physical Activity": { tone: "peach", Icon: Bike },
-  Mood: { tone: "yellow", Icon: Smile },
+const trackerStyles: Record<string, { tone: string; Icon: any; href: string }> = {
+  Energy: { tone: "rose", Icon: Star, href: "https://platform.mantracare.com/therapy/trackers/energy-tracker" },
+  Sleep: { tone: "lilac", Icon: Moon, href: "https://web.mantracare.com/app/sleep" },
+  "Self Care": { tone: "lilac", Icon: Heart, href: "https://platform.mantracare.com/therapy/trackers/care-tracker" },
+  BMI: { tone: "mint", Icon: HeartHandshake, href: "https://platform.mantracare.com/bmi-calculator-new" },
+  "Physical Activity": { tone: "peach", Icon: Bike, href: "https://platform.mantracare.com/therapy/trackers/physical-activity-log" },
+  Mood: { tone: "yellow", Icon: Smile, href: "https://platform.mantracare.com/mood_tracker/" },
 };
 
 const resourceStyles = [
@@ -81,18 +81,21 @@ const Module = () => {
               const tone = meta.tone as keyof typeof toneBg;
               const Icon = meta.Icon;
               return (
-                <button
+                <a
                   key={t}
+                  href={meta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-4 py-3.5 text-left shadow-soft transition-transform hover:-translate-y-0.5`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`grid h-9 w-9 place-items-center rounded-xl ${toneBg[tone]}`}>
-                      <Icon className={`h-4.5 w-4.5 ${toneFg[tone]}`} strokeWidth={2} />
+                      <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
                     <span className={`text-sm font-semibold ${toneFg[tone]}`}>{t}</span>
                   </div>
                   <ChevronRight className={`h-4 w-4 ${toneFg[tone]}`} />
-                </button>
+                </a>
               );
             })}
           </div>
