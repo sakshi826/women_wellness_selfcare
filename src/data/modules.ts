@@ -143,10 +143,26 @@ export const modules: Record<ModuleSlug, ModuleContent> = {
     iconKey: "ClipboardPlus",
     tone: "slate",
     understanding: [
-      { label: "Different Health Conditions", tone: "peach" },
-      { label: "Understanding Women's Health", tone: "blue" },
-      { label: "Common Reproductive Health Concerns", tone: "rose" },
-      { label: "Tips to Improve Health", tone: "mint" },
+      { label: "Different Health Conditions", tone: "peach", body: [
+        "Women's bodies face a unique mix of conditions: endometriosis, fibroids, thyroid disorders, autoimmune diseases, migraines, anemia, UTIs, and more. Many overlap and many are missed because their symptoms get blamed on stress or 'just hormones.'",
+        "Each condition has its own pattern, but the theme is the same: early recognition shortens suffering. A good symptom journal — when, where, how often, how severe — turns vague experience into something a clinician can act on.",
+        "You're not expected to diagnose yourself. You are expected to be the expert on your own body. Bring that expertise to every appointment."
+      ]},
+      { label: "Understanding Women's Health", tone: "blue", body: [
+        "Most medical research was historically done on male bodies, which is why so many conditions in women are diagnosed later or differently. Heart attacks, autoimmune disease, ADHD, and even pain are often missed in women because the textbook picture was built around men.",
+        "That's slowly changing, but it means you may have to advocate harder. Asking 'what else could this be?' or requesting a second opinion isn't rude — it's good medicine.",
+        "Understanding women's health also means recognizing how cycles, pregnancy, and menopause shift everything else: medication doses, blood pressure, mood, even immune response. Context matters."
+      ]},
+      { label: "Common Reproductive Health Concerns", tone: "rose", body: [
+        "The most common reproductive concerns include painful periods, irregular cycles, fibroids, endometriosis, ovarian cysts, PCOS, and recurrent UTIs or yeast infections. Most are very treatable once named.",
+        "Pelvic pain that interrupts your day, periods that soak through protection in under two hours, bleeding between cycles, or pain with sex are all worth investigating. They're common — but not 'normal' to live with.",
+        "Bring specifics to appointments: cycle length, pain location, what helps and what doesn't. The clearer your picture, the faster the path to relief."
+      ]},
+      { label: "Tips to Improve Health", tone: "mint", body: [
+        "Lay the foundations first: sleep, hydration, regular meals, daily movement. Many chronic symptoms ease meaningfully when these are steady, even before treatment begins.",
+        "Get the basic labs at least yearly: thyroid, iron and ferritin, vitamin D, B12, and a metabolic panel. These five catch a surprising number of 'mystery' issues.",
+        "Build a small care team you trust — a primary doctor, a gynecologist, and one specialist if needed. Continuity beats hopping between providers, and trusted relationships make hard conversations easier."
+      ]},
     ],
     articles: [
       { title: "Endometriosis basics", body: "Tissue similar to the uterine lining grows outside the uterus, often causing pain. Diagnosis can take years — advocate for yourself." },
