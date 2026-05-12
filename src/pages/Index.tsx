@@ -35,25 +35,6 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <select
-              onChange={(e) => {
-                const newLang = e.target.value;
-                i18n.changeLanguage(newLang);
-              }}
-              value={i18n.language}
-              className="rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-medium shadow-sm transition-all hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <option value="en">English</option>
-              <option value="hi">हिन्दी (Hindi)</option>
-              <option value="es">Español (Spanish)</option>
-              <option value="fr">Français (French)</option>
-              <option value="de">Deutsch (German)</option>
-              <option value="pt">Português (Portuguese)</option>
-              <option value="zh-Hans">简体中文 (Chinese)</option>
-              <option value="ar">العربية (Arabic)</option>
-            </select>
-          </div>
         </header>
 
 

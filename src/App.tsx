@@ -25,9 +25,11 @@ const LanguageManager = () => {
     const params = new URLSearchParams(location.search);
     const langInUrl = params.get("lang");
     
-    // Always ensure the current i18n language is reflected in the URL parameter
-    // This handles persistence during navigation between modules
-    if (i18n.language && langInUrl !== i18n.language) {
+    if (langInUrl && langInUrl !== i18n.language) {
+      // If URL has a language and it's different from current i18n language, update i18n
+      i18n.changeLanguage(langInUrl);
+    } else if (i18n.language && langInUrl !== i18n.language) {
+      // If URL doesn't have the language or it's different, but i18n has one, update URL
       const newParams = new URLSearchParams(location.search);
       newParams.set("lang", i18n.language);
       navigate(
@@ -38,7 +40,7 @@ const LanguageManager = () => {
         { replace: true }
       );
     }
-  }, [i18n.language, location.pathname, location.search, navigate]);
+  }, [i18n.language, location.pathname, location.search, navigate, i18n]);
 
   return null;
 };

@@ -26,18 +26,30 @@ const urlParamDetector = {
 const detector = new LanguageDetector();
 detector.addDetector(urlParamDetector);
 
-import coreEn from "../modules/core/i18n/en.json";
+// Dynamically import all i18n JSON files from modules
+const locales = import.meta.glob("../modules/*/i18n/*.json", { eager: true });
+const resources: any = {};
+const namespaces: string[] = [];
+
+Object.keys(locales).forEach((path) => {
+  const parts = path.split("/");
+  const ns = parts[parts.length - 3];
+  const lng = parts[parts.length - 1].replace(".json", "");
+
+  if (!resources[lng]) resources[lng] = {};
+  resources[lng][ns] = (locales[path] as any).default || locales[path];
+  
+  if (!namespaces.includes(ns)) namespaces.push(ns);
+});
 
 i18n
   .use(detector)
   .use(initReactI18next)
   .init({
-    resources: {
-      en: { core: coreEn }
-    },
+    resources,
     fallbackLng: "en",
     supportedLngs: supportedLanguages,
-    ns: ["core"],
+    ns: namespaces,
     defaultNS: "core",
     interpolation: {
       escapeValue: false,
