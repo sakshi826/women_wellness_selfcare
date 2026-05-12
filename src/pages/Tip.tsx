@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { tipPages, type TipSlug } from "@/data/tips";
 import { iconMap } from "@/lib/icons";
 
@@ -38,6 +39,7 @@ const toneStyles: Record<string, { headerBg: string; tile: string; icon: string;
 const Tip = () => {
   const { slug } = useParams<{ slug: TipSlug }>();
   const navigate = useNavigate();
+  const { t } = useTranslation(["tips", "core"]);
   const data = slug ? tipPages[slug as TipSlug] : undefined;
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   if (!data) return <Navigate to="/" replace />;
@@ -51,7 +53,10 @@ const Tip = () => {
         {/* Header */}
         <header className="mb-10 flex items-start gap-4 animate-in slide-up">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => {
+              if (window.history.length > 1) navigate(-1);
+              else navigate("/");
+            }}
             aria-label="Back"
             className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
           >
@@ -61,8 +66,8 @@ const Tip = () => {
             <HeaderIcon className={`h-5 w-5 ${s.icon}`} strokeWidth={1.75} />
           </div>
           <div>
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{data.title}</h1>
-            <p className={`mt-1 text-sm ${s.subtitle}`}>{data.subtitle}</p>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{t(`${data.slug}.title`)}</h1>
+            <p className={`mt-1 text-sm ${s.subtitle}`}>{t(`${data.slug}.subtitle`)}</p>
           </div>
         </header>
 
@@ -84,8 +89,8 @@ const Tip = () => {
                     <Icon className={`h-5 w-5 ${s.icon}`} strokeWidth={1.75} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">{item.title}</h3>
-                    <p className={`mt-0.5 text-xs ${s.subtitle}`}>{item.subtitle}</p>
+                    <h3 className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">{t(`${data.slug}.items.${i}.title`)}</h3>
+                    <p className={`mt-0.5 text-xs ${s.subtitle}`}>{t(`${data.slug}.items.${i}.subtitle`)}</p>
                   </div>
                   <ChevronRight
                     className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-90" : ""}`}
@@ -94,7 +99,7 @@ const Tip = () => {
                 {open && (
                   <div className="animate-in fade-in border-t border-border/40 px-4 pb-4 pt-3 md:px-5">
                     <p className="pl-15 text-sm leading-relaxed text-muted-foreground" style={{ paddingLeft: "3.75rem" }}>
-                      {item.detail}
+                      {t(`${data.slug}.items.${i}.detail`)}
                     </p>
                   </div>
                 )}

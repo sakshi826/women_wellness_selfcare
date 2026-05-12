@@ -1,38 +1,66 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ChevronLeft, MessageCircle } from "lucide-react";
 import { iconMap } from "@/lib/icons";
 import { supportCards, tipCards } from "@/data/modules";
 
+import { useTranslation } from "react-i18next";
+
 const Index = () => {
+  const { t, i18n } = useTranslation("core");
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
         {/* Header */}
-        <header className="mb-12 flex items-start gap-4 animate-in slide-up">
-          <button
-            onClick={() => navigate(-1)}
-            aria-label="Back"
-            className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <div className="grid h-10 w-10 place-items-center rounded-xl bg-secondary">
-            <MessageCircle className="h-5 w-5 text-foreground" />
+        <header className="mb-12 flex items-center justify-between animate-in slide-up">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate(-1)}
+              aria-label={t("common.back")}
+              className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <div className="grid h-10 w-10 place-items-center rounded-xl bg-secondary">
+              <MessageCircle className="h-5 w-5 text-foreground" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                {t("header.title")}
+              </h1>
+              <p className="mt-1 text-muted-foreground">
+                {t("header.subtitle")}
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Self-Care Resources
-            </h1>
-            <p className="mt-1 text-muted-foreground">
-              Explore tools and guidance for your wellness journey
-            </p>
+
+          <div className="flex items-center gap-2">
+            <select
+              onChange={(e) => {
+                setSearchParams({ lang: e.target.value });
+              }}
+              value={i18n.language}
+              className="rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-medium shadow-sm transition-all hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            >
+              <option value="en">English</option>
+              <option value="hi">हिन्दी (Hindi)</option>
+              <option value="es">Español (Spanish)</option>
+              <option value="fr">Français (French)</option>
+              <option value="de">Deutsch (German)</option>
+              <option value="pt">Português (Portuguese)</option>
+              <option value="zh-Hans">简体中文 (Chinese)</option>
+              <option value="ar">العربية (Arabic)</option>
+            </select>
           </div>
         </header>
 
+
+
         {/* Tips */}
         <section className="mb-14 animate-in slide-up stagger-1">
-          <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">Tips</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">{t("sections.tips")}</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {tipCards.map((tip) => {
               const Icon = iconMap[tip.iconKey as keyof typeof iconMap];
@@ -43,7 +71,7 @@ const Index = () => {
                   className={`group relative flex h-32 flex-col justify-between overflow-hidden rounded-2xl ${tip.gradient} p-5 text-left text-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
                 >
                   <Icon className="h-7 w-7 opacity-95 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.75} />
-                  <span className="text-base font-semibold">{tip.title}</span>
+                  <span className="text-base font-semibold">{t(`tips.${tip.slug}`)}</span>
                   <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/15 blur-xl transition-all duration-500 group-hover:scale-150" />
                 </Link>
               );
@@ -54,7 +82,7 @@ const Index = () => {
         {/* Find support */}
         <section className="animate-in slide-up stagger-2">
           <h2 className="mb-5 text-2xl font-bold tracking-tight text-foreground">
-            Find support for your health
+            {t("sections.support")}
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
             {supportCards.map((card) => {
@@ -74,7 +102,7 @@ const Index = () => {
                     />
                   </div>
                   <span className="text-center text-sm font-semibold leading-snug text-foreground">
-                    {card.title}
+                    {t(`modules.${card.slug}`)}
                   </span>
                 </Link>
               );

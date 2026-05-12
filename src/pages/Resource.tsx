@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   ChevronLeft,
   ArrowUpRight,
@@ -18,44 +19,46 @@ import { toneBg, toneFg } from "@/lib/tones";
 
 type ResourceKey = "articles" | "tips" | "stories" | "myths";
 
-const resourceMeta: Record<
-  ResourceKey,
-  { title: string; tone: keyof typeof toneBg; Icon: any; tagline: string; eyebrow: string }
-> = {
-  articles: {
-    title: "Articles",
-    tone: "yellow",
-    Icon: Newspaper,
-    tagline: "Long-form reads, written with care and reviewed by experts.",
-    eyebrow: "The Library",
-  },
-  tips: {
-    title: "Tips",
-    tone: "blue",
-    Icon: Lightbulb,
-    tagline: "Small, practical shifts you can fold into your day.",
-    eyebrow: "Daily Practice",
-  },
-  stories: {
-    title: "Stories",
-    tone: "lilac",
-    Icon: BookMarked,
-    tagline: "Honest reflections from people who've walked this path.",
-    eyebrow: "In Their Words",
-  },
-  myths: {
-    title: "Myths vs Facts",
-    tone: "mint",
-    Icon: HelpCircle,
-    tagline: "Common misconceptions, gently corrected with evidence.",
-    eyebrow: "Setting It Straight",
-  },
-};
-
 const Resource = () => {
   const { slug, resource } = useParams<{ slug: ModuleSlug; resource: ResourceKey }>();
   const navigate = useNavigate();
+  const { t } = useTranslation([slug || "core", "core"]);
   const data = slug ? modules[slug as ModuleSlug] : undefined;
+
+  const resourceMeta: Record<
+    ResourceKey,
+    { title: string; tone: keyof typeof toneBg; Icon: any; tagline: string; eyebrow: string }
+  > = {
+    articles: {
+      title: t("core:resources.articles"),
+      tone: "yellow",
+      Icon: Newspaper,
+      tagline: t("core:resource_taglines.articles"),
+      eyebrow: t("core:resource_eyebrows.articles"),
+    },
+    tips: {
+      title: t("core:resources.tips"),
+      tone: "blue",
+      Icon: Lightbulb,
+      tagline: t("core:resource_taglines.tips"),
+      eyebrow: t("core:resource_eyebrows.tips"),
+    },
+    stories: {
+      title: t("core:resources.stories"),
+      tone: "lilac",
+      Icon: BookMarked,
+      tagline: t("core:resource_taglines.stories"),
+      eyebrow: t("core:resource_eyebrows.stories"),
+    },
+    myths: {
+      title: t("core:resources.myths"),
+      tone: "mint",
+      Icon: HelpCircle,
+      tagline: t("core:resource_taglines.myths"),
+      eyebrow: t("core:resource_eyebrows.myths"),
+    },
+  };
+
   const meta = resource ? resourceMeta[resource as ResourceKey] : undefined;
   if (!data || !meta) return <Navigate to="/" replace />;
 
@@ -78,12 +81,15 @@ const Resource = () => {
 
         <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-8 md:px-10 md:pb-20 md:pt-10">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => {
+              if (window.history.length > 1) navigate(-1);
+              else navigate(`/module/${slug}`);
+            }}
             aria-label="Back"
             className="inline-flex items-center gap-1.5 rounded-full bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur transition-colors hover:bg-card"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
-            Back to {data.title}
+            {t("core:common.back_to")} {t("title")}
           </button>
 
           <div className="mt-10 grid gap-6 md:grid-cols-[auto_1fr] md:items-end md:gap-10 animate-in slide-up">
@@ -99,7 +105,7 @@ const Resource = () => {
                 <p
                   className={`text-[10px] font-bold uppercase tracking-[0.28em] ${toneFg[tone]}`}
                 >
-                  {eyebrow} · {data.title}
+                  {eyebrow} · {t("title")}
                 </p>
               </div>
               <h1 className="mt-3 font-bold tracking-tight text-foreground text-[44px] leading-[1.05] md:text-[60px]">
@@ -120,10 +126,10 @@ const Resource = () => {
             {/* Section meta strip */}
             <div className="mb-8 flex items-baseline justify-between border-b border-border/60 pb-4">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-foreground/50">
-                {String(data.articles.length).padStart(2, "0")} articles
+                {String(data.articles.length).padStart(2, "0")} {t("core:resources.articles")}
               </p>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">
-                Curated for {data.title}
+                {t("core:common.curated_for")} {t("title")}
               </p>
             </div>
 
@@ -148,24 +154,24 @@ const Resource = () => {
                             style={{ background: `${accent}1a`, color: accent }}
                           >
                             <Sparkles className="h-3 w-3" fill="currentColor" />
-                            Featured Read
+                            {t("core:common.featured_read")}
                           </span>
                           <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-foreground/60">
                             <Clock className="h-3.5 w-3.5" />
-                            {mins} min read
+                            {mins} {t("core:common.min_read")}
                           </span>
                         </div>
                         <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[42px]">
-                          {a.title}
+                          {t(`articles.${i}.title`)}
                         </h2>
                         <p className="mt-4 text-[15px] leading-[1.7] text-foreground/70 md:text-base">
-                          {a.summary ?? a.body?.[0]}
+                          {t(`articles.${i}.summary`)}
                         </p>
                         <div
                           className="mt-7 inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1"
                           style={{ color: accent }}
                         >
-                          Read the article
+                          {t("core:common.read_article")}
                           <ArrowUpRight className="h-4 w-4" />
                         </div>
                       </div>
@@ -194,13 +200,13 @@ const Resource = () => {
                               className="font-mono text-[10px] font-bold uppercase tracking-[0.28em]"
                               style={{ color: accent }}
                             >
-                              Issue No. 01
+                              {t("core:common.issue_no")} 01
                             </p>
                             <p className="mt-2 font-mono text-6xl font-light leading-none tabular-nums text-foreground/85">
                               01
                             </p>
                             <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/50">
-                              {data.title} Library
+                              {t("title")} {t("core:common.library")}
                             </p>
                           </div>
                         </div>
@@ -243,18 +249,18 @@ const Resource = () => {
                         className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em]"
                         style={{ background: `${accent}1a`, color: accent }}
                       >
-                        Article
+                        {t("core:common.article")}
                       </span>
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-foreground/55">
                         <Clock className="h-3 w-3" />
-                        {mins} min read
+                        {mins} {t("core:common.min_read")}
                       </span>
                     </div>
                     <h2 className="text-xl font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-foreground/70 md:text-[26px]">
-                      {a.title}
+                      {t(`articles.${i}.title`)}
                     </h2>
                     <p className="mt-2.5 line-clamp-2 max-w-2xl text-[14.5px] leading-[1.65] text-foreground/65">
-                      {a.summary ?? a.body?.[0]}
+                      {t(`articles.${i}.summary`)}
                     </p>
                   </div>
 
@@ -276,14 +282,14 @@ const Resource = () => {
           <div>
             <div className="mb-8 flex items-baseline justify-between border-b border-border/60 pb-4">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-foreground/50">
-                {String(data.tips.length).padStart(2, "0")} practices
+                {String(data.tips.length).padStart(2, "0")} {t("core:common.practices")}
               </p>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">
-                Curated for {data.title}
+                {t("core:common.curated_for")} {t("title")}
               </p>
             </div>
             <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-border/60 bg-border/60 md:grid-cols-2">
-              {data.tips.map((tip, i) => (
+              {data.tips.map((_, i) => (
                 <li
                   key={i}
                   className="group relative flex gap-5 bg-card p-7 transition-colors hover:bg-muted/30"
@@ -305,10 +311,10 @@ const Resource = () => {
                       className={`mb-2 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] ${toneFg[tone]}`}
                     >
                       <Sparkles className="h-3 w-3" fill="currentColor" />
-                      Practice
+                      {t("core:common.practice")}
                     </p>
                     <p className="text-[15px] font-medium leading-[1.65] text-foreground/85">
-                      {tip}
+                      {t(`tips.${i}`)}
                     </p>
                   </div>
                 </li>
@@ -321,7 +327,8 @@ const Resource = () => {
         {resource === "stories" && (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {data.stories.map((s, i) => {
-              const initials = s.name
+              const translatedName = t(`stories.${i}.name`);
+              const initials = translatedName
                 .split(/\s+/)
                 .slice(0, 2)
                 .map((w) => w[0])
@@ -342,7 +349,7 @@ const Resource = () => {
                     style={{ background: accent }}
                   />
                   <p className="relative line-clamp-5 text-[17px] font-medium leading-[1.6] tracking-tight text-foreground/85">
-                    "{s.quote}"
+                    “{t(`stories.${i}.quote`)}”
                   </p>
                   <div className="mt-auto flex items-center gap-4 pt-7">
                     <div
@@ -353,10 +360,10 @@ const Resource = () => {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-[15px] font-semibold tracking-tight text-foreground">
-                        {s.name}
+                        {translatedName}
                       </p>
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/45">
-                        Community Story · No. {String(i + 1).padStart(2, "0")}
+                        {t("core:common.community_story")} · № {String(i + 1).padStart(2, "0")}
                       </p>
                     </div>
                     <div
@@ -375,14 +382,14 @@ const Resource = () => {
         {/* ---------- MYTHS ---------- */}
         {resource === "myths" && (
           <div className="space-y-6">
-            {data.myths.map((m, i) => (
+            {data.myths.map((_, i) => (
               <div
                 key={i}
                 className="overflow-hidden rounded-[28px] border border-border/50 bg-card shadow-soft"
               >
                 <div className="flex items-center justify-between border-b border-border/50 bg-muted/30 px-6 py-3 md:px-8">
                   <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-foreground/50">
-                    Misconception No. {String(i + 1).padStart(2, "0")}
+                    {t("core:common.misconception_no")} {String(i + 1).padStart(2, "0")}
                   </p>
                   <BookOpen className="h-3.5 w-3.5 text-foreground/40" />
                 </div>
@@ -394,11 +401,11 @@ const Resource = () => {
                         <X className="h-3.5 w-3.5 text-pastel-rose-foreground" strokeWidth={3} />
                       </div>
                       <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-pastel-rose-foreground">
-                        The Myth
+                        {t("core:common.the_myth")}
                       </span>
                     </div>
                     <p className="text-[16px] font-medium leading-[1.6] text-foreground/80 line-through decoration-pastel-rose-foreground/40 decoration-[1.5px]">
-                      {m.myth}
+                      {t(`myths.${i}.myth`)}
                     </p>
                   </div>
                   {/* Fact side */}
@@ -408,11 +415,11 @@ const Resource = () => {
                         <Check className="h-3.5 w-3.5 text-pastel-mint-foreground" strokeWidth={3} />
                       </div>
                       <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-pastel-mint-foreground">
-                        The Truth
+                        {t("core:common.the_truth")}
                       </span>
                     </div>
                     <p className="text-[16px] font-medium leading-[1.6] text-foreground/85">
-                      {m.fact}
+                      {t(`myths.${i}.fact`)}
                     </p>
                   </div>
                 </div>

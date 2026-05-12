@@ -4,6 +4,8 @@ import { modules, type ModuleSlug, TRACKERS } from "@/data/modules";
 import { iconMap } from "@/lib/icons";
 import { toneBg, toneFg, understandingTile } from "@/lib/tones";
 
+import { useTranslation } from "react-i18next";
+
 const understandingIcons = [BookOpen, CircleDot, Heart, Lightbulb];
 
 const trackerStyles: Record<string, { tone: string; Icon: any; href: string }> = {
@@ -25,6 +27,8 @@ const resourceStyles = [
 const Module = () => {
   const { slug } = useParams<{ slug: ModuleSlug }>();
   const navigate = useNavigate();
+  const { t } = useTranslation([slug as string, 'core']); // Namespace for the module and core for general UI
+  
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   if (!data) return <Navigate to="/" replace />;
 
@@ -36,8 +40,11 @@ const Module = () => {
         {/* Header */}
         <header className="mb-12 flex items-start gap-4 animate-in slide-up">
           <button
-            onClick={() => navigate(-1)}
-            aria-label="Back"
+            onClick={() => {
+              if (window.history.length > 1) navigate(-1);
+              else navigate("/");
+            }}
+            aria-label={t('core:common.back')}
             className="mt-1 grid h-9 w-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -46,14 +53,14 @@ const Module = () => {
             <HeaderIcon className={`h-5 w-5 ${toneFg[data.tone]}`} strokeWidth={1.75} />
           </div>
           <div>
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{data.title}</h1>
-            <p className="mt-1 text-muted-foreground">{data.subtitle}</p>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{t(data.title)}</h1>
+            <p className="mt-1 text-muted-foreground">{t(data.subtitle)}</p>
           </div>
         </header>
 
         {/* Understanding */}
         <section className="mb-12 animate-in slide-up stagger-1">
-          <h2 className="mb-5 text-2xl font-bold tracking-tight">Understanding {data.title}</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight">{t('core:sections.understanding')} {t(data.title)}</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {data.understanding.map((u, i) => {
               const Icon = understandingIcons[i];
@@ -67,24 +74,28 @@ const Module = () => {
                   <div className={`grid h-12 w-12 place-items-center rounded-xl ${s.tile} transition-transform duration-300 group-hover:scale-110`}>
                     <Icon className={`h-6 w-6 ${s.icon}`} strokeWidth={2} />
                   </div>
-                  <span className={`text-sm font-semibold leading-snug ${s.text}`}>{u.label}</span>
+                  <span className={`text-sm font-semibold leading-snug ${s.text}`}>{t(u.label)}</span>
                 </Link>
               );
             })}
           </div>
         </section>
 
+
+
+
+
         {/* Trackers */}
         <section className="mb-12 animate-in slide-up stagger-2">
-          <h2 className="mb-5 text-2xl font-bold tracking-tight">Trackers</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight">{t('core:sections.trackers')}</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {TRACKERS.map((t) => {
-              const meta = trackerStyles[t];
+            {TRACKERS.map((tName) => {
+              const meta = trackerStyles[tName];
               const tone = meta.tone as keyof typeof toneBg;
               const Icon = meta.Icon;
               return (
                 <a
-                  key={t}
+                  key={tName}
                   href={meta.href}
                   className={`group flex items-center justify-between rounded-2xl border border-border/60 ${toneBg[tone]}/50 px-4 py-3 text-left shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card`}
                 >
@@ -92,7 +103,7 @@ const Module = () => {
                     <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]} transition-transform duration-300 group-hover:scale-110`}>
                       <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
-                    <span className={`text-sm font-medium ${toneFg[tone]}`}>{t}</span>
+                    <span className={`text-sm font-medium ${toneFg[tone]}`}>{t(`core:${tName.toLowerCase().replace(' ', '_')}`)}</span>
                   </div>
                   <ChevronRight className={`h-4 w-4 ${toneFg[tone]} transition-transform duration-300 group-hover:translate-x-1`} />
                 </a>
@@ -103,7 +114,7 @@ const Module = () => {
 
         {/* Resources — link to dedicated pages */}
         <section className="mb-12 animate-in slide-up stagger-3">
-          <h2 className="mb-5 text-2xl font-bold tracking-tight">Resources</h2>
+          <h2 className="mb-5 text-2xl font-bold tracking-tight">{t('core:sections.resources')}</h2>
           <div className="space-y-3">
             {resourceStyles.map((r) => {
               const tone = r.tone as keyof typeof toneBg;
@@ -120,7 +131,7 @@ const Module = () => {
                       <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
                     <span className={`text-sm font-medium underline decoration-2 underline-offset-4 ${toneFg[tone]}`}>
-                      {r.key}
+                      {t(`core:resources.${r.key.toLowerCase()}`)}
                     </span>
                   </div>
                   <div className={`grid h-7 w-7 place-items-center rounded-full ${toneBg[tone]}`}>
@@ -135,5 +146,6 @@ const Module = () => {
     </div>
   );
 };
+
 
 export default Module;
