@@ -180,6 +180,3 @@ export const pcosData = {
     { myth: t("myths.9.myth", "Hair growth on the face means high testosterone always."), fact: t("myths.9.fact", "It's a sign worth investigating but can have multiple causes; a clinician can clarify." ) },
   ],
 };
-n can clarify." },
-  ],
-};
