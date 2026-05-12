@@ -1,15 +1,14 @@
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, MessageCircle } from "lucide-react";
 import { iconMap } from "@/lib/icons";
 import { supportCards, tipCards } from "@/data/modules";
 
 import { useTranslation } from "react-i18next";
+import i18n from "@/config/i18n";
 
 const Index = () => {
-  const { t, i18n } = useTranslation("core");
+  const { t } = useTranslation("core");
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
-
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14">
@@ -39,7 +38,8 @@ const Index = () => {
           <div className="flex items-center gap-2">
             <select
               onChange={(e) => {
-                setSearchParams({ lang: e.target.value });
+                const newLang = e.target.value;
+                i18n.changeLanguage(newLang);
               }}
               value={i18n.language}
               className="rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-medium shadow-sm transition-all hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/20"
