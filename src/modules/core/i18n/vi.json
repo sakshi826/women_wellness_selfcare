@@ -7,7 +7,8 @@
     "tips": "Mẹo",
     "support": "Tìm kiếm sự hỗ trợ cho sức khỏe của bạn",
     "trackers": "Trình theo dõi",
-    "resources": "Tài nguyên"
+    "resources": "Tài nguyên",
+    "understanding": "Hiểu biết"
   },
   "common": {
     "back": "Mặt sau",
@@ -69,5 +70,12 @@
     "food": "Đồ ăn",
     "weight-loss": "Giảm cân",
     "pms": "Hội chứng tiền kinh nguyệt"
+  },
+  "trackers": {
+    "energy": "Năng lượng",
+    "sleep": "Giấc ngủ",
+    "self_care": "Tự chăm sóc",
+    "bmi": "BMI",
+    "mood": "Tâm trạng"
   }
 }

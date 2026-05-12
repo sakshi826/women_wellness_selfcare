@@ -7,7 +7,8 @@
     "tips": "尖端",
     "support": "尋找健康方面的支持",
     "trackers": "追蹤器",
-    "resources": "資源"
+    "resources": "資源",
+    "understanding": "理解"
   },
   "common": {
     "back": "後退",
@@ -69,5 +70,13 @@
     "food": "食物",
     "weight-loss": "減肥",
     "pms": "經前症候群"
+  },
+  "trackers": {
+    "energy": "能量",
+    "sleep": "睡眠",
+    "self_care": "自我護理",
+    "bmi": "BMI",
+    "physical_activity": "身體活動",
+    "mood": "情緒"
   }
 }

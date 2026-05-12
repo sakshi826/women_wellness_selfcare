@@ -7,7 +7,8 @@
     "tips": "نصائح",
     "support": "ابحث عن الدعم لصحتك",
     "trackers": "أجهزة التتبع",
-    "resources": "موارد"
+    "resources": "موارد",
+    "understanding": "الفهم"
   },
   "common": {
     "back": "خلف",
@@ -69,5 +70,13 @@
     "food": "طعام",
     "weight-loss": "فقدان الوزن",
     "pms": "نظام إدارة الطاقة"
+  },
+  "trackers": {
+    "energy": "الطاقة",
+    "sleep": "النوم",
+    "self_care": "الرعاية الذاتية",
+    "bmi": "مؤشر كتلة الجسم",
+    "physical_activity": "النشاط البدني",
+    "mood": "الحالة المزاجية"
   }
 }

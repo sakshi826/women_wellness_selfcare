@@ -7,7 +7,8 @@
     "tips": "팁",
     "support": "건강 관련 지원을 찾아보세요",
     "trackers": "추적기",
-    "resources": "자원"
+    "resources": "자원",
+    "understanding": "이해"
   },
   "common": {
     "back": "뒤쪽에",
@@ -69,5 +70,13 @@
     "food": "음식",
     "weight-loss": "체중 감량",
     "pms": "월경전 증후군"
+  },
+  "trackers": {
+    "energy": "에너지",
+    "sleep": "수면",
+    "self_care": "자기 관리",
+    "bmi": "BMI",
+    "physical_activity": "신체 활동",
+    "mood": "기분"
   }
 }

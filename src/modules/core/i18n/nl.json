@@ -7,7 +7,8 @@
     "tips": "Tips",
     "support": "Vind ondersteuning voor uw gezondheid",
     "trackers": "Trackers",
-    "resources": "Bronnen"
+    "resources": "Bronnen",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Rug",
@@ -69,5 +70,13 @@
     "food": "Voedsel",
     "weight-loss": "Gewichtsverlies",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

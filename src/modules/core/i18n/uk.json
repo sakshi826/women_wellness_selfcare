@@ -7,7 +7,8 @@
     "tips": "Поради",
     "support": "Знайдіть підтримку для свого здоров'я",
     "trackers": "Трекери",
-    "resources": "Ресурси"
+    "resources": "Ресурси",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Назад",
@@ -69,5 +70,13 @@
     "food": "Їжа",
     "weight-loss": "Втрата ваги",
     "pms": "ПМС"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

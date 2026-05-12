@@ -7,7 +7,8 @@
     "tips": "Pontas",
     "support": "Encontre apoio para a sua saúde.",
     "trackers": "Rastreadores",
-    "resources": "Recursos"
+    "resources": "Recursos",
+    "understanding": "Compreensão"
   },
   "common": {
     "back": "Voltar",
@@ -69,5 +70,13 @@
     "food": "Comida",
     "weight-loss": "Perda de peso",
     "pms": "TPM"
+  },
+  "trackers": {
+    "energy": "Energia",
+    "sleep": "Sono",
+    "self_care": "Autocuidado",
+    "bmi": "IMC",
+    "physical_activity": "Atividade física",
+    "mood": "Humor"
   }
 }

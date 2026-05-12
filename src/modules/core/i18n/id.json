@@ -7,7 +7,8 @@
     "tips": "Tips",
     "support": "Temukan dukungan untuk kesehatan Anda",
     "trackers": "Pelacak",
-    "resources": "Sumber daya"
+    "resources": "Sumber daya",
+    "understanding": "Pemahaman"
   },
   "common": {
     "back": "Kembali",
@@ -69,5 +70,13 @@
     "food": "Makanan",
     "weight-loss": "Penurunan Berat Badan",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energi",
+    "sleep": "Tidur",
+    "self_care": "Perawatan Diri",
+    "bmi": "BMI",
+    "physical_activity": "Aktivitas Fisik",
+    "mood": "Suasana Hati"
   }
 }

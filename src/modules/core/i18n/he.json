@@ -7,7 +7,8 @@
     "tips": "טיפים",
     "support": "מצא תמיכה לבריאות שלך",
     "trackers": "עוקבים",
-    "resources": "אֶמְצָעִי"
+    "resources": "אֶמְצָעִי",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "בְּחֲזָרָה",
@@ -69,5 +70,13 @@
     "food": "מָזוֹן",
     "weight-loss": "ירידה במשקל",
     "pms": "תסמונת קדם וסתית"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

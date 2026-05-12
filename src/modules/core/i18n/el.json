@@ -7,7 +7,8 @@
     "tips": "Συμβουλές",
     "support": "Βρείτε υποστήριξη για την υγεία σας",
     "trackers": "Ιχνηλάτες",
-    "resources": "Πόροι"
+    "resources": "Πόροι",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Πίσω",
@@ -69,5 +70,13 @@
     "food": "Τροφή",
     "weight-loss": "Απώλεια βάρους",
     "pms": "Προεμμηνορροϊκό σύνδρομο"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

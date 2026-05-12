@@ -1,7 +1,11 @@
 import { t } from "@/lib/i18n-utils";
+import { type ModuleContent } from "@/data/modules";
 
-export const pcosData = {
-  title: t("title", { defaultValue: "PCOS" }),
+export const pcosData: ModuleContent = {
+  slug: "pcos",
+  title: t("title", "PCOS"),
+  iconKey: "Flower",
+  tone: "pink",
 
   subtitle: t("subtitle", "Personalized care and guidance to manage PCOS symptoms effectively."),
 

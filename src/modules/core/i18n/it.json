@@ -7,7 +7,8 @@
     "tips": "Suggerimenti",
     "support": "Trova supporto per la tua salute",
     "trackers": "Tracciatori",
-    "resources": "Risorse"
+    "resources": "Risorse",
+    "understanding": "Comprensione"
   },
   "common": {
     "back": "Indietro",
@@ -69,5 +70,13 @@
     "food": "Cibo",
     "weight-loss": "perdita di peso",
     "pms": "Sindrome premestruale"
+  },
+  "trackers": {
+    "energy": "Energia",
+    "sleep": "Sonno",
+    "self_care": "Cura di sé",
+    "bmi": "IMC",
+    "physical_activity": "Attività fisica",
+    "mood": "Umore"
   }
 }

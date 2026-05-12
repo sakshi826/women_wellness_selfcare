@@ -7,7 +7,8 @@
     "tips": "Sfaturi",
     "support": "Găsește sprijin pentru sănătatea ta",
     "trackers": "Trackere",
-    "resources": "Resurse"
+    "resources": "Resurse",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Spate",
@@ -69,5 +70,13 @@
     "food": "Mâncare",
     "weight-loss": "Pierdere în greutate",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

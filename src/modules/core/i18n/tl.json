@@ -7,7 +7,8 @@
     "tips": "Mga Tip",
     "support": "Maghanap ng suporta para sa iyong kalusugan",
     "trackers": "Mga Tracker",
-    "resources": "Mga Mapagkukunan"
+    "resources": "Mga Mapagkukunan",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Balik",
@@ -69,5 +70,13 @@
     "food": "Pagkain",
     "weight-loss": "Pagbaba ng Timbang",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

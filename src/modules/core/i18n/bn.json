@@ -7,7 +7,8 @@
     "tips": "টিপস",
     "support": "আপনার স্বাস্থ্যের জন্য সহায়তা খুঁজুন",
     "trackers": "ট্র্যাকার",
-    "resources": "সম্পদ"
+    "resources": "সম্পদ",
+    "understanding": "উপলব্ধি"
   },
   "common": {
     "back": "ফিরে যান",
@@ -69,5 +70,13 @@
     "food": "খাবার",
     "weight-loss": "ওজন হ্রাস",
     "pms": "পিএমএস"
+  },
+  "trackers": {
+    "energy": "শক্তি",
+    "sleep": "ঘুম",
+    "self_care": "স্ব-যত্ন",
+    "bmi": "বিএমআই",
+    "physical_activity": "শারীরিক কার্যকলাপ",
+    "mood": "মেজাজ"
   }
 }

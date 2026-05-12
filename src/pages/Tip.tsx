@@ -45,7 +45,7 @@ const Tip = () => {
   if (!data) return <Navigate to="/" replace />;
 
   const s = toneStyles[data.tone];
-  const HeaderIcon = iconMap[data.iconKey as keyof typeof iconMap];
+  const HeaderIcon = iconMap[data.iconKey as keyof typeof iconMap] || iconMap.Lightbulb;
 
   return (
     <div className="min-h-screen bg-background">

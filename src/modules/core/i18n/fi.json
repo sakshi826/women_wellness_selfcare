@@ -7,7 +7,8 @@
     "tips": "Vinkkejä",
     "support": "Löydä tukea terveydellesi",
     "trackers": "Seurantalaitteet",
-    "resources": "Resurssit"
+    "resources": "Resurssit",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Takaisin",
@@ -69,5 +70,13 @@
     "food": "Ruoka",
     "weight-loss": "Painonpudotus",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

@@ -7,7 +7,8 @@
     "tips": "చిట్కాలు",
     "support": "మీ ఆరోగ్యానికి మద్దతును కనుగొనండి",
     "trackers": "ట్రాకర్లు",
-    "resources": "వనరులు"
+    "resources": "వనరులు",
+    "understanding": "అవగాహన"
   },
   "common": {
     "back": "వెనుక",
@@ -69,5 +70,13 @@
     "food": "ఆహారం",
     "weight-loss": "బరువు తగ్గడం",
     "pms": "పిఎంఎస్"
+  },
+  "trackers": {
+    "energy": "శక్తి",
+    "sleep": "నిద్ర",
+    "self_care": "స్వీయ సంరక్షణ",
+    "bmi": "బిఎమ్‌ఐ",
+    "physical_activity": "శారీరక శ్రమ",
+    "mood": "మానసిక స్థితి"
   }
 }

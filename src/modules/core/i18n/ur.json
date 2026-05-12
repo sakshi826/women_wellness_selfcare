@@ -7,7 +7,8 @@
     "tips": "تجاویز",
     "support": "اپنی صحت کے لیے مدد تلاش کریں۔",
     "trackers": "ٹریکرز",
-    "resources": "وسائل"
+    "resources": "وسائل",
+    "understanding": "تفہیم"
   },
   "common": {
     "back": "پیچھے",
@@ -69,5 +70,13 @@
     "food": "کھانا",
     "weight-loss": "وزن میں کمی",
     "pms": "پی ایم ایس"
+  },
+  "trackers": {
+    "energy": " توانائی",
+    "sleep": "نیند",
+    "self_care": "خود کی دیکھ بھال",
+    "bmi": "بی ایم آئی",
+    "physical_activity": "جسمانی سرگرمی",
+    "mood": "مزاج"
   }
 }

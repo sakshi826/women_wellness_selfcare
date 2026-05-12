@@ -7,7 +7,8 @@
     "tips": "Tips",
     "support": "Finn støtte for helsen din",
     "trackers": "Sporere",
-    "resources": "Ressurser"
+    "resources": "Ressurser",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Tilbake",
@@ -69,5 +70,13 @@
     "food": "Mat",
     "weight-loss": "Vekttap",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

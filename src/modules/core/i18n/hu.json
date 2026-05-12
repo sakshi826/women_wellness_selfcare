@@ -7,7 +7,8 @@
     "tips": "Tippek",
     "support": "Keressen támogatást az egészségéhez",
     "trackers": "Követők",
-    "resources": "Erőforrás"
+    "resources": "Erőforrás",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Vissza",
@@ -69,5 +70,13 @@
     "food": "Élelmiszer",
     "weight-loss": "Fogyás",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

@@ -7,7 +7,8 @@
     "tips": "Tips",
     "support": "Hitta stöd för din hälsa",
     "trackers": "Spårare",
-    "resources": "Resurser"
+    "resources": "Resurser",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Tillbaka",
@@ -69,5 +70,13 @@
     "food": "Mat",
     "weight-loss": "Viktminskning",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }

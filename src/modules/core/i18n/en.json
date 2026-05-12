@@ -4,10 +4,19 @@
     "subtitle": "Explore tools and guidance for your wellness journey"
   },
   "sections": {
+    "understanding": "Understanding",
     "tips": "Tips",
     "support": "Find support for your health",
     "trackers": "Trackers",
     "resources": "Resources"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   },
   "common": {
     "back": "Back",

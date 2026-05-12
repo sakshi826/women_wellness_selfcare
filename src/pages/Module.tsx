@@ -32,7 +32,7 @@ const Module = () => {
   const data = slug ? modules[slug as ModuleSlug] : undefined;
   if (!data) return <Navigate to="/" replace />;
 
-  const HeaderIcon = iconMap[data.iconKey as keyof typeof iconMap];
+  const HeaderIcon = iconMap[data.iconKey as keyof typeof iconMap] || iconMap.Flower;
 
   return (
     <div className="min-h-screen bg-background">
@@ -63,7 +63,7 @@ const Module = () => {
           <h2 className="mb-5 text-2xl font-bold tracking-tight">{t('core:sections.understanding')} {t(data.title)}</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {data.understanding.map((u, i) => {
-              const Icon = understandingIcons[i];
+              const Icon = understandingIcons[i] || BookOpen;
               const s = understandingTile[u.tone];
               return (
                 <Link
@@ -103,7 +103,7 @@ const Module = () => {
                     <div className={`grid h-10 w-10 place-items-center rounded-xl ${toneBg[tone]} transition-transform duration-300 group-hover:scale-110`}>
                       <Icon className={`h-4 w-4 ${toneFg[tone]}`} strokeWidth={2} />
                     </div>
-                    <span className={`text-sm font-medium ${toneFg[tone]}`}>{t(`core:${tName.toLowerCase().replace(' ', '_')}`)}</span>
+                    <span className={`text-sm font-medium ${toneFg[tone]}`}>{t(`core:trackers.${tName.toLowerCase().replace(/\s+/g, '_')}`)}</span>
                   </div>
                   <ChevronRight className={`h-4 w-4 ${toneFg[tone]} transition-transform duration-300 group-hover:translate-x-1`} />
                 </a>

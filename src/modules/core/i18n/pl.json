@@ -7,7 +7,8 @@
     "tips": "Porady",
     "support": "Znajdź wsparcie dla swojego zdrowia",
     "trackers": "Trackery",
-    "resources": "Zasoby"
+    "resources": "Zasoby",
+    "understanding": "Understanding"
   },
   "common": {
     "back": "Z powrotem",
@@ -69,5 +70,13 @@
     "food": "Żywność",
     "weight-loss": "Utrata wagi",
     "pms": "PMS"
+  },
+  "trackers": {
+    "energy": "Energy",
+    "sleep": "Sleep",
+    "self_care": "Self Care",
+    "bmi": "BMI",
+    "physical_activity": "Physical Activity",
+    "mood": "Mood"
   }
 }
