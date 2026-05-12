@@ -1,30 +1,31 @@
-FROM node:20-alpine AS builder
+# Build stage
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 COPY . .
-
-# Build the application
 RUN npm run build
 
-FROM nginx:alpine
+# Production stage
+FROM nginx:stable-alpine
 
-# Remove default config
-RUN rm /etc/nginx/conf.d/default.conf
+# Copy the built app to Nginx's html directory
+COPY --from=build /app/dist /usr/share/nginx/html/women_wellness_selfcare
 
-WORKDIR /usr/share/nginx/html
-
-# Clean the directory before copying
-RUN rm -rf ./*
-
-# Copy built files to the subfolder only to keep paths clean
-COPY --from=builder /app/dist /usr/share/nginx/html/women_wellness_selfcare
-
-# Copy the custom nginx config
-COPY vite-nginx.conf /etc/nginx/conf.d/nginx.conf
+# Add custom Nginx config for SPA routing
+RUN printf 'server {\n\
+    listen 80;\n\
+    location /women_wellness_selfcare {\n\
+        alias /usr/share/nginx/html/women_wellness_selfcare;\n\
+        try_files $uri $uri/ /women_wellness_selfcare/index.html;\n\
+    }\n\
+    location / {\n\
+        return 301 /women_wellness_selfcare/;\n\
+    }\n\
+}' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
